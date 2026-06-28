@@ -123,6 +123,31 @@
       50%     { transform: translateY(-5px); }
     }
 
+    /* Mechanism legend */
+    .hero-legend {
+      display: flex; align-items: center; gap: 1rem; margin-top: 2.5rem;
+    }
+    .hl-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.56rem;
+      letter-spacing: 0.18em; color: var(--text-3); text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .hl-dots { display: flex; align-items: center; gap: 0.55rem; }
+    .hl-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--c);
+      box-shadow: 0 0 8px var(--c), 0 0 16px color-mix(in srgb, var(--c) 40%, transparent);
+      animation: dotPulse2 2.4s ease-in-out infinite;
+    }
+    .hl-dot:nth-child(2) { animation-delay: 0.3s; }
+    .hl-dot:nth-child(3) { animation-delay: 0.6s; }
+    .hl-dot:nth-child(4) { animation-delay: 0.9s; }
+    .hl-dot:nth-child(5) { animation-delay: 1.2s; }
+    @keyframes dotPulse2 {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%     { opacity: 0.45; transform: scale(0.7); }
+    }
+
     @media (max-width: 900px) {
       .hero-split { grid-template-columns: 1fr; }
       .hero-l { padding-top: 8rem; }
@@ -231,6 +256,18 @@
     <div class="hero-actions rv d3">
       <a href="molecule.html" class="btn-p"><span data-i18n="index.btn_mol">Изучить молекулу</span> <span class="btn-p-ic">↓</span></a>
       <a href="contact.html" class="btn-s" data-i18n="index.btn_coa">Запросить CoA</a>
+    </div>
+
+    <!-- Mechanism legend -->
+    <div class="hero-legend rv d4">
+      <div class="hl-label">4 mechanisms →</div>
+      <div class="hl-dots">
+        <span class="hl-dot" style="--c:#C9943A" title="Antioxidant"></span>
+        <span class="hl-dot" style="--c:#6366F1" title="Anti-inflammatory"></span>
+        <span class="hl-dot" style="--c:#10B981" title="Bioavailability"></span>
+        <span class="hl-dot" style="--c:#E84545" title="Vasodilatory"></span>
+        <span class="hl-dot" style="--c:#8B5CF6" title="Neuroprotective"></span>
+      </div>
     </div>
 
   </div>
