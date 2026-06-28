@@ -151,6 +151,7 @@
   </style>
 </head>
 <body>
+<div id="scroll-prog"></div>
 <div class="amb-r"></div><div class="amb-l"></div>
 
 <nav class="nav">
@@ -204,45 +205,57 @@
     <div class="mol-card rv d4">
       <div class="dbezel"><div class="dbezel-in mol-inner">
         <svg class="mol-svg" viewBox="0 0 300 300" fill="none">
-          <circle cx="150" cy="150" r="138" stroke="rgba(201,148,58,0.05)" stroke-width="1"/>
-          <circle cx="150" cy="150" r="104" stroke="rgba(201,148,58,0.07)" stroke-width="1"/>
-          <circle cx="150" cy="150" r="68"  stroke="rgba(201,148,58,0.11)" stroke-width="1"/>
-          <line x1="150" y1="76"  x2="206" y2="110" stroke="rgba(201,148,58,0.38)" stroke-width="1.5"/>
-          <line x1="206" y1="110" x2="206" y2="174" stroke="rgba(201,148,58,0.38)" stroke-width="1.5"/>
-          <line x1="206" y1="174" x2="150" y2="208" stroke="rgba(201,148,58,0.38)" stroke-width="1.5"/>
-          <line x1="150" y1="208" x2="94"  y2="174" stroke="rgba(201,148,58,0.38)" stroke-width="1.5"/>
-          <line x1="94"  y1="174" x2="94"  y2="110" stroke="rgba(201,148,58,0.38)" stroke-width="1.5"/>
-          <line x1="94"  y1="110" x2="150" y2="76"  stroke="rgba(201,148,58,0.38)" stroke-width="1.5"/>
-          <line x1="150" y1="112" x2="180" y2="130" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
-          <line x1="180" y1="130" x2="180" y2="164" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
-          <line x1="180" y1="164" x2="150" y2="182" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
-          <line x1="150" y1="182" x2="120" y2="164" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
-          <line x1="120" y1="164" x2="120" y2="130" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
-          <line x1="120" y1="130" x2="150" y2="112" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
-          <line x1="150" y1="76"  x2="150" y2="40"  stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
-          <line x1="206" y1="110" x2="242" y2="88"  stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
-          <line x1="206" y1="174" x2="242" y2="196" stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
-          <line x1="150" y1="208" x2="150" y2="244" stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
-          <line x1="94"  y1="174" x2="58"  y2="196" stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
-          <line x1="94"  y1="110" x2="58"  y2="88"  stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
-          <circle cx="150" cy="76"  r="6" fill="#C9943A" opacity="0.92"/>
-          <circle cx="206" cy="110" r="5.5" fill="#C9943A" opacity="0.72"/>
-          <circle cx="206" cy="174" r="5.5" fill="#C9943A" opacity="0.72"/>
-          <circle cx="150" cy="208" r="6" fill="#C9943A" opacity="0.92"/>
-          <circle cx="94"  cy="174" r="5.5" fill="#C9943A" opacity="0.72"/>
-          <circle cx="94"  cy="110" r="5.5" fill="#C9943A" opacity="0.72"/>
-          <circle cx="150" cy="40"  r="3.5" fill="rgba(201,148,58,0.3)"/>
-          <circle cx="242" cy="88"  r="3.5" fill="rgba(201,148,58,0.3)"/>
-          <circle cx="242" cy="196" r="3.5" fill="rgba(201,148,58,0.3)"/>
-          <circle cx="150" cy="244" r="3.5" fill="rgba(201,148,58,0.3)"/>
-          <circle cx="58"  cy="196" r="3.5" fill="rgba(201,148,58,0.3)"/>
-          <circle cx="58"  cy="88"  r="3.5" fill="rgba(201,148,58,0.3)"/>
-          <circle cx="150" cy="150" r="14" fill="rgba(201,148,58,0.1)" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
-          <circle cx="150" cy="150" r="5" fill="#C9943A"/>
-          <text x="150" y="30" text-anchor="middle" fill="rgba(201,148,58,0.45)" font-family="JetBrains Mono" font-size="9">OH</text>
-          <text x="150" y="260" text-anchor="middle" fill="rgba(201,148,58,0.45)" font-family="JetBrains Mono" font-size="9">OH</text>
-          <text x="44" y="86" text-anchor="end" fill="rgba(201,148,58,0.45)" font-family="JetBrains Mono" font-size="9">O</text>
-          <text x="260" y="86" text-anchor="start" fill="rgba(201,148,58,0.45)" font-family="JetBrains Mono" font-size="9">OH</text>
+          <g id="mol-geo">
+            <circle cx="150" cy="150" r="138" stroke="rgba(201,148,58,0.05)" stroke-width="1"/>
+            <circle cx="150" cy="150" r="104" stroke="rgba(201,148,58,0.07)" stroke-width="1"/>
+            <circle cx="150" cy="150" r="68"  stroke="rgba(201,148,58,0.11)" stroke-width="1"/>
+            <line x1="150" y1="76"  x2="206" y2="110" stroke="rgba(201,148,58,0.38)" stroke-width="1.5"/>
+            <line x1="206" y1="110" x2="206" y2="174" stroke="rgba(201,148,58,0.38)" stroke-width="1.5"/>
+            <line x1="206" y1="174" x2="150" y2="208" stroke="rgba(201,148,58,0.38)" stroke-width="1.5"/>
+            <line x1="150" y1="208" x2="94"  y2="174" stroke="rgba(201,148,58,0.38)" stroke-width="1.5"/>
+            <line x1="94"  y1="174" x2="94"  y2="110" stroke="rgba(201,148,58,0.38)" stroke-width="1.5"/>
+            <line x1="94"  y1="110" x2="150" y2="76"  stroke="rgba(201,148,58,0.38)" stroke-width="1.5"/>
+            <line x1="150" y1="112" x2="180" y2="130" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
+            <line x1="180" y1="130" x2="180" y2="164" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
+            <line x1="180" y1="164" x2="150" y2="182" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
+            <line x1="150" y1="182" x2="120" y2="164" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
+            <line x1="120" y1="164" x2="120" y2="130" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
+            <line x1="120" y1="130" x2="150" y2="112" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
+            <line x1="150" y1="76"  x2="150" y2="40"  stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
+            <line x1="206" y1="110" x2="242" y2="88"  stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
+            <line x1="206" y1="174" x2="242" y2="196" stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
+            <line x1="150" y1="208" x2="150" y2="244" stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
+            <line x1="94"  y1="174" x2="58"  y2="196" stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
+            <line x1="94"  y1="110" x2="58"  y2="88"  stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
+            <circle cx="150" cy="76"  r="6" fill="#C9943A" opacity="0.92"/>
+            <circle cx="206" cy="110" r="5.5" fill="#C9943A" opacity="0.72"/>
+            <circle cx="206" cy="174" r="5.5" fill="#C9943A" opacity="0.72"/>
+            <circle cx="150" cy="208" r="6" fill="#C9943A" opacity="0.92"/>
+            <circle cx="94"  cy="174" r="5.5" fill="#C9943A" opacity="0.72"/>
+            <circle cx="94"  cy="110" r="5.5" fill="#C9943A" opacity="0.72"/>
+            <circle cx="150" cy="40"  r="3.5" fill="rgba(201,148,58,0.3)"/>
+            <circle cx="242" cy="88"  r="3.5" fill="rgba(201,148,58,0.3)"/>
+            <circle cx="242" cy="196" r="3.5" fill="rgba(201,148,58,0.3)"/>
+            <circle cx="150" cy="244" r="3.5" fill="rgba(201,148,58,0.3)"/>
+            <circle cx="58"  cy="196" r="3.5" fill="rgba(201,148,58,0.3)"/>
+            <circle cx="58"  cy="88"  r="3.5" fill="rgba(201,148,58,0.3)"/>
+            <circle cx="150" cy="150" r="14" fill="rgba(201,148,58,0.1)" stroke="rgba(201,148,58,0.28)" stroke-width="1.5"/>
+            <circle cx="150" cy="150" r="5" fill="#C9943A"/>
+            <animateTransform
+              xlink:href="#mol-geo"
+              attributeName="transform"
+              type="rotate"
+              from="0 150 150"
+              to="360 150 150"
+              dur="30s"
+              repeatCount="indefinite"/>
+          </g>
+          <g id="mol-labels">
+            <text x="150" y="30" text-anchor="middle" fill="rgba(201,148,58,0.45)" font-family="JetBrains Mono" font-size="9">OH</text>
+            <text x="150" y="260" text-anchor="middle" fill="rgba(201,148,58,0.45)" font-family="JetBrains Mono" font-size="9">OH</text>
+            <text x="44" y="86" text-anchor="end" fill="rgba(201,148,58,0.45)" font-family="JetBrains Mono" font-size="9">O</text>
+            <text x="260" y="86" text-anchor="start" fill="rgba(201,148,58,0.45)" font-family="JetBrains Mono" font-size="9">OH</text>
+          </g>
         </svg>
         <div class="mol-lbl">
           <div class="mol-formula">C₁₅H₁₂O₇ · MW 304.25</div>
@@ -423,4 +436,24 @@
   document.querySelectorAll('.mob-link,.mob-cta').forEach(l=>l.addEventListener('click',()=>{mob.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
 </script>
 <script src="js/i18n.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('scroll-prog');
+  if(!el) return;
+  window.addEventListener('scroll', function(){
+    var s = document.documentElement;
+    var pct = s.scrollTop / (s.scrollHeight - s.clientHeight) * 100;
+    el.style.width = Math.min(pct, 100) + '%';
+  }, {passive: true});
+})();
+(function(){
+  var pill = document.querySelector('.nav-pill');
+  if(!pill) return;
+  var onScroll = function(){
+    pill.classList.toggle('scrolled', window.scrollY > 40);
+  };
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+})();
+</script>
 </body></html>

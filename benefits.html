@@ -95,6 +95,7 @@
   </style>
 </head>
 <body>
+<div id="scroll-prog"></div>
 <div class="amb-r"></div><div class="amb-l"></div>
 
 <nav class="nav">
@@ -462,4 +463,24 @@
   }));
 </script>
 <script src="js/i18n.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('scroll-prog');
+  if(!el) return;
+  window.addEventListener('scroll', function(){
+    var s = document.documentElement;
+    var pct = s.scrollTop / (s.scrollHeight - s.clientHeight) * 100;
+    el.style.width = Math.min(pct, 100) + '%';
+  }, {passive: true});
+})();
+(function(){
+  var pill = document.querySelector('.nav-pill');
+  if(!pill) return;
+  var onScroll = function(){
+    pill.classList.toggle('scrolled', window.scrollY > 40);
+  };
+  window.addEventListener('scroll', onScroll, {passive: true});
+  onScroll();
+})();
+</script>
 </body></html>
