@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ингредиент — BOREALIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* ── SPEC TABLE ── */
+    .spec-wrap {
+      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      padding: 5px; border-radius: 2rem; overflow: hidden;
+    }
+    .spec-in {
+      background: var(--bg-card); border-radius: calc(2rem - 5px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .spec-table { width: 100%; border-collapse: collapse; }
+    .spec-table thead tr { border-bottom: 1px solid var(--border); }
+    .spec-table th {
+      padding: 1.25rem 2rem;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.58rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      font-weight: 400; color: var(--text-3); text-align: left;
+    }
+    .spec-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .spec-table tbody tr:last-child { border-bottom: none; }
+    .spec-table td { padding: 1rem 2rem; font-size: 0.86rem; vertical-align: middle; }
+    .sp-param { color: var(--text-2); }
+    .sp-val { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent); }
+    .sp-method { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--text-3); }
+
+    /* ── FORMS GRID ── */
+    .forms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .form-c {
+      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      padding: 4px; border-radius: var(--r-card);
+      transition: border-color 0.4s var(--out);
+    }
+    .form-c:hover { border-color: var(--accent-border); }
+    .form-in {
+      background: var(--bg-card); border-radius: var(--r-inner);
+      padding: 2rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .form-ico { font-size: 2rem; }
+    .form-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; }
+    .form-props { display: flex; flex-direction: column; gap: 0.35rem; margin-top: 0.25rem; }
+    .form-prop { font-size: 0.78rem; color: var(--text-2); display: flex; gap: 0.5rem; }
+    .form-prop::before { content: '·'; color: var(--accent); flex-shrink: 0; }
+
+    /* ── APPLICATIONS ── */
+    .app-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .app-c {
+      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      padding: 4px; border-radius: var(--r-card);
+    }
+    .app-in {
+      background: var(--bg-card); border-radius: var(--r-inner);
+      padding: 1.75rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .app-ico { font-size: 1.75rem; margin-bottom: 0.75rem; }
+    .app-n { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; margin-bottom: 0.5rem; }
+    .app-d { font-size: 0.78rem; color: var(--text-2); line-height: 1.65; }
+    .app-dose { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: var(--accent); margin-top: 0.75rem; }
+
+    /* ── CERTS ── */
+    .certs { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .cert {
+      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      padding: 4px; border-radius: 1rem;
+    }
+    .cert-in {
+      background: var(--bg-card); border-radius: calc(1rem - 4px);
+      padding: 1rem 1.5rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      text-align: center; min-width: 110px;
+    }
+    .cert-ico { font-size: 1.5rem; margin-bottom: 0.3rem; }
+    .cert-n { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.12em; color: var(--text-2); }
+
+    /* ── PACKAGING ── */
+    .pkg-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .pkg {
+      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      padding: 4px; border-radius: var(--r-card);
+    }
+    .pkg-in {
+      background: var(--bg-card); border-radius: var(--r-inner);
+      padding: 1.5rem; text-align: center;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .pkg-ico { font-size: 1.75rem; margin-bottom: 0.5rem; }
+    .pkg-w { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--accent); }
+    .pkg-l { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-3); margin-top: 0.25rem; }
+
+    /* ── CONTACT CTA (minimal) ── */
+    .inquiry-block {
+      padding: 4rem 5vw 8rem; max-width: 1400px; margin: 0 auto; position: relative; z-index: 1;
+    }
+    .inquiry-card {
+      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      padding: 5px; border-radius: 2.5rem;
+    }
+    .inquiry-in {
+      background: var(--bg-card); border-radius: calc(2.5rem - 5px);
+      padding: 3.5rem 4rem;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 4rem; align-items: center;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .inq-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem,2.5vw,2.6rem); font-weight: 300; line-height: 1.15; margin-bottom: 0.6rem; }
+    .inq-h em { font-style: italic; color: var(--accent); }
+    .inq-sub { font-size: 0.86rem; color: var(--text-2); line-height: 1.7; max-width: 48ch; }
+    .inq-acts { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-end; }
+
+    @media (max-width: 1024px) { .forms-grid { grid-template-columns: 1fr 1fr; } .app-grid { grid-template-columns: 1fr 1fr; } .pkg-row { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) { .forms-grid, .app-grid { grid-template-columns: 1fr; } .pkg-row { grid-template-columns: 1fr 1fr; } .inquiry-in { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 2rem; } .inq-acts { align-items: flex-start; flex-direction: row; flex-wrap: wrap; } }
+  </style>
+</head>
+<body>
+<div class="amb-r"></div><div class="amb-l"></div>
+
+<nav class="nav">
+  <div class="nav-pill">
+    <a href="index.html" class="nav-logo">Borealis</a>
+    <ul class="nav-links">
+      <li><a href="molecule.html" data-i18n="nav.molecule">Молекула</a></li>
+      <li><a href="benefits.html" data-i18n="nav.benefits">Применения</a></li>
+      <li><a href="research.html" data-i18n="nav.research">Исследования</a></li>
+      <li><a href="source.html" data-i18n="nav.source">Источник</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Контакт</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta"><span data-i18n="nav.cta">Запросить CoA</span> <span class="nav-cta-ic">↗</span></a>
+    <div id="langSw">
+      <button class="lang-btn" id="langBtn" onclick="bI18nToggleDrop()">EN</button>
+      <div class="lang-drop" id="langDrop">
+        <button data-lang="en" onclick="bI18nSetLang('en')">EN · English</button>
+        <button data-lang="fr" onclick="bI18nSetLang('fr')">FR · Français</button>
+        <button data-lang="es" onclick="bI18nSetLang('es')">ES · Español</button>
+        <button data-lang="ru" onclick="bI18nSetLang('ru')">RU · Русский</button>
+      </div>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <div class="mob-links">
+    <a href="molecule.html" class="mob-link" data-i18n="mob.molecule">Молекула</a>
+    <a href="benefits.html" class="mob-link" data-i18n="mob.benefits">Применения</a>
+    <a href="research.html" class="mob-link" data-i18n="mob.research">Исследования</a>
+    <a href="source.html" class="mob-link" data-i18n="mob.source">Источник</a>
+    <a href="contact.html" class="mob-link" data-i18n="mob.contact">Контакт</a>
+  </div>
+  <a href="contact.html" class="mob-cta" data-i18n="mob.cta">Запросить CoA →</a>
+</div>
+
+<div class="page-hero rv">
+  <div class="eye-pill" style="margin-bottom:1.5rem" data-i18n="product.pill"><span class="eye-dot"></span>Bulk ingredient · Powder · Larix gmelinii · GMP</div>
+  <h1 class="page-h1" data-i18n="product.h1">Спецификация<br><em>ингредиента.</em></h1>
+  <p class="page-sub" data-i18n="product.sub">Технические характеристики, формы поставки и области применения ДКВ (таксифолина) и арабиногалактана из сибирской лиственницы.</p>
+</div>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat rv"><div class="stat-n">99%+</div><div class="stat-l">Чистота (HPLC)</div></div>
+  <div class="stat rv d1"><div class="stat-n">3</div><div class="stat-l">Формы поставки</div></div>
+  <div class="stat rv d2"><div class="stat-n">EU</div><div class="stat-l">Novel Food 2018/461</div></div>
+  <div class="stat rv d3"><div class="stat-n">GMP</div><div class="stat-l">Сертифицировано</div></div>
+</div>
+
+<!-- PHOTO BANNER -->
+<div style="padding:0 5vw;max-width:1400px;margin:0 auto">
+  <div class="rv" style="position:relative;overflow:hidden;border-radius:1.75rem;height:300px;margin:0 0 4rem">
+    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&q=80&fit=crop" alt="ДКВ в лаборатории" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.55) brightness(0.55)">
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(7,11,24,0.9) 0%,rgba(7,11,24,0.35) 60%,rgba(7,11,24,0.1) 100%);display:flex;align-items:center;padding:3rem">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;color:var(--accent);margin-bottom:0.75rem">BULK INGREDIENT · GMP CERTIFIED</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.05;color:var(--text)">Dihydroquercetin<br><em style="color:var(--accent)">Taxifolin</em></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.18em;color:var(--text-3);margin-top:0.75rem">CAS 480-18-2 · C₁₅H₁₂O₇ · MW 304.25 · Purity ≥99%</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SPECS -->
+<section class="sec">
+  <div class="sec-eye rv" data-i18n="product.spec_eye">Технические характеристики</div>
+  <h2 class="sec-h2 rv d1">Диhydroquercetin<br><em>(ДКВ · Таксифолин)</em></h2>
+  <div class="spec-wrap rv d2" style="margin-top:2.5rem">
+    <div class="spec-in">
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Параметр</th>
+            <th>Значение</th>
+            <th>Метод</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="sp-param">Химическое название</td><td class="sp-val">(2R,3R)-Dihydroquercetin</td><td class="sp-method">IUPAC</td></tr>
+          <tr><td class="sp-param">CAS номер</td><td class="sp-val">480-18-2</td><td class="sp-method">—</td></tr>
+          <tr><td class="sp-param">Молекулярная формула</td><td class="sp-val">C₁₅H₁₂O₇</td><td class="sp-method">—</td></tr>
+          <tr><td class="sp-param">Молекулярная масса</td><td class="sp-val">304.25 g/mol</td><td class="sp-method">—</td></tr>
+          <tr><td class="sp-param">Содержание ДКВ</td><td class="sp-val">≥ 99%</td><td class="sp-method">HPLC-UV</td></tr>
+          <tr><td class="sp-param">Влажность</td><td class="sp-val">≤ 1.5%</td><td class="sp-method">Karl Fischer</td></tr>
+          <tr><td class="sp-param">Зольность</td><td class="sp-val">≤ 0.2%</td><td class="sp-method">Ph. Eur.</td></tr>
+          <tr><td class="sp-param">Тяжёлые металлы (Pb)</td><td class="sp-val">≤ 0.5 ppm</td><td class="sp-method">ICP-MS</td></tr>
+          <tr><td class="sp-param">Тяжёлые металлы (As)</td><td class="sp-val">≤ 0.1 ppm</td><td class="sp-method">ICP-MS</td></tr>
+          <tr><td class="sp-param">Общее микробное число</td><td class="sp-val">≤ 1000 CFU/g</td><td class="sp-method">USP &lt;61&gt;</td></tr>
+          <tr><td class="sp-param">E. coli</td><td class="sp-val">Не обнаружено / 10 г</td><td class="sp-method">USP &lt;62&gt;</td></tr>
+          <tr><td class="sp-param">Растворимость в воде</td><td class="sp-val">~1.5 g/L при 25°C</td><td class="sp-method">Ph. Eur.</td></tr>
+          <tr><td class="sp-param">Термостабильность</td><td class="sp-val">До 150°C</td><td class="sp-method">DSC</td></tr>
+          <tr><td class="sp-param">Цвет порошка</td><td class="sp-val">Светло-жёлтый / кремовый</td><td class="sp-method">Визуально</td></tr>
+          <tr><td class="sp-param">Срок годности</td><td class="sp-val">24 месяца</td><td class="sp-method">При 15–25°C, сухо</td></tr>
+          <tr><td class="sp-param">Источник</td><td class="sp-val">Larix gmelinii (Dahurian Larch)</td><td class="sp-method">Ботаническая IDх</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- АГ SPECS -->
+<section class="sec">
+  <div class="sec-eye rv">Технические характеристики</div>
+  <h2 class="sec-h2 rv d1">Arabinogalactan<br><em>(АГ)</em></h2>
+  <div class="spec-wrap rv d2" style="margin-top:2.5rem">
+    <div class="spec-in">
+      <table class="spec-table">
+        <thead>
+          <tr><th>Параметр</th><th>Значение</th><th>Метод</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="sp-param">Химический класс</td><td class="sp-val">Полисахарид (β-D-галактан)</td><td class="sp-method">—</td></tr>
+          <tr><td class="sp-param">CAS номер</td><td class="sp-val">9036-66-2</td><td class="sp-method">—</td></tr>
+          <tr><td class="sp-param">Содержание АГ</td><td class="sp-val">≥ 95%</td><td class="sp-method">GC-MS</td></tr>
+          <tr><td class="sp-param">Молекулярная масса</td><td class="sp-val">10–120 kDa</td><td class="sp-method">GPC</td></tr>
+          <tr><td class="sp-param">Влажность</td><td class="sp-val">≤ 8%</td><td class="sp-method">Karl Fischer</td></tr>
+          <tr><td class="sp-param">Растворимость в воде</td><td class="sp-val">&gt; 200 g/L (высокая)</td><td class="sp-method">—</td></tr>
+          <tr><td class="sp-param">pH 1% раствора</td><td class="sp-val">4.5–6.5</td><td class="sp-method">pH-метрия</td></tr>
+          <tr><td class="sp-param">Пребиотический эффект</td><td class="sp-val">Подтверждён</td><td class="sp-method">In vitro fermentation</td></tr>
+          <tr><td class="sp-param">Источник</td><td class="sp-val">Larix gmelinii</td><td class="sp-method">—</td></tr>
+          <tr><td class="sp-param">Срок годности</td><td class="sp-val">24 месяца</td><td class="sp-method">При 15–25°C, сухо</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- FORMS -->
+<section class="sec">
+  <div class="sec-eye rv" data-i18n="product.pack_eye">Формы поставки</div>
+  <h2 class="sec-h2 rv d1">Три формата <em>под вашу задачу</em></h2>
+  <div class="forms-grid" style="margin-top:2.5rem">
+    <div class="form-c rv d1"><div class="form-in">
+      <div class="form-ico">🧪</div>
+      <div class="form-name">Стандартный порошок</div>
+      <div class="form-props">
+        <div class="form-prop">ДКВ ≥99% или АГ ≥95%</div>
+        <div class="form-prop">Размер частиц D90 &lt; 150 мкм</div>
+        <div class="form-prop">Лёгкий кремовый цвет</div>
+        <div class="form-prop">Для капсул, таблеток, саше</div>
+      </div>
+    </div></div>
+    <div class="form-c rv d2"><div class="form-in">
+      <div class="form-ico">💧</div>
+      <div class="form-name">Водорастворимый</div>
+      <div class="form-props">
+        <div class="form-prop">Повышенная дисперсность</div>
+        <div class="form-prop">Растворимость &gt;10 g/L</div>
+        <div class="form-prop">Мгновенное растворение</div>
+        <div class="form-prop">Для напитков, функциональных продуктов</div>
+      </div>
+    </div></div>
+    <div class="form-c rv d3"><div class="form-in">
+      <div class="form-ico">⚗️</div>
+      <div class="form-name">Смесь ДКВ+АГ</div>
+      <div class="form-props">
+        <div class="form-prop">Готовая синергетическая смесь</div>
+        <div class="form-prop">Стандартное соотношение 1:3</div>
+        <div class="form-prop">Биодоступность ×2.8 vs ДКВ alone</div>
+        <div class="form-prop">Для любой формы выпуска</div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- PACKAGING -->
+<section class="sec">
+  <div class="sec-eye rv">Упаковка</div>
+  <h2 class="sec-h2 rv d1">Объёмы <em>поставки</em></h2>
+  <div class="pkg-row rv d1" style="margin-top:2.5rem">
+    <div class="pkg"><div class="pkg-in">
+      <div class="pkg-ico">🧪</div>
+      <div class="pkg-w">100 г</div>
+      <div class="pkg-l">Тестовый образец</div>
+    </div></div>
+    <div class="pkg"><div class="pkg-in">
+      <div class="pkg-ico">🗂️</div>
+      <div class="pkg-w">1 кг</div>
+      <div class="pkg-l">Малая серия / R&D</div>
+    </div></div>
+    <div class="pkg"><div class="pkg-in">
+      <div class="pkg-ico">📦</div>
+      <div class="pkg-w">5 кг</div>
+      <div class="pkg-l">Средняя серия</div>
+    </div></div>
+    <div class="pkg"><div class="pkg-in">
+      <div class="pkg-ico">🏭</div>
+      <div class="pkg-w">25 кг</div>
+      <div class="pkg-l">Промышленный барабан</div>
+    </div></div>
+  </div>
+  <p class="rv d2" style="font-size:0.8rem;color:var(--text-3);margin-top:1.5rem;font-family:'JetBrains Mono',monospace">
+    Нестандартные объёмы — по запросу. Все партии сопровождаются CoA, паспортом безопасности (SDS) и документами происхождения.
+  </p>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- APPLICATIONS -->
+<section class="sec">
+  <div class="sec-eye rv" data-i18n="product.app_eye">Области применения</div>
+  <h2 class="sec-h2 rv d1">Где применяют <em>ингредиент</em></h2>
+  <div class="app-grid" style="margin-top:2.5rem">
+    <div class="app-c rv d1"><div class="app-in">
+      <div class="app-ico">💊</div>
+      <div class="app-n">Нутрицевтика</div>
+      <div class="app-d">Капсулы, таблетки, саше. Антиоксидантные, кардио-, нейро- и иммунные формулы.</div>
+      <div class="app-dose">Типичная доза: 100–300 мг ДКВ / день</div>
+    </div></div>
+    <div class="app-c rv d2"><div class="app-in">
+      <div class="app-ico">🏋️</div>
+      <div class="app-n">Спортивное питание</div>
+      <div class="app-d">Порошки, батончики, изотоники. Снижение оксидативного стресса при нагрузках, ускорение восстановления.</div>
+      <div class="app-dose">Типичная доза: 200–400 мг ДКВ / день</div>
+    </div></div>
+    <div class="app-c rv d3"><div class="app-in">
+      <div class="app-ico">✨</div>
+      <div class="app-n">Косметика</div>
+      <div class="app-d">Антивозрастные кремы, сыворотки. Защита коллагена, ингибирование MMP-1/MMP-3, UV-протекция кожи.</div>
+      <div class="app-dose">Типичная концентрация: 0.05–0.5% в формуле</div>
+    </div></div>
+    <div class="app-c rv d1"><div class="app-in">
+      <div class="app-ico">🍵</div>
+      <div class="app-n">Функциональные продукты</div>
+      <div class="app-d">Обогащённые напитки, чаи, йогурты. Водорастворимая форма ДКВ — прозрачные растворы без осадка.</div>
+      <div class="app-dose">Термостабилен до 150°C</div>
+    </div></div>
+    <div class="app-c rv d2"><div class="app-in">
+      <div class="app-ico">💉</div>
+      <div class="app-n">Фармацевтика</div>
+      <div class="app-d">Субстанция для фармпроизводства. Соответствие Ph. Eur. стандартам. Хирально чистая форма.</div>
+      <div class="app-dose">Доступна фармакопейная документация</div>
+    </div></div>
+    <div class="app-c rv d3"><div class="app-in">
+      <div class="app-ico">🐄</div>
+      <div class="app-n">Ветеринария и животноводство</div>
+      <div class="app-d">Натуральная замена антибиотикам (кормовые добавки). АГ как пребиотик для кишечного микробиома животных.</div>
+      <div class="app-dose">Данные по птице, свиньям, КРС</div>
+    </div></div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- CERTS -->
+<section class="sec">
+  <div class="sec-eye rv" data-i18n="product.cert_eye">Сертификация</div>
+  <h2 class="sec-h2 rv d1">Регуляторный <em>статус</em></h2>
+  <div class="certs rv d1" style="margin-top:2rem">
+    <div class="cert"><div class="cert-in"><div class="cert-ico">🇪🇺</div><div class="cert-n">EU Novel Food<br>2018/461</div></div></div>
+    <div class="cert"><div class="cert-in"><div class="cert-ico">🏭</div><div class="cert-n">GMP<br>Certified</div></div></div>
+    <div class="cert"><div class="cert-in"><div class="cert-ico">🇨🇳</div><div class="cert-n">China NHC<br>2021</div></div></div>
+    <div class="cert"><div class="cert-in"><div class="cert-ico">🌱</div><div class="cert-n">Non-GMO<br>Verified</div></div></div>
+    <div class="cert"><div class="cert-in"><div class="cert-ico">🌾</div><div class="cert-n">Gluten-Free<br>Certified</div></div></div>
+    <div class="cert"><div class="cert-in"><div class="cert-ico">🥬</div><div class="cert-n">Vegan<br>Suitable</div></div></div>
+  </div>
+  <p class="rv d2" style="font-size:0.8rem;color:var(--text-3);margin-top:1.5rem;line-height:1.7">
+    CoA, SDS, сертификаты происхождения и дополнительная регуляторная документация предоставляются по запросу.
+  </p>
+</section>
+
+<!-- INQUIRY -->
+<div class="inquiry-block">
+  <div class="inquiry-card rv">
+    <div class="inquiry-in">
+      <div>
+        <h2 class="inq-h">Запросить образец<br>или <em>CoA</em></h2>
+        <p class="inq-sub">Предоставляем тестовые образцы (100 г), Certificate of Analysis, паспорт безопасности и коммерческое предложение.</p>
+      </div>
+      <div class="inq-acts">
+        <a href="contact.html" class="btn-p"><span data-i18n="product.cta_btn1">Написать нам</span> <span class="btn-p-ic">→</span></a>
+        <a href="research.html" class="btn-s" data-i18n="product.cta_btn2">Исследования</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-brand"><a href="index.html" class="ft-logo">Borealis</a><p data-i18n="footer.tagline">Таксифолин и арабиногалактан из сибирской лиственницы. Bulk ingredient supplier.</p></div>
+  <nav class="ft-nav">
+    <a href="molecule.html" data-i18n="footer.molecule">Молекула</a><a href="benefits.html" data-i18n="footer.benefits">Применения</a>
+    <a href="research.html" data-i18n="footer.research">Исследования</a><a href="source.html" data-i18n="footer.source">Источник</a>
+    <a href="contact.html" data-i18n="footer.contact">Контакт</a>
+  </nav>
+  <div class="ft-copy"><p data-i18n="footer.copy">© 2025 Borealis</p><p class="ft-reg">EU Novel Food 2018/461<br>GMP Certified</p></div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('in'),obs.unobserve(x.target))),{threshold:0.07});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.page-hero .rv').forEach(el=>el.classList.add('in')),80);
+  const burger=document.getElementById('navBurger'),mob=document.getElementById('mobMenu');
+  if(burger&&mob){burger.addEventListener('click',()=>{const o=mob.classList.toggle('open');burger.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});}
+  document.querySelectorAll('.mob-link,.mob-cta').forEach(l=>l.addEventListener('click',()=>{mob.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
+</script>
+<script src="js/i18n.js"></script>
+</body></html>

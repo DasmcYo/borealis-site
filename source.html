@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Источник — Сибирская лиственница — BOREALIS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* ── PHOTO HERO ── */
+    .tree-hero {
+      min-height: 100dvh; display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 0 5vw 6rem;
+      position: relative; z-index: 1;
+    }
+    .tree-hero-content { max-width: 700px; position: relative; z-index: 4; }
+    /* Larch silhouette overlay on photo */
+    .larch-silhouette {
+      position: absolute; inset: 0; z-index: 3; pointer-events: none;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900' preserveAspectRatio='xMidYMid slice'%3E%3Cg opacity='0.18'%3E%3Cpolygon points='1320,60 1280,380 1360,380' fill='%23C9943A'/%3E%3Cpolygon points='1320,120 1270,440 1370,440' fill='%23C9943A'/%3E%3Cpolygon points='1320,180 1260,510 1380,510' fill='%23C9943A'/%3E%3Crect x='1312' y='510' width='16' height='200' fill='%23C9943A'/%3E%3Cpolygon points='1180,120 1148,400 1212,400' fill='%23C9943A'/%3E%3Cpolygon points='1180,170 1140,450 1220,450' fill='%23C9943A'/%3E%3Crect x='1174' y='450' width='12' height='160' fill='%23C9943A'/%3E%3C/g%3E%3C/svg%3E")
+        right bottom / cover no-repeat;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline { position: relative; padding-left: 3rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0.65rem; top: 0; bottom: 0;
+      width: 1px; background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+    .tl-item { position: relative; margin-bottom: 3rem; }
+    .tl-dot {
+      position: absolute; left: -3rem; top: 0.35rem;
+      width: 10px; height: 10px; border-radius: 50%;
+      border: 2px solid var(--accent); background: var(--bg);
+    }
+    .tl-dot.big { width: 16px; height: 16px; left: calc(-3rem - 3px); background: var(--accent); }
+    .tl-year { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 0.5rem; }
+    .tl-t { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 0.5rem; }
+    .tl-d { font-size: 0.83rem; color: var(--text-2); line-height: 1.7; }
+
+    /* ── FOREST STATS ── */
+    .forest-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+    .fg {
+      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      padding: 4px; border-radius: var(--r-card);
+    }
+    .fg-in {
+      background: var(--bg-card); border-radius: var(--r-inner);
+      padding: 2rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .fg-ico { font-size: 2rem; margin-bottom: 0.25rem; }
+    .fg-n { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--accent); line-height: 1; }
+    .fg-l { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; color: var(--text-3); text-transform: uppercase; }
+    .fg-d { font-size: 0.8rem; color: var(--text-2); line-height: 1.6; }
+
+    /* ── MAP ── */
+    .map-card {
+      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      padding: 5px; border-radius: 2rem; overflow: hidden;
+    }
+    .map-in {
+      background: var(--bg-card-2); border-radius: calc(2rem - 5px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      display: grid; grid-template-columns: 1fr 1fr; min-height: 380px;
+    }
+    .map-l { padding: 3rem; display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; }
+    .map-r { position: relative; overflow: hidden; }
+    .map-svg { width: 100%; height: 100%; opacity: 0.7; }
+
+    /* SVG Russia map simplified */
+    .monopoly-badge {
+      background: var(--accent); color: #070B18; padding: 0.2rem 0.7rem;
+      border-radius: 9999px; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.1em; font-weight: 600;
+      display: inline-block;
+    }
+
+    @media (max-width: 1024px) { .forest-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) {
+      .forest-grid { grid-template-columns: 1fr; }
+      .map-in { grid-template-columns: 1fr; }
+      .map-r { min-height: 200px; }
+    }
+  </style>
+</head>
+<body>
+<div class="amb-r"></div><div class="amb-l"></div>
+<nav class="nav">
+  <div class="nav-pill">
+    <a href="index.html" class="nav-logo">Borealis</a>
+    <ul class="nav-links">
+      <li><a href="molecule.html" data-i18n="nav.molecule">Молекула</a></li>
+      <li><a href="benefits.html" data-i18n="nav.benefits">Применения</a></li>
+      <li><a href="research.html" data-i18n="nav.research">Исследования</a></li>
+      <li><a href="source.html" class="active" data-i18n="nav.source">Источник</a></li>
+      <li><a href="contact.html" data-i18n="nav.contact">Контакт</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta"><span data-i18n="nav.cta">Запросить CoA</span> <span class="nav-cta-ic">↗</span></a>
+    <div id="langSw">
+      <button class="lang-btn" id="langBtn" onclick="bI18nToggleDrop()">EN</button>
+      <div class="lang-drop" id="langDrop">
+        <button data-lang="en" onclick="bI18nSetLang('en')">EN · English</button>
+        <button data-lang="fr" onclick="bI18nSetLang('fr')">FR · Français</button>
+        <button data-lang="es" onclick="bI18nSetLang('es')">ES · Español</button>
+        <button data-lang="ru" onclick="bI18nSetLang('ru')">RU · Русский</button>
+      </div>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mob-menu" id="mobMenu">
+  <div class="mob-links">
+    <a href="molecule.html" class="mob-link" data-i18n="mob.molecule">Молекула</a>
+    <a href="benefits.html" class="mob-link" data-i18n="mob.benefits">Применения</a>
+    <a href="research.html" class="mob-link" data-i18n="mob.research">Исследования</a>
+    <a href="source.html" class="mob-link" data-i18n="mob.source">Источник</a>
+    <a href="contact.html" class="mob-link" data-i18n="mob.contact">Контакт</a>
+  </div>
+  <a href="contact.html" class="mob-cta" data-i18n="mob.cta">Запросить CoA →</a>
+</div>
+
+<!-- PHOTO HERO -->
+<section class="photo-hero tree-hero">
+  <div class="ph-bg" id="srcBg" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85&fit=crop');background-position:center 35%"></div>
+  <div class="ph-tint"></div>
+  <div class="ph-overlay" style="background:linear-gradient(110deg,rgba(7,11,24,0.96) 0%,rgba(7,11,24,0.88) 38%,rgba(7,11,24,0.55) 65%,rgba(7,11,24,0.2) 100%)"></div>
+  <div class="ph-vignette"></div>
+  <div class="larch-silhouette"></div>
+  <div class="tree-hero-content ph-content" style="padding:0 5vw 6rem;width:100%;max-width:1400px;margin:0 auto">
+    <div class="eye-pill rv" style="margin-bottom:1.5rem" data-i18n="source.pill"><span class="eye-dot"></span>Larix gmelinii · Восточная Сибирь · Вечная мерзлота</div>
+    <h1 class="page-h1 rv d1" data-i18n="source.h1">Дерево которое<br>не <em>умирает.</em></h1>
+    <p class="page-sub rv d2" data-i18n="source.sub">800 лет в условиях -60°C. Промёрзшая земля. 6 месяцев полярной ночи. Лиственница даурская выжила — и накопила молекулу выживания.</p>
+  </div>
+  <div class="ph-credit"><a href="https://unsplash.com" target="_blank">Photo: Unsplash</a></div>
+</section>
+
+<!-- FOREST STATS -->
+<section class="sec">
+  <div class="sec-eye rv" data-i18n="source.geo_eye">Уникальность источника</div>
+  <h2 class="sec-h2 rv d1" data-i18n="source.geo_h2">Там где <em>растёт сила</em></h2>
+  <div class="forest-grid" style="margin-top:2.5rem">
+    <div class="fg rv d1"><div class="fg-in">
+      <div class="fg-ico">🌲</div>
+      <div class="fg-n">800</div>
+      <div class="fg-l">Лет жизни дерева</div>
+      <div class="fg-d">Лиственница даурская живёт до 800 лет в условиях вечной мерзлоты — рекорд среди хвойных Сибири.</div>
+    </div></div>
+    <div class="fg rv d2"><div class="fg-in">
+      <div class="fg-ico">🌡️</div>
+      <div class="fg-n">-60°C</div>
+      <div class="fg-l">Минимальная температура</div>
+      <div class="fg-d">Выдерживает якутские зимы до -60°C. Экстремальный холодовой стресс — движущая сила биосинтеза ДКВ.</div>
+    </div></div>
+    <div class="fg rv d3"><div class="fg-in">
+      <div class="fg-ico">🗺️</div>
+      <div class="fg-n">7M км²</div>
+      <div class="fg-l">Ареал в Сибири</div>
+      <div class="fg-d">Крупнейший лесной массив планеты. Larix gmelinii покрывает большую часть Восточной Сибири и Дальнего Востока.</div>
+    </div></div>
+    <div class="fg rv d1"><div class="fg-in">
+      <div class="fg-ico">⚗️</div>
+      <div class="fg-n">99%</div>
+      <div class="fg-l">Чистота ДКВ (HPLC)</div>
+      <div class="fg-d">Криоэкстракция без растворителей. Контроль качества на каждом этапе: от дерева до капсулы.</div>
+    </div></div>
+    <div class="fg rv d2"><div class="fg-in">
+      <div class="fg-ico">🔒</div>
+      <div class="fg-n">Монополия</div>
+      <div class="fg-l">На мировом рынке</div>
+      <div class="fg-d">Dahurian Larch — единственный промышленно значимый источник ДКВ в мире. Альтернативы нет.</div>
+    </div></div>
+    <div class="fg rv d3"><div class="fg-in">
+      <div class="fg-ico">♻️</div>
+      <div class="fg-n">Отходы</div>
+      <div class="fg-l">Деревообработки</div>
+      <div class="fg-d">ДКВ извлекается из древесных отходов лесопереработки. Нет вырубки живых деревьев. Экологичный цикл.</div>
+    </div></div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- TIMELINE -->
+<section class="sec">
+  <div class="sec-eye rv" data-i18n="source.tl_eye">История открытия</div>
+  <h2 class="sec-h2 rv d1" data-i18n="source.tl_h2">От дерева <em>к науке</em></h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:3rem">
+    <div class="timeline rv d1">
+      <div class="tl-item">
+        <div class="tl-dot big"></div>
+        <div class="tl-year">~120 000 000 лет</div>
+        <div class="tl-t">Появление рода Larix</div>
+        <div class="tl-d">Лиственничные леса появились в меловом периоде. С тех пор молекула ДКВ эволюционировала как защита дерева.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1940s</div>
+        <div class="tl-t">Первые советские исследования</div>
+        <div class="tl-d">Советские фитохимики выделили ДКВ из Larix dahurica. Первые данные об антиоксидантной активности.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">1990s–2000s</div>
+        <div class="tl-t">Индустриализация добычи</div>
+        <div class="tl-d">Первое промышленное производство ДКВ из отходов лиственничных предприятий Красноярска и Иркутска.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot big"></div>
+        <div class="tl-year">2019</div>
+        <div class="tl-t">Прорыв в PNAS</div>
+        <div class="tl-d">Публикация в PNAS о нейропротекторных свойствах ДКВ вывела молекулу на международный уровень.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot big"></div>
+        <div class="tl-year">2025</div>
+        <div class="tl-t">Активный RCT в Японии</div>
+        <div class="tl-d">Первое клиническое испытание на людях — T-COG, Национальный центр мозга Японии.</div>
+      </div>
+    </div>
+    <div class="rv d2">
+      <div class="map-card">
+        <div class="map-in">
+          <div class="map-l">
+            <div class="monopoly-badge">МОНОПОЛИЯ</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;line-height:1.2">Восточная<br>Сибирь</div>
+            <p style="font-size:0.82rem;color:var(--text-2);line-height:1.65">Якутия, Бурятия, Иркутская область — единственные в мире промышленные источники ДКВ из Larix gmelinii.</p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+              <span class="tag">Якутия</span>
+              <span class="tag">Красноярск</span>
+              <span class="tag">Иркутск</span>
+            </div>
+          </div>
+          <div class="map-r">
+            <!-- Simplified Russia/Siberia SVG map -->
+            <svg class="map-svg" viewBox="0 0 400 380" fill="none">
+              <!-- Russia simplified outline -->
+              <path d="M 20,120 Q 40,80 80,70 L 140,60 L 200,50 L 260,55 L 320,65 L 380,80 L 395,120 L 390,180 L 370,220 L 340,250 L 300,265 L 260,270 L 220,260 L 180,270 L 150,280 L 120,275 L 90,260 L 60,240 L 30,200 Z"
+                fill="rgba(201,148,58,0.06)" stroke="rgba(201,148,58,0.2)" stroke-width="1.5"/>
+              <!-- Eastern Siberia highlight -->
+              <path d="M 200,50 L 320,65 L 380,80 L 395,120 L 390,180 L 340,250 L 260,270 L 220,260 L 210,200 L 200,150 Z"
+                fill="rgba(201,148,58,0.15)" stroke="rgba(201,148,58,0.4)" stroke-width="1.5"/>
+              <!-- Pin -->
+              <circle cx="290" cy="155" r="10" fill="rgba(201,148,58,0.2)" stroke="var(--accent)" stroke-width="1.5"/>
+              <circle cx="290" cy="155" r="4" fill="var(--accent)"/>
+              <!-- Pulse rings -->
+              <circle cx="290" cy="155" r="18" fill="none" stroke="rgba(201,148,58,0.2)" stroke-width="1" opacity="0.8">
+                <animate attributeName="r" values="10;28" dur="2.5s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.8;0" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+              <!-- Label -->
+              <text x="290" y="188" text-anchor="middle" fill="rgba(201,148,58,0.7)" font-family="JetBrains Mono" font-size="9" letter-spacing="0.1em">ЯКУТИЯ</text>
+              <!-- Compass N -->
+              <text x="370" y="100" fill="rgba(201,148,58,0.3)" font-family="JetBrains Mono" font-size="11">N</text>
+              <line x1="374" y1="103" x2="374" y2="115" stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:1rem">
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+    <div class="rv" style="border-radius:1.5rem;overflow:hidden;height:280px">
+      <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80&fit=crop" alt="Лиственница даурская" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.65) brightness(0.65)">
+    </div>
+    <div class="rv d1" style="border-radius:1.5rem;overflow:hidden;height:280px">
+      <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80&fit=crop" alt="Тайга с высоты" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.65) brightness(0.65)">
+    </div>
+    <div class="rv d2" style="border-radius:1.5rem;overflow:hidden;height:280px">
+      <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=600&q=80&fit=crop" alt="Кора лиственницы" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.65) brightness(0.65)">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-block">
+  <div class="cta-card rv">
+    <div class="cta-in">
+      <div class="cta-glow"></div>
+      <div><h2 class="cta-h">Спецификация<br><em>ингредиента</em></h2><p class="cta-sub">Технические характеристики, формы поставки и сертификаты.</p></div>
+      <div class="cta-acts">
+        <a href="product.html" class="btn-p"><span data-i18n="source.cta_btn1">Спецификация</span> <span class="btn-p-ic">→</span></a>
+        <a href="contact.html" class="btn-s" data-i18n="source.cta_btn2">Запросить CoA</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-brand"><a href="index.html" class="ft-logo">Borealis</a><p data-i18n="footer.tagline">Таксифолин и арабиногалактан из сибирской лиственницы.</p></div>
+  <nav class="ft-nav">
+    <a href="molecule.html" data-i18n="footer.molecule">Молекула</a><a href="benefits.html" data-i18n="footer.benefits">Применения</a>
+    <a href="research.html" data-i18n="footer.research">Исследования</a><a href="source.html" data-i18n="footer.source">Источник</a>
+    <a href="product.html" data-i18n="footer.product">Ингредиент</a><a href="contact.html" data-i18n="footer.contact">Контакт</a>
+  </nav>
+  <div class="ft-copy"><p data-i18n="footer.copy">© 2025 Borealis</p></div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('in'),obs.unobserve(x.target))),{threshold:0.07});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.tree-hero .rv').forEach(el=>el.classList.add('in')),80);
+  const bg=document.getElementById('srcBg');if(bg){const i=new Image();i.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85&fit=crop';i.onload=()=>bg.classList.add('loaded');}
+  const burger=document.getElementById('navBurger'),mob=document.getElementById('mobMenu');
+  if(burger&&mob){burger.addEventListener('click',()=>{const o=mob.classList.toggle('open');burger.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});}
+  document.querySelectorAll('.mob-link,.mob-cta').forEach(l=>l.addEventListener('click',()=>{mob.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
+</script>
+<script src="js/i18n.js"></script>
+</body></html>

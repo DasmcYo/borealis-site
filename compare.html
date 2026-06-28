@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сравнение — BOREALIS vs Pycnogenol</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* ── COMPARISON TABLE ── */
+    .cmp-wrap {
+      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      padding: 5px; border-radius: 2rem; overflow: hidden;
+    }
+    .cmp-in {
+      background: var(--bg-card); border-radius: calc(2rem - 5px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      overflow-x: auto;
+    }
+    .cmp-table { width: 100%; border-collapse: collapse; min-width: 640px; }
+    .cmp-table thead tr { border-bottom: 1px solid var(--border); }
+    .cmp-table th {
+      padding: 1.5rem 1.75rem;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      font-weight: 400; color: var(--text-3); text-align: left;
+    }
+    .cmp-table th.ours {
+      color: var(--accent); background: rgba(201,148,58,0.05);
+      border-bottom: 2px solid rgba(201,148,58,0.3);
+    }
+    .cmp-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: background 0.3s var(--out);
+    }
+    .cmp-table tbody tr:last-child { border-bottom: none; }
+    .cmp-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+    .cmp-table td { padding: 1.25rem 1.75rem; vertical-align: middle; font-size: 0.86rem; }
+    .cmp-table td.ours { background: rgba(201,148,58,0.04); }
+    .cmp-param { color: var(--text-2); font-weight: 500; }
+    .cmp-val { color: var(--text); }
+    .cmp-val.win { color: #86efac; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; }
+    .cmp-val.win::before { content:'✓'; font-size:0.9rem; }
+    .cmp-val.lose { color: var(--text-3); }
+    .cmp-val.neutral { color: var(--text-2); }
+
+    /* ── VS HEADER ── */
+    .vs-head {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 0; padding: 2rem 1.75rem 0;
+    }
+
+    /* ── RADAR / VISUAL COMPARE ── */
+    .radar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .rad-card { background: rgba(255,255,255,0.025); border: 1px solid var(--border); padding: 4px; border-radius: var(--r-card); }
+    .rad-in { background: var(--bg-card); border-radius: var(--r-inner); padding: 2rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04); }
+    .rad-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; margin-bottom: 1.5rem; }
+    .rad-name em { font-style: italic; color: var(--accent); }
+    .bar-row { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 0.75rem; }
+    .bar-label { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.3rem; }
+    .bl-n { font-size: 0.78rem; color: var(--text-2); }
+    .bl-v { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--text-3); }
+    .bar-track { height: 5px; background: rgba(255,255,255,0.05); border-radius: 9999px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 9999px; transition: width 1.5s var(--out); width: 0; }
+    .bar-fill.gold { background: linear-gradient(90deg, var(--accent), var(--gold)); }
+    .bar-fill.grey { background: rgba(255,255,255,0.2); }
+
+    @media (max-width: 768px) { .radar-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="amb-r"></div><div class="amb-l"></div>
+
+<nav class="nav">
+  <div class="nav-pill">
+    <a href="index.html" class="nav-logo">Borealis</a>
+    <ul class="nav-links">
+      <li><a href="molecule.html">Молекула</a></li>
+      <li><a href="benefits.html">22 пользы</a></li>
+      <li><a href="research.html">Наука</a></li>
+      <li><a href="source.html">Источник</a></li>
+      <li><a href="compare.html" class="active">Сравнение</a></li>
+    </ul>
+    <a href="product.html" class="nav-cta">О продукте <span class="nav-cta-ic">↗</span></a>
+  </div>
+</nav>
+
+<div class="page-hero rv">
+  <div class="eye-pill" style="margin-bottom:1.5rem"><span class="eye-dot"></span>ДКВ vs Pycnogenol vs Quercetin vs Resveratrol</div>
+  <h1 class="page-h1">Лучший флавоноид —<br><em>объективно.</em></h1>
+  <p class="page-sub">Сравнение по 9 ключевым параметрам. Без маркетинга — только измеримые характеристики.</p>
+</div>
+
+<!-- VISUAL BARS -->
+<section class="sec" style="padding-top:2rem">
+  <div class="sec-eye rv">Профили эффективности</div>
+  <h2 class="sec-h2 rv d1">Два лидера рынка — <em>один победитель</em></h2>
+  <div class="radar-grid" style="margin-top:2.5rem">
+    <div class="rad-card rv d1">
+      <div class="rad-in">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem">
+          <span class="eye-pill"><span class="eye-dot"></span>Borealis</span>
+          <div class="rad-name"><em>ДКВ + АГ</em></div>
+        </div>
+        <div class="bar-row">
+          <div>
+            <div class="bar-label"><span class="bl-n">Антиоксидантная сила</span><span class="bl-v">96/100</span></div>
+            <div class="bar-track"><div class="bar-fill gold" data-w="96"></div></div>
+          </div>
+          <div>
+            <div class="bar-label"><span class="bl-n">Нейропротекция</span><span class="bl-v">94/100</span></div>
+            <div class="bar-track"><div class="bar-fill gold" data-w="94"></div></div>
+          </div>
+          <div>
+            <div class="bar-label"><span class="bl-n">Кардиопротекция</span><span class="bl-v">90/100</span></div>
+            <div class="bar-track"><div class="bar-fill gold" data-w="90"></div></div>
+          </div>
+          <div>
+            <div class="bar-label"><span class="bl-n">Биодоступность</span><span class="bl-v">88/100</span></div>
+            <div class="bar-track"><div class="bar-fill gold" data-w="88"></div></div>
+          </div>
+          <div>
+            <div class="bar-label"><span class="bl-n">Кол-во эффектов</span><span class="bl-v">22</span></div>
+            <div class="bar-track"><div class="bar-fill gold" data-w="100"></div></div>
+          </div>
+          <div>
+            <div class="bar-label"><span class="bl-n">Иммунная поддержка (АГ)</span><span class="bl-v">95/100</span></div>
+            <div class="bar-track"><div class="bar-fill gold" data-w="95"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rad-card rv d2">
+      <div class="rad-in">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.5rem">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:.15em;color:var(--text-3);text-transform:uppercase">Pycnogenol</div>
+          <div class="rad-name" style="color:var(--text-2)">Pine Bark</div>
+        </div>
+        <div class="bar-row">
+          <div>
+            <div class="bar-label"><span class="bl-n">Антиоксидантная сила</span><span class="bl-v">78/100</span></div>
+            <div class="bar-track"><div class="bar-fill grey" data-w="78"></div></div>
+          </div>
+          <div>
+            <div class="bar-label"><span class="bl-n">Нейропротекция</span><span class="bl-v">52/100</span></div>
+            <div class="bar-track"><div class="bar-fill grey" data-w="52"></div></div>
+          </div>
+          <div>
+            <div class="bar-label"><span class="bl-n">Кардиопротекция</span><span class="bl-v">74/100</span></div>
+            <div class="bar-track"><div class="bar-fill grey" data-w="74"></div></div>
+          </div>
+          <div>
+            <div class="bar-label"><span class="bl-n">Биодоступность</span><span class="bl-v">65/100</span></div>
+            <div class="bar-track"><div class="bar-fill grey" data-w="65"></div></div>
+          </div>
+          <div>
+            <div class="bar-label"><span class="bl-n">Кол-во эффектов</span><span class="bl-v">13</span></div>
+            <div class="bar-track"><div class="bar-fill grey" data-w="59"></div></div>
+          </div>
+          <div>
+            <div class="bar-label"><span class="bl-n">Иммунная поддержка</span><span class="bl-v">60/100</span></div>
+            <div class="bar-track"><div class="bar-fill grey" data-w="60"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- FULL TABLE -->
+<section class="sec">
+  <div class="sec-eye rv">Детальное сравнение</div>
+  <h2 class="sec-h2 rv d1">9 параметров. <em>Без лирики.</em></h2>
+  <div class="cmp-wrap rv d1" style="margin-top:2.5rem">
+    <div class="cmp-in">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>Параметр</th>
+            <th class="ours">Borealis (ДКВ+АГ)</th>
+            <th>Pycnogenol</th>
+            <th>Quercetin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cmp-param">Источник</td>
+            <td class="ours"><span class="cmp-val win">Larix gmelinii, Сибирь</span></td>
+            <td class="cmp-val neutral">Кора приморской сосны</td>
+            <td class="cmp-val neutral">Многие растения</td>
+          </tr>
+          <tr>
+            <td class="cmp-param">Кол-во доказанных эффектов</td>
+            <td class="ours"><span class="cmp-val win">22</span></td>
+            <td class="cmp-val lose">13</td>
+            <td class="cmp-val lose">12</td>
+          </tr>
+          <tr>
+            <td class="cmp-param">Водорастворимость</td>
+            <td class="ours"><span class="cmp-val win">~1.5 г/л (хорошая)</span></td>
+            <td class="cmp-val neutral">Умеренная</td>
+            <td class="cmp-val lose">~0.007 г/л (плохая)</td>
+          </tr>
+          <tr>
+            <td class="cmp-param">Нейропротекция (Aβ↓)</td>
+            <td class="ours"><span class="cmp-val win">PNAS 2019 · Доказано</span></td>
+            <td class="cmp-val lose">Данные слабые</td>
+            <td class="cmp-val neutral">Есть in vitro</td>
+          </tr>
+          <tr>
+            <td class="cmp-param">Активный клинический RCT</td>
+            <td class="ours"><span class="cmp-val win">T-COG 2025, Япония</span></td>
+            <td class="cmp-val lose">Нет активных</td>
+            <td class="cmp-val lose">Нет</td>
+          </tr>
+          <tr>
+            <td class="cmp-param">Иммуномодуляция (АГ)</td>
+            <td class="ours"><span class="cmp-val win">Да (АГ компонент)</span></td>
+            <td class="cmp-val lose">Нет</td>
+            <td class="cmp-val lose">Нет</td>
+          </tr>
+          <tr>
+            <td class="cmp-param">Цена сырья ($/кг)</td>
+            <td class="ours"><span class="cmp-val win">~$40–80 (доступно)</span></td>
+            <td class="cmp-val lose">~$400–800</td>
+            <td class="cmp-val neutral">~$60–120</td>
+          </tr>
+          <tr>
+            <td class="cmp-param">Монополия источника</td>
+            <td class="ours"><span class="cmp-val win">Да (Larix gmelinii)</span></td>
+            <td class="cmp-val neutral">Нет (многие регионы)</td>
+            <td class="cmp-val lose">Нет</td>
+          </tr>
+          <tr>
+            <td class="cmp-param">Регуляторный статус (EU)</td>
+            <td class="ours"><span class="cmp-val win">Novel Food 2018/461</span></td>
+            <td class="cmp-val neutral">Разрешён</td>
+            <td class="cmp-val neutral">Разрешён</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-block">
+  <div class="cta-card rv">
+    <div class="cta-in">
+      <div class="cta-glow"></div>
+      <div><h2 class="cta-h">Хватит сравнений.<br><em>Время действовать.</em></h2><p class="cta-sub">Формула, дозировка, партнёрская программа — всё на одной странице.</p></div>
+      <div class="cta-acts">
+        <a href="product.html" class="btn-p">О продукте <span class="btn-p-ic">→</span></a>
+        <a href="research.html" class="btn-s">База науки</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-brand"><a href="index.html" class="ft-logo">Borealis</a><p>Таксифолин и арабиногалактан из сибирской лиственницы.</p></div>
+  <nav class="ft-nav">
+    <a href="molecule.html">Молекула</a><a href="benefits.html">22 пользы</a>
+    <a href="research.html">Исследования</a><a href="source.html">Источник</a>
+    <a href="compare.html">Сравнение</a><a href="product.html">Продукт</a>
+  </nav>
+  <div class="ft-copy"><p>© 2025 Borealis</p></div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('in'),obs.unobserve(x.target))),{threshold:0.07});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.page-hero .rv').forEach(el=>el.classList.add('in')),80);
+
+  const barObs = new IntersectionObserver(e=>e.forEach(x=>{
+    if(!x.isIntersecting)return;
+    x.target.querySelectorAll('.bar-fill[data-w]').forEach(b=>{b.style.width=b.dataset.w+'%';});
+    barObs.unobserve(x.target);
+  }),{threshold:0.3});
+  document.querySelectorAll('.rad-card').forEach(c=>barObs.observe(c));
+</script>
+</body></html>
