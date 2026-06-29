@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
-  <script src="https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.min.js"></script>
   <style>
     /* ── SPLIT HERO ── */
     .hero-split {
@@ -77,51 +76,20 @@
 
     .hero-h1 {
       font-family: 'Cormorant Garamond', serif; font-weight: 300;
-      font-size: clamp(3.2rem, 5vw, 6.5rem);
-      line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 1.75rem;
+      font-size: clamp(3.5rem, 6.5vw, 8.5rem);
+      line-height: 0.96; letter-spacing: -0.032em; margin-bottom: 1.75rem;
     }
     .hero-h1 em { font-style: italic; color: var(--accent); }
     .hero-sub { font-size: 0.96rem; color: var(--text-2); line-height: 1.78; max-width: 42ch; margin-bottom: 2.5rem; }
     .hero-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
 
-    /* 3D Molecule panel */
-    #mol3d { position: absolute; inset: 0; width: 100%; height: 100%; }
-    .mol3d-panel {
-      position: absolute; bottom: 2.5rem; left: 2rem; z-index: 10;
-      background: rgba(7,11,24,0.82);
-      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(201,148,58,0.3);
-      border-radius: 1.4rem; padding: 1.5rem 1.75rem;
-      max-width: 255px;
-      opacity: 0; transform: translateY(10px);
-      transition: opacity 0.45s var(--out), transform 0.45s var(--out);
-      pointer-events: none;
-    }
-    .mol3d-panel.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
-    .mp-sub {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.55rem; letter-spacing: 0.22em;
-      color: var(--accent); text-transform: uppercase; margin-bottom: 0.3rem;
-      display: flex; align-items: center; gap: 0.5rem;
-    }
-    #mp-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-    #mp-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.55rem; font-weight: 300; line-height: 1.1;
-      color: var(--text); margin-bottom: 0.55rem;
-    }
-    #mp-desc { font-size: 0.77rem; color: var(--text-2); line-height: 1.65; }
-    .mol3d-hint {
-      position: absolute; bottom: 1.4rem; right: 1.6rem; z-index: 10;
-      font-family: 'JetBrains Mono', monospace; font-size: 0.54rem;
-      letter-spacing: 0.16em; color: rgba(201,148,58,0.38); text-transform: uppercase;
-      pointer-events: none; transition: opacity 0.4s;
-      animation: hintFloat 3s ease-in-out infinite;
-    }
-    @keyframes hintFloat {
-      0%,100% { transform: translateY(0); }
-      50%     { transform: translateY(-5px); }
-    }
+    /* Molecule card in hero-l */
+    .mol-card { margin-top: 2.5rem; display: inline-block; }
+    .mol-inner { padding: 1.75rem; }
+    .mol-svg { width: 200px; height: 200px; }
+    .mol-lbl { margin-top: 1rem; text-align: center; }
+    .mol-formula { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 0.15rem; }
+    .mol-name { font-size: 0.72rem; color: var(--text-3); }
 
     /* Mechanism legend */
     .hero-legend {
@@ -257,35 +225,14 @@
       <a href="molecule.html" class="btn-p"><span data-i18n="index.btn_mol">Изучить молекулу</span> <span class="btn-p-ic">↓</span></a>
       <a href="contact.html" class="btn-s" data-i18n="index.btn_coa">Запросить CoA</a>
     </div>
-
-    <!-- Mechanism legend -->
-    <div class="hero-legend rv d4">
-      <div class="hl-label">4 mechanisms →</div>
-      <div class="hl-dots">
-        <span class="hl-dot" style="--c:#C9943A" title="Antioxidant"></span>
-        <span class="hl-dot" style="--c:#6366F1" title="Anti-inflammatory"></span>
-        <span class="hl-dot" style="--c:#10B981" title="Bioavailability"></span>
-        <span class="hl-dot" style="--c:#E84545" title="Vasodilatory"></span>
-        <span class="hl-dot" style="--c:#8B5CF6" title="Neuroprotective"></span>
-      </div>
-    </div>
-
   </div>
 
-  <!-- RIGHT: 3D Molecule -->
+  <!-- RIGHT: photo panel -->
   <div class="hero-r">
-    <div id="mol3d"></div>
-    <!-- Info panel — appears on atom click -->
-    <div class="mol3d-panel" id="mol3d-panel">
-      <div class="mp-sub"><span id="mp-dot"></span><span id="mp-sub">Mechanism I</span></div>
-      <div id="mp-title">Antioxidant</div>
-      <p id="mp-desc">Click a highlighted atom to explore the mechanisms of action.</p>
-    </div>
-    <!-- Hint -->
-    <div class="mol3d-hint" id="mol3d-hint">Click coloured atoms to explore →</div>
-    <!-- Geo tag -->
+    <div class="hero-video" id="heroBg" style="background-image:url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&q=90&fit=crop');background-size:cover;background-position:center 30%;width:100%;height:100%;position:absolute;inset:0"></div>
+    <div class="hero-r-vignette"></div>
     <div class="hero-geo">
-      <div class="hero-geo-line">C₁₅H₁₂O₇ · MW 304.25</div>
+      <div class="hero-geo-line">LARIX GMELINII</div>
       <div class="hero-geo-line" data-i18n="index.geo_siberia">ВОСТОЧНАЯ СИБИРЬ</div>
       <div class="hero-geo-coord">62°N  130°E</div>
     </div>
@@ -450,7 +397,6 @@
   document.querySelectorAll('.mob-link,.mob-cta').forEach(l=>l.addEventListener('click',()=>{mob.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
 </script>
 <script src="js/i18n.js"></script>
-<script src="js/molecule3d.js"></script>
 <script>
 (function(){
   var el = document.getElementById('scroll-prog');
