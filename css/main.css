@@ -96,10 +96,10 @@ body::before {
 .nav-top {
   background: var(--bg-2);
   border-bottom: 1px solid var(--border);
-  padding: 0.45rem 3vw;
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 0.75rem 3vw;
+  display: flex; align-items: center; justify-content: flex-end; gap: 1.5rem;
 }
-.nav-top-l, .nav-top-r { display: flex; align-items: center; gap: 1.2rem; }
+.nav-top-l, .nav-top-r { display: flex; align-items: center; gap: 1.3rem; }
 .nav-top-link {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.6rem; letter-spacing: 0.12em;
@@ -572,19 +572,20 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
 .lang-drop button:hover { background: rgba(176,120,40,0.10); color: var(--accent); }
 .lang-drop button.active { color: var(--accent); }
 /* Social icons + search in nav-top */
-.nav-top-social { display: flex; align-items: center; gap: 0.45rem; }
+.nav-top-social { display: flex; align-items: center; gap: 0.2rem; }
 .nav-top-soc {
   display: flex; align-items: center; justify-content: center;
-  width: 1.5rem; height: 1.5rem; border-radius: 0.3rem;
-  color: var(--text-3); text-decoration: none;
+  width: 1.9rem; height: 1.9rem; border-radius: 0.4rem;
+  color: var(--text-2); text-decoration: none;
+  font-size: 1.1rem;
   transition: color 0.22s, background 0.22s;
 }
 .nav-top-soc:hover { color: var(--accent); background: var(--accent-dim); }
 .nav-top-search {
   display: flex; align-items: center; justify-content: center;
-  width: 1.5rem; height: 1.5rem; border-radius: 0.3rem;
+  width: 1.9rem; height: 1.9rem; border-radius: 0.4rem;
   background: none; border: none; cursor: pointer; padding: 0;
-  color: var(--text-3);
+  color: var(--text-2); font-size: 1.15rem;
   transition: color 0.22s, background 0.22s;
 }
 .nav-top-search:hover { color: var(--accent); background: var(--accent-dim); }
