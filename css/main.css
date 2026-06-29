@@ -102,7 +102,6 @@ body::before {
   -webkit-backdrop-filter: blur(28px);
   box-shadow: 0 2px 32px rgba(14,12,9,0.10), inset 0 1px 0 rgba(255,255,255,0.75);
   transition: background 0.4s var(--out);
-  overflow: visible;
 }
 .nav-logo {
   font-family: 'JetBrains Mono', monospace;
@@ -632,20 +631,21 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
   transform: rotate(180deg);
 }
 .nav-drop {
+  display: none;
   position: absolute;
   top: calc(100% + 0.4rem);
   left: 50%;
-  transform: translateX(-50%) translateY(-10px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s var(--out), transform 0.2s var(--out);
+  transform: translateX(-50%);
   z-index: 9999;
   min-width: 255px;
 }
 .nav-drop.visible {
-  opacity: 1;
-  pointer-events: all;
-  transform: translateX(-50%) translateY(0);
+  display: block;
+  animation: navDropIn 0.18s var(--out) both;
+}
+@keyframes navDropIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 .nav-drop-shell {
   background: rgba(14,12,9,0.04);
@@ -653,8 +653,6 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
   border-radius: 1.3rem;
   padding: 4px;
   box-shadow: 0 20px 50px rgba(14,12,9,0.13), 0 4px 12px rgba(14,12,9,0.06), inset 0 1px 0 rgba(255,255,255,0.9);
-  backdrop-filter: blur(28px);
-  -webkit-backdrop-filter: blur(28px);
 }
 .nav-drop-in {
   background: var(--bg-card);
