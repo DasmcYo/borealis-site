@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>22 пользы ДКВ — BOREALIS</title>
+  <title>BOREALIS — Sectors</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -92,424 +92,219 @@
     .bc.has-photo { background-size: cover; background-position: center; }
     .bc.has-photo .bc-in { background: rgba(10,16,28,0.82); }
     .bc.has-photo:hover .bc-in { background: rgba(10,16,28,0.72); }
+    .tag-g { display:inline-block; font-family:'JetBrains Mono',monospace; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.25rem 0.65rem; border-radius:9999px; background:var(--accent-dim); color:var(--accent); border:1px solid var(--accent-border); }
+    .sec-lead { font-size:0.97rem; color:var(--text-2); line-height:1.78; max-width:52ch; margin-top:1rem; }
+    @media (max-width:768px) {
+      .dbezel-in[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 <body>
 <div id="scroll-prog"></div>
 <div class="amb-r"></div><div class="amb-l"></div>
 
-<nav class="nav">
-  <div class="nav-pill">
-    <a href="index.html" class="nav-logo">Borealis</a>
-    <ul class="nav-links">
-      <li class="nav-item nav-has-drop">
-        <a href="molecule.html" data-i18n="nav.molecule">Молекула</a>
-        <div class="nav-drop">
-          <div class="nav-drop-shell"><div class="nav-drop-in">
-            <a href="molecule.html#dhq" class="nd-link">
-              <span class="nd-ico">⬡</span>
-              <span class="nd-body"><span class="nd-title">DHQ / Таксифолин</span><span class="nd-desc">Структура, свойства, ORAC</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-            <a href="molecule.html#ag" class="nd-link">
-              <span class="nd-ico">○</span>
-              <span class="nd-body"><span class="nd-title">Арабиногалактан</span><span class="nd-desc">Биодоступность ×2.8</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-            <div class="nd-sep"></div>
-            <a href="molecule.html#mech" class="nd-link">
-              <span class="nd-ico">⚡</span>
-              <span class="nd-body"><span class="nd-title">Механизмы действия</span><span class="nd-desc">4 ключевых молекулярных пути</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-            <a href="molecule.html#synergy" class="nd-link">
-              <span class="nd-ico">∞</span>
-              <span class="nd-body"><span class="nd-title">Синергия DHQ + AG</span><span class="nd-desc">Комбинированный эффект</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-          </div></div>
-        </div>
-      </li>
-      <li class="nav-item nav-has-drop">
-        <a href="benefits.html" class="active" data-i18n="nav.benefits">Применения</a>
-        <div class="nav-drop">
-          <div class="nav-drop-shell"><div class="nav-drop-in">
-            <a href="benefits.html#poultry" class="nd-link">
-              <span class="nd-ico">🐔</span>
-              <span class="nd-body"><span class="nd-title">Птицеводство</span><span class="nd-desc">Бройлер, несушки</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-            <a href="benefits.html#swine" class="nd-link">
-              <span class="nd-ico">🐷</span>
-              <span class="nd-body"><span class="nd-title">Свиноводство</span><span class="nd-desc">Откорм, супоросность</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-            <a href="benefits.html#cattle" class="nd-link">
-              <span class="nd-ico">🐄</span>
-              <span class="nd-body"><span class="nd-title">КРС</span><span class="nd-desc">Молочное и мясное</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-            <a href="benefits.html#aqua" class="nd-link">
-              <span class="nd-ico">🐟</span>
-              <span class="nd-body"><span class="nd-title">Аквакультура</span><span class="nd-desc">Рыба, ракообразные</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-          </div></div>
-        </div>
-      </li>
-      <li class="nav-item nav-has-drop">
-        <a href="research.html" data-i18n="nav.research">Исследования</a>
-        <div class="nav-drop">
-          <div class="nav-drop-shell"><div class="nav-drop-in">
-            <a href="research.html#featured" class="nd-link">
-              <span class="nd-ico">★</span>
-              <span class="nd-body"><span class="nd-title">Ключевые работы</span><span class="nd-desc">PNAS, Nutrients, Antioxidants</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-            <a href="research.html#pnas" class="nd-link">
-              <span class="nd-ico">🧠</span>
-              <span class="nd-body"><span class="nd-title">ГЭБ — PNAS 2019</span><span class="nd-desc">Нейрозащита DHQ</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-            <div class="nd-sep"></div>
-            <a href="research.html#database" class="nd-link">
-              <span class="nd-ico">📋</span>
-              <span class="nd-body"><span class="nd-title">База публикаций</span><span class="nd-desc">18+ рецензируемых работ</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-          </div></div>
-        </div>
-      </li>
-      <li class="nav-item nav-has-drop">
-        <a href="source.html" data-i18n="nav.source">Источник</a>
-        <div class="nav-drop">
-          <div class="nav-drop-shell"><div class="nav-drop-in">
-            <a href="source.html#larch" class="nd-link">
-              <span class="nd-ico">🌲</span>
-              <span class="nd-body"><span class="nd-title">Лиственница даурская</span><span class="nd-desc">Larix gmelinii — Восточная Сибирь</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-            <a href="source.html#monopoly" class="nd-link">
-              <span class="nd-ico">📍</span>
-              <span class="nd-body"><span class="nd-title">Монополия на сырьё</span><span class="nd-desc">Уникальный доступ к ресурсу</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-            <a href="source.html#production" class="nd-link">
-              <span class="nd-ico">⚗️</span>
-              <span class="nd-body"><span class="nd-title">Производство</span><span class="nd-desc">Экстракция и очистка</span></span>
-              <span class="nd-arr">›</span>
-            </a>
-          </div></div>
-        </div>
-      </li>
-      <li class="nav-item"><a href="contact.html" data-i18n="nav.contact">Контакт</a></li>
-    </ul>
-    <a href="contact.html" class="nav-cta"><span data-i18n="nav.cta">Запросить CoA</span> <span class="nav-cta-ic">↗</span></a>
-    <div id="langSw">
-      <button class="lang-btn" id="langBtn" onclick="bI18nToggleDrop()">EN</button>
-      <div class="lang-drop" id="langDrop">
-        <button data-lang="en" onclick="bI18nSetLang('en')">EN · English</button>
-        <button data-lang="fr" onclick="bI18nSetLang('fr')">FR · Français</button>
-        <button data-lang="es" onclick="bI18nSetLang('es')">ES · Español</button>
-        <button data-lang="ru" onclick="bI18nSetLang('ru')">RU · Русский</button>
-      </div>
+<header class="site-header">
+  <div class="nav-top">
+    <div class="nav-top-l">
+      <a href="mailto:info@borealis-dhq.com" class="nav-top-link">info@borealis-dhq.com</a>
+      <div class="nav-top-sep"></div>
+      <a href="#" class="nav-top-link">LinkedIn ↗</a>
     </div>
-    <button class="nav-burger" id="navBurger" aria-label="Меню"><span></span><span></span></button>
+    <div class="nav-top-r">
+      <div id="langSw">
+        <button class="lang-btn" id="langBtn" onclick="bI18nToggleDrop()">EN</button>
+        <div class="lang-drop" id="langDrop">
+          <button data-lang="en" onclick="bI18nSetLang('en')">EN · English</button>
+          <button data-lang="ru" onclick="bI18nSetLang('ru')">RU · Русский</button>
+          <button data-lang="fr" onclick="bI18nSetLang('fr')">FR · Français</button>
+          <button data-lang="es" onclick="bI18nSetLang('es')">ES · Español</button>
+        </div>
+      </div>
+      <a href="contact.html" class="nav-top-sample">Request Sample</a>
+    </div>
   </div>
-</nav>
+
+  <nav class="nav-main">
+    <a href="index.html" class="nav-main-logo">Borealis</a>
+    <ul class="nav-main-links">
+
+      <li class="nav-main-item nav-has-drop">
+        <a href="molecule.html">The Molecule</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="molecule.html#dhq" class="nd-link"><span class="nd-ico">⬡</span><span class="nd-body"><span class="nd-title">DHQ — Dihydroquercetin</span><span class="nd-desc">Molecular profile · ORAC · structure</span></span><span class="nd-arr">›</span></a>
+          <a href="molecule.html#ag" class="nd-link"><span class="nd-ico">○</span><span class="nd-body"><span class="nd-title">Arabiogalactan</span><span class="nd-desc">Bioavailability ×2.8</span></span><span class="nd-arr">›</span></a>
+          <div class="nd-sep"></div>
+          <a href="molecule.html#mech" class="nd-link"><span class="nd-ico">⚡</span><span class="nd-body"><span class="nd-title">Mechanisms of Action</span><span class="nd-desc">4 molecular pathways</span></span><span class="nd-arr">›</span></a>
+          <a href="molecule.html#synergy" class="nd-link"><span class="nd-ico">∞</span><span class="nd-body"><span class="nd-title">DHQ + AG Synergy</span><span class="nd-desc">Why together works differently</span></span><span class="nd-arr">›</span></a>
+          <a href="product.html" class="nd-link"><span class="nd-ico">📄</span><span class="nd-body"><span class="nd-title">Technical Dossier</span><span class="nd-desc">Spec sheet · CoA · analytical data</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+
+      <li class="nav-main-item nav-has-drop">
+        <a href="source.html">Siberia</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="source.html#larch" class="nd-link"><span class="nd-ico">🌲</span><span class="nd-body"><span class="nd-title">Larix Gmelinii</span><span class="nd-desc">The only commercial DHQ source</span></span><span class="nd-arr">›</span></a>
+          <a href="source.html#monopoly" class="nd-link"><span class="nd-ico">📍</span><span class="nd-body"><span class="nd-title">62°N · 130°E</span><span class="nd-desc">Geography of exclusivity</span></span><span class="nd-arr">›</span></a>
+          <div class="nd-sep"></div>
+          <a href="source.html#production" class="nd-link"><span class="nd-ico">⚗️</span><span class="nd-body"><span class="nd-title">Extraction Process</span><span class="nd-desc">From tree to molecule, 95%+ purity</span></span><span class="nd-arr">›</span></a>
+          <a href="source.html" class="nd-link"><span class="nd-ico">🔗</span><span class="nd-body"><span class="nd-title">Chain of Custody</span><span class="nd-desc">Traceability · certifications</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+
+      <li class="nav-main-item nav-has-drop">
+        <a href="research.html">Evidence</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="research.html#featured" class="nd-link"><span class="nd-ico">★</span><span class="nd-body"><span class="nd-title">Key Publications</span><span class="nd-desc">PNAS · Nutrients · Antioxidants</span></span><span class="nd-arr">›</span></a>
+          <a href="research.html#pnas" class="nd-link"><span class="nd-ico">🧠</span><span class="nd-body"><span class="nd-title">Neuroprotection — PNAS 2019</span><span class="nd-desc">Blood-brain barrier crossing confirmed</span></span><span class="nd-arr">›</span></a>
+          <div class="nd-sep"></div>
+          <a href="research.html#database" class="nd-link"><span class="nd-ico">📋</span><span class="nd-body"><span class="nd-title">Research Database</span><span class="nd-desc">18+ peer-reviewed studies</span></span><span class="nd-arr">›</span></a>
+          <a href="research.html" class="nd-link"><span class="nd-ico">🗺️</span><span class="nd-body"><span class="nd-title">Regulatory Map</span><span class="nd-desc">Status: EU · USA · Asia-Pacific</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+
+      <li class="nav-main-item nav-has-drop active">
+        <a href="benefits.html">Sectors</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="benefits.html#supplements" class="nd-link"><span class="nd-ico">💊</span><span class="nd-body"><span class="nd-title">Dietary Supplements</span><span class="nd-desc">Nutraceutical brands · capsules · powders</span></span><span class="nd-arr">›</span></a>
+          <a href="benefits.html#pharma" class="nd-link"><span class="nd-ico">⚕️</span><span class="nd-body"><span class="nd-title">Pharmaceutical / OTC</span><span class="nd-desc">Proprietary formulas · clinical-grade</span></span><span class="nd-arr">›</span></a>
+          <a href="benefits.html#sports" class="nd-link"><span class="nd-ico">⚡</span><span class="nd-body"><span class="nd-title">Sports Nutrition</span><span class="nd-desc">Recovery · VO₂ · antioxidant protection</span></span><span class="nd-arr">›</span></a>
+          <a href="benefits.html#functional" class="nd-link"><span class="nd-ico">🍃</span><span class="nd-body"><span class="nd-title">Functional Food & Beverage</span><span class="nd-desc">Enriched formats · functional drinks</span></span><span class="nd-arr">›</span></a>
+          <a href="benefits.html#longevity" class="nd-link"><span class="nd-ico">◎</span><span class="nd-body"><span class="nd-title">Longevity & Anti-aging</span><span class="nd-desc">Fastest-growing ingredient segment</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+
+      <li class="nav-main-item">
+        <a href="contact.html">Access</a>
+      </li>
+
+    </ul>
+    <div class="nav-main-cta">
+      <a href="contact.html" class="btn-p" style="font-size:0.74rem;padding:0.58rem 0.58rem 0.58rem 1.1rem;">
+        <span>Start Partnership</span><span class="btn-p-ic" style="width:1.55rem;height:1.55rem;font-size:0.8rem;">→</span>
+      </a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
+  </nav>
+</header>
 
 <div class="mob-menu" id="mobMenu">
-  <div class="mob-links">
-    <a href="molecule.html" class="mob-link" data-i18n="mob.molecule">Молекула</a>
-    <a href="benefits.html" class="mob-link" data-i18n="mob.benefits">Применения</a>
-    <a href="research.html" class="mob-link" data-i18n="mob.research">Исследования</a>
-    <a href="source.html" class="mob-link" data-i18n="mob.source">Источник</a>
-    <a href="contact.html" class="mob-link" data-i18n="mob.contact">Контакт</a>
-  </div>
-  <a href="contact.html" class="mob-cta" data-i18n="mob.cta">Запросить CoA →</a>
+  <a href="molecule.html" class="mob-link">The Molecule</a>
+  <a href="source.html" class="mob-link">Siberia</a>
+  <a href="research.html" class="mob-link">Evidence</a>
+  <a href="benefits.html" class="mob-link">Sectors</a>
+  <a href="contact.html" class="mob-link">Access</a>
+  <a href="contact.html" class="mob-cta">Start Partnership →</a>
 </div>
 
 <div class="page-hero rv">
-  <div class="eye-pill" style="margin-bottom:1.5rem" data-i18n="benefits.pill"><span class="eye-dot"></span>22 направления · 4 механизма · 70+ источников</div>
-  <h1 class="page-h1" data-i18n="benefits.h1">Один флавоноид.<br><em>22 применения.</em></h1>
-  <p class="page-sub" data-i18n="benefits.sub">Научно подтверждённые области применения ДКВ. Уровень доказательности: A — клинические RCT, B — доклиника + in vitro, C — предварительные данные.</p>
+  <div class="eye-pill" style="margin-bottom:1.5rem"><span class="eye-dot"></span>DHQ + Arabiogalactan · B2B Ingredient</div>
+  <h1 class="page-h1">Sectors</h1>
+  <p class="page-sub">Where DHQ enters the formula. Five industries, one molecule.</p>
 </div>
 
-<section class="sec" style="padding-top:2rem">
-  <!-- Filter -->
-  <div class="filter-wrap rv">
-    <button class="f-btn on" data-filter="all" data-i18n="benefits.f_all">Все 22</button>
-    <button class="f-btn" data-filter="сердце" data-i18n="benefits.f_heart">Сердце и сосуды</button>
-    <button class="f-btn" data-filter="нейро" data-i18n="benefits.f_neuro">Нейро</button>
-    <button class="f-btn" data-filter="иммунитет" data-i18n="benefits.f_immune">Иммунитет</button>
-    <button class="f-btn" data-filter="метаболизм" data-i18n="benefits.f_meta">Метаболизм</button>
-    <button class="f-btn" data-filter="кожа" data-i18n="benefits.f_skin">Кожа и старение</button>
-    <button class="f-btn" data-filter="спорт" data-i18n="benefits.f_sport">Спорт</button>
+<section class="sec" id="sectors-intro">
+  <div class="sec-eye">Ingredient Applications</div>
+  <h2 class="sec-h2">Five Industries.<br><em>One Molecule.</em></h2>
+  <p class="sec-lead">DHQ and Arabiogalactan from Borealis enter finished products across five fast-growing categories. We supply the ingredient. Our partners build the brand.</p>
+</section>
+
+<section class="sec" id="supplements" style="padding-top:0">
+  <div class="dbezel rv">
+    <div class="dbezel-in" style="padding:3rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center">
+      <div>
+        <div class="sec-eye">Sector 01</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,3rem);font-weight:300;line-height:1.1;margin-bottom:1rem">Dietary <em style="color:var(--accent)">Supplements</em></h3>
+        <p style="font-size:0.9rem;color:var(--text-2);line-height:1.75;max-width:42ch">The primary application for DHQ+AG. Antioxidant capsules, immune support complexes, cardiovascular formulas. Compatible with softgel, hard capsule, powder, and stick-pack formats.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.5rem">
+          <span class="tag-g">Antioxidant</span><span class="tag-g">Immune Support</span><span class="tag-g">Cardiovascular</span><span class="tag-g">Nootropic</span>
+        </div>
+      </div>
+      <div style="background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:var(--r-inner);padding:2rem;display:flex;flex-direction:column;gap:1rem">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;color:var(--accent);text-transform:uppercase">Typical dosage range</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--text)">50–500<span style="font-size:1rem;color:var(--text-2)"> mg/day</span></div>
+        <div style="font-size:0.78rem;color:var(--text-2);line-height:1.6">DHQ as primary active. AG as bioavailability enhancer and prebiotic co-ingredient.</div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <!-- Legend -->
-  <div class="legend rv d1">
-    <div class="leg"><div class="leg-dot" style="background:#86efac"></div><span data-i18n="benefits.leg_a">Уровень A — клинические исследования</span></div>
-    <div class="leg"><div class="leg-dot" style="background:#fcd34d"></div><span data-i18n="benefits.leg_b">Уровень B — доклинические данные</span></div>
-    <div class="leg"><div class="leg-dot" style="background:#93c5fd"></div><span data-i18n="benefits.leg_c">Уровень C — предварительные данные</span></div>
+<section class="sec" id="pharma" style="padding-top:0">
+  <div class="dbezel rv">
+    <div class="dbezel-in" style="padding:3rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center">
+      <div style="background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:var(--r-inner);padding:2rem;display:flex;flex-direction:column;gap:1rem">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;color:var(--accent);text-transform:uppercase">Purity grade available</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--text)">95%+<span style="font-size:1rem;color:var(--text-2)"> DHQ</span></div>
+        <div style="font-size:0.78rem;color:var(--text-2);line-height:1.6">Full analytical documentation. CoA, TDS, SDS available on request.</div>
+      </div>
+      <div>
+        <div class="sec-eye">Sector 02</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,3rem);font-weight:300;line-height:1.1;margin-bottom:1rem">Pharmaceutical <em style="color:var(--accent)">/ OTC</em></h3>
+        <p style="font-size:0.9rem;color:var(--text-2);line-height:1.75;max-width:42ch">High-purity DHQ for proprietary pharmaceutical formulations. Chronic venous insufficiency, hepatoprotection, and neuroprotective applications. Full regulatory dossier available.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.5rem">
+          <span class="tag-g">Hepatoprotective</span><span class="tag-g">Venous Health</span><span class="tag-g">Neuroprotective</span>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <!-- BENTO GRID -->
-  <div class="bento" id="bentoGrid">
-
-    <!-- 1 - Сосуды (BIG) -->
-    <div id="poultry" class="bc b-s4 rv has-photo" data-cat="сердце" style="background-image:url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80')">
-      <div class="bc-in">
-        <div>
-          <div class="bc-top"><div class="bc-ico">❤️</div><span class="bc-ev ev-a">A</span></div>
-          <div class="bc-cat" style="margin-top:.75rem" data-i18n="benefits.bc01_cat">Сердце и сосуды</div>
-          <div class="bc-name" data-i18n="benefits.bc01_name">Защита эндотелия и снижение давления</div>
-        </div>
-        <div>
-          <div class="bc-desc" data-i18n="benefits.bc01_desc">eNOS→NO вазодилатация. Улучшение микроциркуляции. Снижение жёсткости артерий. Профилактика атеросклероза через подавление окисления LDL.</div>
-          <div class="bc-ref" style="margin-top:.5rem" data-i18n="benefits.bc01_ref">Ref: 12+ клинических исследований</div>
+<section class="sec" id="sports" style="padding-top:0">
+  <div class="dbezel rv">
+    <div class="dbezel-in" style="padding:3rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center">
+      <div>
+        <div class="sec-eye">Sector 03</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,3rem);font-weight:300;line-height:1.1;margin-bottom:1rem">Sports <em style="color:var(--accent)">Nutrition</em></h3>
+        <p style="font-size:0.9rem;color:var(--text-2);line-height:1.75;max-width:42ch">DHQ as a capillary-protective antioxidant for endurance and recovery products. Supports oxygen delivery, reduces oxidative stress during exercise. Growing demand in cycling, running, and triathlon categories.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.5rem">
+          <span class="tag-g">Endurance</span><span class="tag-g">Recovery</span><span class="tag-g">VO₂ Support</span><span class="tag-g">Antioxidant</span>
         </div>
       </div>
-    </div>
-
-    <!-- 2 - Мозг (BIG) -->
-    <div id="swine" class="bc b-s2h rv d1 has-photo" data-cat="нейро" style="background-image:url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80')">
-      <div class="bc-in">
-        <div>
-          <div class="bc-top"><div class="bc-ico">🧠</div><span class="bc-ev ev-a">A</span></div>
-          <div class="bc-cat" style="margin-top:.75rem" data-i18n="benefits.bc02_cat">Нейро</div>
-          <div class="bc-name" data-i18n="benefits.bc02_name">Нейропротекция и снижение риска Альцгеймера</div>
-        </div>
-        <div>
-          <div class="bc-desc" data-i18n="benefits.bc02_desc">Aβ↓, восстановление церебрального кровотока. PNAS 2019. T-COG RCT 2025.</div>
-          <div class="bc-ref" style="margin-top:.5rem">PNAS · PMC6525485</div>
-        </div>
+      <div style="background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:var(--r-inner);padding:2rem;display:flex;flex-direction:column;gap:1rem">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;color:var(--accent);text-transform:uppercase">ORAC value</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--text)">5×<span style="font-size:1rem;color:var(--text-2)"> vs Vitamin C</span></div>
+        <div style="font-size:0.78rem;color:var(--text-2);line-height:1.6">Higher antioxidant capacity without pro-oxidant risk at elevated doses.</div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- 3 - Антиоксидант -->
-    <div id="cattle" class="bc b-s2 rv d2 has-photo" data-cat="иммунитет" style="background-image:url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&q=80')">
-      <div class="bc-in">
-        <div>
-          <div class="bc-top"><div class="bc-ico">🛡️</div><span class="bc-ev ev-a">A</span></div>
-          <div class="bc-cat" style="margin-top:.75rem" data-i18n="benefits.bc03_cat">Антиоксидант</div>
-          <div class="bc-name" data-i18n="benefits.bc03_name">Системная антиоксидантная защита</div>
-        </div>
-        <div>
-          <div class="bc-desc" data-i18n="benefits.bc03_desc">ORAC выше чем у витамина C в 20 раз. Nrf2/HO-1. Активирует SOD и глутатион.</div>
-          <div class="bc-ref" style="margin-top:.5rem">Multiple FRAP/DPPH assays</div>
+<section class="sec" id="functional" style="padding-top:0">
+  <div class="dbezel rv">
+    <div class="dbezel-in" style="padding:3rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center">
+      <div style="background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:var(--r-inner);padding:2rem;display:flex;flex-direction:column;gap:1rem">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;color:var(--accent);text-transform:uppercase">Solubility</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--text)">Water<span style="font-size:1rem;color:var(--text-2)">-soluble</span></div>
+        <div style="font-size:0.78rem;color:var(--text-2);line-height:1.6">AG carrier makes DHQ water-dispersible. Compatible with beverages and liquid formats.</div>
+      </div>
+      <div>
+        <div class="sec-eye">Sector 04</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,3rem);font-weight:300;line-height:1.1;margin-bottom:1rem">Functional Food <em style="color:var(--accent)">& Beverage</em></h3>
+        <p style="font-size:0.9rem;color:var(--text-2);line-height:1.75;max-width:42ch">Water-soluble DHQ+AG complex for functional drink enrichment, fortified foods, and wellness shots. The AG matrix stabilises DHQ in liquid formats and extends shelf life.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.5rem">
+          <span class="tag-g">Functional Drinks</span><span class="tag-g">Fortified Foods</span><span class="tag-g">Wellness Shots</span>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- 4 - Печень -->
-    <div id="aqua" class="bc b-s2 rv d1" data-cat="метаболизм">
-      <div class="bc-in">
-        <div>
-          <div class="bc-top"><div class="bc-ico">🫀</div><span class="bc-ev ev-b">B</span></div>
-          <div class="bc-cat" style="margin-top:.75rem" data-i18n="benefits.bc04_cat">Метаболизм</div>
-          <div class="bc-name" data-i18n="benefits.bc04_name">Гепатопротекция</div>
-        </div>
-        <div>
-          <div class="bc-desc" data-i18n="benefits.bc04_desc">Снижение АЛТ/АСТ, защита от фиброза печени, уменьшение стеатоза при НАЖБП.</div>
-          <div class="bc-ref" style="margin-top:.5rem">Hepatology studies</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 5 - Воспаление small -->
-    <div class="bc b-s1 rv d2" data-cat="иммунитет">
-      <div class="bc-in">
-        <div class="bc-top"><div class="bc-ico">🌡️</div><span class="bc-ev ev-a">A</span></div>
-        <div class="bc-cat" data-i18n="benefits.bc05_cat">Иммунитет</div>
-        <div class="bc-name" data-i18n="benefits.bc05_name">Противовоспалительное</div>
-      </div>
-    </div>
-
-    <!-- 6 - Сахар small -->
-    <div class="bc b-s1 rv d3" data-cat="метаболизм">
-      <div class="bc-in">
-        <div class="bc-top"><div class="bc-ico">🍬</div><span class="bc-ev ev-b">B</span></div>
-        <div class="bc-cat" data-i18n="benefits.bc06_cat">Метаболизм</div>
-        <div class="bc-name" data-i18n="benefits.bc06_name">Гликемический контроль</div>
-      </div>
-    </div>
-
-    <!-- 7 - Когниция -->
-    <div class="bc b-s3 rv d1 has-photo" data-cat="нейро" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80')">
-      <div class="bc-in">
-        <div class="bc-top">
-          <div><div class="bc-ico">💡</div><div class="bc-cat" data-i18n="benefits.bc07_cat">Нейро · Когниция</div></div>
-          <span class="bc-ev ev-a">A</span>
-        </div>
-        <div class="bc-name" data-i18n="benefits.bc07_name">Улучшение памяти и концентрации</div>
-        <div class="bc-desc" data-i18n="benefits.bc07_desc">Клинические данные T-COG 2025. Отсрочка когнитивного снижения при MCI.</div>
-      </div>
-    </div>
-
-    <!-- 8 - Онко small -->
-    <div class="bc b-s1 rv d2" data-cat="иммунитет">
-      <div class="bc-in">
-        <div class="bc-top"><div class="bc-ico">🔬</div><span class="bc-ev ev-c">C</span></div>
-        <div class="bc-cat" data-i18n="benefits.bc08_cat">Иммунитет</div>
-        <div class="bc-name" data-i18n="benefits.bc08_name">Антипролиферация</div>
-      </div>
-    </div>
-
-    <!-- 9 - Кожа big -->
-    <div class="bc b-s2 rv d3 has-photo" data-cat="кожа" style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80')">
-      <div class="bc-in">
-        <div>
-          <div class="bc-top"><div class="bc-ico">✨</div><span class="bc-ev ev-a">A</span></div>
-          <div class="bc-cat" style="margin-top:.75rem" data-i18n="benefits.bc09_cat">Кожа и старение</div>
-          <div class="bc-name" data-i18n="benefits.bc09_name">Антивозрастной эффект кожи</div>
-        </div>
-        <div>
-          <div class="bc-desc" data-i18n="benefits.bc09_desc">Защита коллагена от деградации. Ингибирование MMP-1/MMP-3. Снижение UV-индуцированного старения.</div>
-          <div class="bc-ref" style="margin-top:.5rem">Cosmetic dermatology RCTs</div>
+<section class="sec" id="longevity" style="padding-top:0">
+  <div class="dbezel rv">
+    <div class="dbezel-in" style="padding:3rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center">
+      <div>
+        <div class="sec-eye">Sector 05</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,3rem);font-weight:300;line-height:1.1;margin-bottom:1rem">Longevity <em style="color:var(--accent)">& Anti-aging</em></h3>
+        <p style="font-size:0.9rem;color:var(--text-2);line-height:1.75;max-width:42ch">The fastest-growing ingredient segment globally. DHQ's neuroprotective, mitochondrial, and anti-inflammatory mechanisms position it as a core longevity ingredient. PNAS 2019 confirmed blood-brain barrier crossing.</p>
+        <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:0.5rem">
+          <span class="tag-g">Neuroprotection</span><span class="tag-g">Mitochondrial</span><span class="tag-g">Anti-inflammatory</span>
         </div>
       </div>
-    </div>
-
-    <!-- 10 - Зрение -->
-    <div class="bc b-s2 rv d1" data-cat="кожа">
-      <div class="bc-in">
-        <div>
-          <div class="bc-top"><div class="bc-ico">👁️</div><span class="bc-ev ev-b">B</span></div>
-          <div class="bc-cat" style="margin-top:.75rem" data-i18n="benefits.bc10_cat">Кожа и старение</div>
-          <div class="bc-name" data-i18n="benefits.bc10_name">Защита зрения</div>
-        </div>
-        <div>
-          <div class="bc-desc" data-i18n="benefits.bc10_desc">Снижение риска катаракты, макулярной дегенерации. Защита хрусталика от окисления.</div>
-        </div>
+      <div style="background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:var(--r-inner);padding:2rem;display:flex;flex-direction:column;gap:1rem">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;color:var(--accent);text-transform:uppercase">Confirmed mechanism</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--text);line-height:1.2">Crosses the<br><em>Blood-Brain<br>Barrier</em></div>
+        <div style="font-size:0.78rem;color:var(--text-2);line-height:1.6">PNAS 2019. Detected in murine cerebrospinal fluid.</div>
       </div>
     </div>
-
-    <!-- 11 - Спорт -->
-    <div class="bc b-s3 rv d2" data-cat="спорт">
-      <div class="bc-in">
-        <div class="bc-top">
-          <div><div class="bc-ico">💪</div><div class="bc-cat" data-i18n="benefits.bc11_cat">Спорт · Восстановление</div></div>
-          <span class="bc-ev ev-b">B</span>
-        </div>
-        <div class="bc-name" data-i18n="benefits.bc11_name">Снижение оксидативного стресса при нагрузках</div>
-        <div class="bc-desc" data-i18n="benefits.bc11_desc">Уменьшение DOMS, ускорение восстановления. Митохондриальная защита.</div>
-      </div>
-    </div>
-
-    <!-- 12 - Лёгкие small -->
-    <div class="bc b-s1 rv d1" data-cat="иммунитет">
-      <div class="bc-in">
-        <div class="bc-top"><div class="bc-ico">🫁</div><span class="bc-ev ev-b">B</span></div>
-        <div class="bc-cat" data-i18n="benefits.bc12_cat">Иммунитет</div>
-        <div class="bc-name" data-i18n="benefits.bc12_name">Защита лёгких</div>
-      </div>
-    </div>
-
-    <!-- 13 - Кости small -->
-    <div class="bc b-s1 rv d2" data-cat="метаболизм">
-      <div class="bc-in">
-        <div class="bc-top"><div class="bc-ico">🦴</div><span class="bc-ev ev-b">B</span></div>
-        <div class="bc-cat" data-i18n="benefits.bc13_cat">Метаболизм</div>
-        <div class="bc-name" data-i18n="benefits.bc13_name">Здоровье костей</div>
-      </div>
-    </div>
-
-    <!-- 14 - Суставы wide -->
-    <div class="bc b-s3 rv d1" data-cat="спорт">
-      <div class="bc-in">
-        <div class="bc-top">
-          <div><div class="bc-ico">🦵</div><div class="bc-cat" data-i18n="benefits.bc14_cat">Спорт · Суставы</div></div>
-          <span class="bc-ev ev-b">B</span>
-        </div>
-        <div class="bc-name" data-i18n="benefits.bc14_name">Защита суставного хряща</div>
-        <div class="bc-desc" data-i18n="benefits.bc14_desc">Снижение воспаления синовиальной оболочки. Аналог хондропротекторов без побочных эффектов.</div>
-      </div>
-    </div>
-
-    <!-- 15 - Микробиом -->
-    <div class="bc b-s1 rv d3" data-cat="метаболизм">
-      <div class="bc-in">
-        <div class="bc-top"><div class="bc-ico">🦠</div><span class="bc-ev ev-b">B</span></div>
-        <div class="bc-cat" data-i18n="benefits.bc15_cat">Метаболизм</div>
-        <div class="bc-name" data-i18n="benefits.bc15_name">Пребиотик (АГ)</div>
-      </div>
-    </div>
-
-    <!-- 16 - Иммунитет big -->
-    <div class="bc b-s2 rv d1" data-cat="иммунитет">
-      <div class="bc-in">
-        <div>
-          <div class="bc-top"><div class="bc-ico">🛡️</div><span class="bc-ev ev-b">B</span></div>
-          <div class="bc-cat" style="margin-top:.75rem" data-i18n="benefits.bc16_cat">Иммунитет</div>
-          <div class="bc-name" data-i18n="benefits.bc16_name">Модуляция иммунного ответа</div>
-        </div>
-        <div>
-          <div class="bc-desc" data-i18n="benefits.bc16_desc">АГ стимулирует NK-клетки, макрофаги. Ускорение иммунного ответа без аутоиммунной агрессии.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 17 - Сон small -->
-    <div class="bc b-s1 rv d2" data-cat="нейро">
-      <div class="bc-in">
-        <div class="bc-top"><div class="bc-ico">😴</div><span class="bc-ev ev-c">C</span></div>
-        <div class="bc-cat" data-i18n="benefits.bc17_cat">Нейро</div>
-        <div class="bc-name" data-i18n="benefits.bc17_name">Качество сна</div>
-      </div>
-    </div>
-
-    <!-- 18 - Микроциркуляция small -->
-    <div class="bc b-s1 rv d3" data-cat="сердце">
-      <div class="bc-in">
-        <div class="bc-top"><div class="bc-ico">🩸</div><span class="bc-ev ev-a">A</span></div>
-        <div class="bc-cat" data-i18n="benefits.bc18_cat">Сердце</div>
-        <div class="bc-name" data-i18n="benefits.bc18_name">Микроциркуляция</div>
-      </div>
-    </div>
-
-    <!-- 19 - Диабет wide -->
-    <div class="bc b-s3 rv d2" data-cat="метаболизм">
-      <div class="bc-in">
-        <div class="bc-top">
-          <div><div class="bc-ico">💉</div><div class="bc-cat" data-i18n="benefits.bc19_cat">Метаболизм · Диабет</div></div>
-          <span class="bc-ev ev-b">B</span>
-        </div>
-        <div class="bc-name" data-i18n="benefits.bc19_name">Инсулинорезистентность и гликемия</div>
-        <div class="bc-desc" data-i18n="benefits.bc19_desc">Снижение постпрандиальной гликемии. Повышение чувствительности к инсулину через GLUT-4.</div>
-      </div>
-    </div>
-
-    <!-- 20 - Митохондрии small -->
-    <div class="bc b-s1 rv d1" data-cat="спорт">
-      <div class="bc-in">
-        <div class="bc-top"><div class="bc-ico">⚡</div><span class="bc-ev ev-c">C</span></div>
-        <div class="bc-cat" data-i18n="benefits.bc20_cat">Спорт</div>
-        <div class="bc-name" data-i18n="benefits.bc20_name">Митохондрии</div>
-      </div>
-    </div>
-
-    <!-- 21 - Аллергия small -->
-    <div class="bc b-s1 rv d2" data-cat="иммунитет">
-      <div class="bc-in">
-        <div class="bc-top"><div class="bc-ico">🌿</div><span class="bc-ev ev-b">B</span></div>
-        <div class="bc-cat" data-i18n="benefits.bc21_cat">Иммунитет</div>
-        <div class="bc-name" data-i18n="benefits.bc21_name">Аллергия</div>
-      </div>
-    </div>
-
-    <!-- 22 - Стресс wide final -->
-    <div class="bc b-s3 rv d3" data-cat="нейро">
-      <div class="bc-in">
-        <div class="bc-top">
-          <div><div class="bc-ico">🧘</div><div class="bc-cat" data-i18n="benefits.bc22_cat">Нейро · Адаптация</div></div>
-          <span class="bc-ev ev-c">C</span>
-        </div>
-        <div class="bc-name" data-i18n="benefits.bc22_name">Адаптогенный и антистрессовый эффект</div>
-        <div class="bc-desc" data-i18n="benefits.bc22_desc">Снижение кортизола при хроническом стрессе. Синергия с АГ как адаптогеном.</div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -545,18 +340,6 @@
   const burger=document.getElementById('navBurger'),mob=document.getElementById('mobMenu');
   if(burger&&mob){burger.addEventListener('click',()=>{const o=mob.classList.toggle('open');burger.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});}
   document.querySelectorAll('.mob-link,.mob-cta').forEach(l=>l.addEventListener('click',()=>{mob.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
-  // Filter
-  const btns = document.querySelectorAll('.f-btn');
-  const cards = document.querySelectorAll('.bc');
-  btns.forEach(btn=>btn.addEventListener('click',()=>{
-    btns.forEach(b=>b.classList.remove('on'));
-    btn.classList.add('on');
-    const f=btn.dataset.filter;
-    cards.forEach(c=>{
-      if(f==='all'||c.dataset.cat===f){c.classList.remove('hidden');}
-      else{c.classList.add('hidden');}
-    });
-  }));
 </script>
 <script src="js/i18n.js"></script>
 <script src="js/nav.js"></script>
@@ -569,15 +352,6 @@
     var pct = s.scrollTop / (s.scrollHeight - s.clientHeight) * 100;
     el.style.width = Math.min(pct, 100) + '%';
   }, {passive: true});
-})();
-(function(){
-  var pill = document.querySelector('.nav-pill');
-  if(!pill) return;
-  var onScroll = function(){
-    pill.classList.toggle('scrolled', window.scrollY > 40);
-  };
-  window.addEventListener('scroll', onScroll, {passive: true});
-  onScroll();
 })();
 </script>
 </body></html>
