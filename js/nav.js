@@ -19,7 +19,7 @@
         timer = setTimeout(function () {
           item.classList.remove('open');
           drop.classList.remove('visible');
-        }, 180);
+        }, 300);
       }
 
       item.addEventListener('mouseenter', open);

@@ -126,6 +126,7 @@ body::before {
 .nav-main {
   padding: 0 3vw;
   display: flex; align-items: stretch; height: 3.75rem;
+  overflow: visible;
 }
 .nav-main-logo {
   font-family: 'JetBrains Mono', monospace;
@@ -499,13 +500,17 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
   position: fixed; top: 3.75rem; left: 0; right: 0; bottom: 0;
   background: var(--bg); z-index: 490;
   padding: 2rem 2.5rem 3rem;
-  display: none; flex-direction: column; gap: 0.25rem;
+  display: flex; flex-direction: column; gap: 0.25rem;
   overflow-y: auto;
   border-top: 1px solid var(--border);
-  transform: translateY(-100%);
-  transition: transform 0.4s var(--spring);
+  visibility: hidden; opacity: 0; pointer-events: none;
+  transform: translateY(-12px);
+  transition: opacity 0.3s var(--out), transform 0.3s var(--out), visibility 0.3s;
 }
-.mob-menu.open { display: flex; transform: translateY(0); }
+.mob-menu.open {
+  visibility: visible; opacity: 1; pointer-events: all;
+  transform: translateY(0);
+}
 .mob-link {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
@@ -635,13 +640,22 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
   left: 0;
   z-index: 9999;
   min-width: 255px;
+  padding-top: 6px;
+}
+/* Invisible bridge between nav bar and dropdown — prevents close on tiny mouse gaps */
+.nav-drop::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0; right: 0;
+  height: 8px;
 }
 .nav-drop.visible {
   display: block;
-  animation: navDropIn 0.18s var(--out) both;
+  animation: navDropIn 0.2s var(--out) both;
 }
 @keyframes navDropIn {
-  from { opacity: 0; transform: translateY(-8px); }
+  from { opacity: 0; transform: translateY(-6px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 .nav-drop-shell {
