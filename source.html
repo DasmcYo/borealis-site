@@ -40,15 +40,19 @@
     .tl-t { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 0.5rem; }
     .tl-d { font-size: 0.83rem; color: var(--text-2); line-height: 1.7; }
 
+    /* ── PHOTO HERO TEXT OVERRIDE (white text over dark photo) ── */
+    .photo-hero .page-h1 { color: rgba(238,242,255,0.9) !important; }
+    .photo-hero .page-sub { color: rgba(238,242,255,0.7) !important; }
+
     /* ── FOREST STATS ── */
     .forest-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
     .fg {
-      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      background: rgba(14,12,9,0.03); border: 1px solid var(--border);
       padding: 4px; border-radius: var(--r-card);
     }
     .fg-in {
       background: var(--bg-card); border-radius: var(--r-inner);
-      padding: 2rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      padding: 2rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
       display: flex; flex-direction: column; gap: 0.5rem;
     }
     .fg-ico { font-size: 2rem; margin-bottom: 0.25rem; }
@@ -58,12 +62,12 @@
 
     /* ── MAP ── */
     .map-card {
-      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      background: rgba(14,12,9,0.03); border: 1px solid var(--border);
       padding: 5px; border-radius: 2rem; overflow: hidden;
     }
     .map-in {
       background: var(--bg-card-2); border-radius: calc(2rem - 5px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
       display: grid; grid-template-columns: 1fr 1fr; min-height: 380px;
     }
     .map-l { padding: 3rem; display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; }
@@ -72,7 +76,7 @@
 
     /* SVG Russia map simplified */
     .monopoly-badge {
-      background: var(--accent); color: #070B18; padding: 0.2rem 0.7rem;
+      background: var(--accent); color: #FFFFFF; padding: 0.2rem 0.7rem;
       border-radius: 9999px; font-family: 'JetBrains Mono', monospace;
       font-size: 0.6rem; letter-spacing: 0.1em; font-weight: 600;
       display: inline-block;

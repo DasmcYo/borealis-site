@@ -30,17 +30,21 @@
     }
     .mol-3d-svg { width: 100%; height: 100%; }
 
+    /* ── PHOTO HERO TEXT OVERRIDE (white text over dark photo) ── */
+    .photo-hero .page-h1 { color: rgba(238,242,255,0.9) !important; }
+    .photo-hero .page-sub { color: rgba(238,242,255,0.7) !important; }
+
     /* ── MECHANISMS ── */
     .mech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .mech {
-      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      background: rgba(14,12,9,0.03); border: 1px solid var(--border);
       padding: 4px; border-radius: var(--r-card);
       transition: all 0.5s var(--spring);
     }
     .mech:hover { border-color: var(--accent-border); transform: translateY(-3px); }
     .mech-in {
       background: var(--bg-card); border-radius: var(--r-inner);
-      padding: 1.75rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      padding: 1.75rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
     }
     .mech-ico { font-size: 2rem; margin-bottom: 0.75rem; }
     .mech-path {
@@ -57,12 +61,12 @@
       align-items: center; gap: 2rem;
     }
     .syn-card {
-      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      background: rgba(14,12,9,0.03); border: 1px solid var(--border);
       padding: 4px; border-radius: var(--r-card);
     }
     .syn-card-in {
       background: var(--bg-card); border-radius: var(--r-inner);
-      padding: 2.5rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      padding: 2.5rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
       text-align: center;
     }
     .syn-ico { font-size: 3rem; margin-bottom: 1rem; }
@@ -82,8 +86,8 @@
 
     /* ── BIOAVAIL ── */
     .bio-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
-    .bio-card { padding: 4px; border-radius: var(--r-card); background: rgba(255,255,255,0.025); border: 1px solid var(--border); }
-    .bio-in { background: var(--bg-card); border-radius: var(--r-inner); padding: 2rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04); }
+    .bio-card { padding: 4px; border-radius: var(--r-card); background: rgba(14,12,9,0.03); border: 1px solid var(--border); }
+    .bio-in { background: var(--bg-card); border-radius: var(--r-inner); padding: 2rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9); }
     .bio-label { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; color: var(--text-3); text-transform: uppercase; margin-bottom: 0.75rem; }
     .bio-val { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; }
     .bio-desc { font-size: 0.8rem; color: var(--text-2); line-height: 1.6; }

@@ -10,12 +10,12 @@
   <style>
     /* ── SPEC TABLE ── */
     .spec-wrap {
-      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      background: rgba(14,12,9,0.03); border: 1px solid var(--border);
       padding: 5px; border-radius: 2rem; overflow: hidden;
     }
     .spec-in {
       background: var(--bg-card); border-radius: calc(2rem - 5px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
     }
     .spec-table { width: 100%; border-collapse: collapse; }
     .spec-table thead tr { border-bottom: 1px solid var(--border); }
@@ -25,7 +25,7 @@
       letter-spacing: 0.2em; text-transform: uppercase;
       font-weight: 400; color: var(--text-3); text-align: left;
     }
-    .spec-table tbody tr { border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .spec-table tbody tr { border-bottom: 1px solid var(--border); }
     .spec-table tbody tr:last-child { border-bottom: none; }
     .spec-table td { padding: 1rem 2rem; font-size: 0.86rem; vertical-align: middle; }
     .sp-param { color: var(--text-2); }
@@ -35,14 +35,14 @@
     /* ── FORMS GRID ── */
     .forms-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
     .form-c {
-      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      background: rgba(14,12,9,0.03); border: 1px solid var(--border);
       padding: 4px; border-radius: var(--r-card);
       transition: border-color 0.4s var(--out);
     }
     .form-c:hover { border-color: var(--accent-border); }
     .form-in {
       background: var(--bg-card); border-radius: var(--r-inner);
-      padding: 2rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      padding: 2rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
       display: flex; flex-direction: column; gap: 0.75rem;
     }
     .form-ico { font-size: 2rem; }
@@ -54,12 +54,12 @@
     /* ── APPLICATIONS ── */
     .app-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
     .app-c {
-      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      background: rgba(14,12,9,0.03); border: 1px solid var(--border);
       padding: 4px; border-radius: var(--r-card);
     }
     .app-in {
       background: var(--bg-card); border-radius: var(--r-inner);
-      padding: 1.75rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      padding: 1.75rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
     }
     .app-ico { font-size: 1.75rem; margin-bottom: 0.75rem; }
     .app-n { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; margin-bottom: 0.5rem; }
@@ -69,12 +69,12 @@
     /* ── CERTS ── */
     .certs { display: flex; gap: 1rem; flex-wrap: wrap; }
     .cert {
-      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      background: rgba(14,12,9,0.03); border: 1px solid var(--border);
       padding: 4px; border-radius: 1rem;
     }
     .cert-in {
       background: var(--bg-card); border-radius: calc(1rem - 4px);
-      padding: 1rem 1.5rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      padding: 1rem 1.5rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
       text-align: center; min-width: 110px;
     }
     .cert-ico { font-size: 1.5rem; margin-bottom: 0.3rem; }
@@ -83,13 +83,13 @@
     /* ── PACKAGING ── */
     .pkg-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
     .pkg {
-      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      background: rgba(14,12,9,0.03); border: 1px solid var(--border);
       padding: 4px; border-radius: var(--r-card);
     }
     .pkg-in {
       background: var(--bg-card); border-radius: var(--r-inner);
       padding: 1.5rem; text-align: center;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
     }
     .pkg-ico { font-size: 1.75rem; margin-bottom: 0.5rem; }
     .pkg-w { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--accent); }
@@ -100,7 +100,7 @@
       padding: 4rem 5vw 8rem; max-width: 1400px; margin: 0 auto; position: relative; z-index: 1;
     }
     .inquiry-card {
-      background: rgba(255,255,255,0.025); border: 1px solid var(--border);
+      background: rgba(14,12,9,0.03); border: 1px solid var(--border);
       padding: 5px; border-radius: 2.5rem;
     }
     .inquiry-in {
@@ -108,7 +108,7 @@
       padding: 3.5rem 4rem;
       display: grid; grid-template-columns: 1fr auto;
       gap: 4rem; align-items: center;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
     }
     .inq-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem,2.5vw,2.6rem); font-weight: 300; line-height: 1.15; margin-bottom: 0.6rem; }
     .inq-h em { font-style: italic; color: var(--accent); }
@@ -179,8 +179,8 @@
     <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(7,11,24,0.9) 0%,rgba(7,11,24,0.35) 60%,rgba(7,11,24,0.1) 100%);display:flex;align-items:center;padding:3rem">
       <div>
         <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.2em;color:var(--accent);margin-bottom:0.75rem">BULK INGREDIENT · GMP CERTIFIED</div>
-        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.05;color:var(--text)">Dihydroquercetin<br><em style="color:var(--accent)">Taxifolin</em></div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.18em;color:var(--text-3);margin-top:0.75rem">CAS 480-18-2 · C₁₅H₁₂O₇ · MW 304.25 · Purity ≥99%</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.05;color:rgba(238,242,255,0.95)">Dihydroquercetin<br><em style="color:var(--accent)">Taxifolin</em></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.18em;color:rgba(238,242,255,0.45);margin-top:0.75rem">CAS 480-18-2 · C₁₅H₁₂O₇ · MW 304.25 · Purity ≥99%</div>
       </div>
     </div>
   </div>
