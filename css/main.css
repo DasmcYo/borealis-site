@@ -538,10 +538,21 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
   border-radius: 9999px; padding: 0.28rem 0.72rem;
   font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
   letter-spacing: 0.14em; color: var(--text-2); cursor: pointer;
-  transition: border-color 0.3s var(--out), color 0.3s var(--out);
-  flex-shrink: 0;
+  display: flex; align-items: center; gap: 0.35rem;
+  transition: border-color 0.22s, color 0.22s;
 }
 .lang-btn:hover { border-color: var(--accent-border); color: var(--accent); }
+.lang-btn::after {
+  content: '';
+  width: 0; height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 4px solid currentColor;
+  opacity: 0.55;
+  flex-shrink: 0;
+  transition: transform 0.22s;
+}
+.lang-drop.open ~ .lang-btn::after { transform: rotate(180deg); opacity: 0.8; }
 .lang-drop {
   position: absolute; top: calc(100% + 0.6rem); right: 0; z-index: 200;
   background: var(--bg-card); border: 1px solid var(--border);
@@ -560,6 +571,23 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
 }
 .lang-drop button:hover { background: rgba(176,120,40,0.10); color: var(--accent); }
 .lang-drop button.active { color: var(--accent); }
+/* Social icons + search in nav-top */
+.nav-top-social { display: flex; align-items: center; gap: 0.45rem; }
+.nav-top-soc {
+  display: flex; align-items: center; justify-content: center;
+  width: 1.5rem; height: 1.5rem; border-radius: 0.3rem;
+  color: var(--text-3); text-decoration: none;
+  transition: color 0.22s, background 0.22s;
+}
+.nav-top-soc:hover { color: var(--accent); background: var(--accent-dim); }
+.nav-top-search {
+  display: flex; align-items: center; justify-content: center;
+  width: 1.5rem; height: 1.5rem; border-radius: 0.3rem;
+  background: none; border: none; cursor: pointer; padding: 0;
+  color: var(--text-3);
+  transition: color 0.22s, background 0.22s;
+}
+.nav-top-search:hover { color: var(--accent); background: var(--accent-dim); }
 @media (max-width: 900px) { #langSw { display: none; } }
 
 /* ── PHOTO HERO SHARED ── */
