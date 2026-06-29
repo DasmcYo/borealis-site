@@ -230,7 +230,7 @@ body::before {
 
 /* ── SECTION COMMONS ── */
 .sec {
-  padding: 7rem 5vw;
+  padding: 6rem 5vw;
   max-width: 1400px; margin: 0 auto;
   position: relative; z-index: 1;
 }
@@ -384,7 +384,7 @@ body::before {
 
 /* ── CTA BLOCK ── */
 .cta-block {
-  padding: 5rem 5vw 8rem;
+  padding: 5rem 5vw 5rem;
   max-width: 1400px; margin: 0 auto;
   position: relative; z-index: 1;
 }
