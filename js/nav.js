@@ -11,6 +11,14 @@
 
       function open() {
         clearTimeout(timer);
+        // Close all other dropdowns immediately
+        document.querySelectorAll('.nav-has-drop.open').forEach(function (el) {
+          if (el !== item) {
+            el.classList.remove('open');
+            var d = el.querySelector('.nav-drop');
+            if (d) d.classList.remove('visible');
+          }
+        });
         item.classList.add('open');
         drop.classList.add('visible');
       }
