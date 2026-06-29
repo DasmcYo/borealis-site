@@ -145,9 +145,9 @@ body::before {
 }
 .nav-main-item > a {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.59rem; letter-spacing: 0.15em; text-transform: uppercase;
+  font-size: 0.71rem; letter-spacing: 0.11em; text-transform: uppercase;
   color: var(--text-3); text-decoration: none;
-  padding: 0 0.95rem;
+  padding: 0 1.05rem;
   display: flex; align-items: center; gap: 0.3rem;
   white-space: nowrap;
   border-bottom: 2px solid transparent;
@@ -572,20 +572,20 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
 .lang-drop button:hover { background: rgba(176,120,40,0.10); color: var(--accent); }
 .lang-drop button.active { color: var(--accent); }
 /* Social icons + search in nav-top */
-.nav-top-social { display: flex; align-items: center; gap: 0.2rem; }
+.nav-top-social { display: flex; align-items: center; gap: 0.15rem; }
 .nav-top-soc {
   display: flex; align-items: center; justify-content: center;
-  width: 1.9rem; height: 1.9rem; border-radius: 0.4rem;
+  width: 2.3rem; height: 2.3rem; border-radius: 0.5rem;
   color: var(--text-2); text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   transition: color 0.22s, background 0.22s;
 }
 .nav-top-soc:hover { color: var(--accent); background: var(--accent-dim); }
 .nav-top-search {
   display: flex; align-items: center; justify-content: center;
-  width: 1.9rem; height: 1.9rem; border-radius: 0.4rem;
+  width: 2.3rem; height: 2.3rem; border-radius: 0.5rem;
   background: none; border: none; cursor: pointer; padding: 0;
-  color: var(--text-2); font-size: 1.15rem;
+  color: var(--text-2); font-size: 1.35rem;
   transition: color 0.22s, background 0.22s;
 }
 .nav-top-search:hover { color: var(--accent); background: var(--accent-dim); }
@@ -681,65 +681,64 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
 }
 .nav-drop.visible {
   display: block;
-  animation: navDropIn 0.2s var(--out) both;
+  animation: navDropIn 0.28s var(--out) both;
 }
 @keyframes navDropIn {
-  from { opacity: 0; transform: translateY(-6px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-10px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 .nav-drop-shell {
-  background: rgba(14,12,9,0.04);
+  background: rgba(245,241,235,0.75);
   border: 1px solid var(--border-2);
-  border-radius: 1.3rem;
-  padding: 4px;
-  box-shadow: 0 20px 50px rgba(14,12,9,0.13), 0 4px 12px rgba(14,12,9,0.06), inset 0 1px 0 rgba(255,255,255,0.9);
+  border-radius: 1.1rem;
+  padding: 5px;
+  box-shadow:
+    0 32px 64px rgba(14,12,9,0.14),
+    0 8px 24px rgba(14,12,9,0.07),
+    0 2px 6px rgba(14,12,9,0.04),
+    inset 0 1px 0 rgba(255,255,255,0.96);
+  transform-origin: top center;
 }
 .nav-drop-in {
   background: var(--bg-card);
-  border-radius: calc(1.3rem - 4px);
-  padding: 0.6rem;
+  border-radius: calc(1.1rem - 5px);
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.05rem;
 }
 .nd-link {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  padding: 0.6rem 0.75rem;
-  border-radius: 0.85rem;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.65rem;
   text-decoration: none;
-  transition: background 0.18s var(--out);
+  transition: background 0.18s var(--out), transform 0.18s var(--out);
 }
-.nd-link:hover { background: rgba(176,120,40,0.08); }
-.nd-link:hover .nd-arr { opacity: 1; transform: translateX(2px); }
-.nd-ico {
-  width: 2rem; height: 2rem;
-  border-radius: 0.55rem;
-  background: var(--accent-dim);
-  border: 1px solid var(--accent-border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.88rem;
-  flex-shrink: 0;
-}
+.nd-link:hover { background: rgba(176,120,40,0.07); transform: translateX(3px); }
+.nd-link:hover .nd-arr { opacity: 1; transform: translateX(4px); }
 .nd-body { flex: 1; min-width: 0; }
 .nd-title {
-  font-size: 0.79rem; font-weight: 600;
-  color: var(--text); line-height: 1.2;
-  margin-bottom: 0.12rem;
+  font-size: 0.8rem; font-weight: 600;
+  color: var(--text); line-height: 1.25;
+  margin-bottom: 0.15rem;
+  display: block;
 }
 .nd-desc {
-  font-size: 0.68rem; color: var(--text-3); line-height: 1.3;
+  font-size: 0.69rem; color: var(--text-3); line-height: 1.35;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  display: block;
 }
 .nd-arr {
-  font-size: 0.75rem; color: var(--accent);
+  font-size: 0.8rem; color: var(--accent);
   opacity: 0; transition: opacity 0.18s, transform 0.18s var(--out);
   flex-shrink: 0;
 }
 .nd-sep {
   height: 1px; background: var(--border);
-  margin: 0.3rem 0.75rem;
+  margin: 0.25rem 1rem;
 }
 /* hide dropdown on mobile — it's in mob-menu there */
 @media (max-width: 900px) { .nav-drop { display: none !important; } }
