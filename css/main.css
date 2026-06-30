@@ -61,27 +61,24 @@ body::before {
 
 .amb-r {
   position: fixed; top: -20vh; right: -10vw;
-  width: 65vw; height: 65vw; max-width: 750px; max-height: 750px;
+  width: 55vw; height: 55vw; max-width: 620px; max-height: 620px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(176,120,40,0.06) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(176,120,40,0.05) 0%, transparent 65%);
   pointer-events: none; z-index: 0;
-  animation: ambFloat 18s ease-in-out infinite alternate;
 }
 .amb-l {
   position: fixed; bottom: -25vh; left: -8vw;
-  width: 52vw; height: 52vw; max-width: 600px; max-height: 600px;
+  width: 44vw; height: 44vw; max-width: 500px; max-height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(176,120,40,0.04) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(176,120,40,0.035) 0%, transparent 65%);
   pointer-events: none; z-index: 0;
-  animation: ambFloat2 22s ease-in-out infinite alternate;
 }
 .amb-m {
   position: fixed; top: 40vh; left: 30vw;
-  width: 50vw; height: 50vw; max-width: 580px; max-height: 580px;
+  width: 42vw; height: 42vw; max-width: 480px; max-height: 480px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201,148,58,0.04) 0%, rgba(79,70,229,0.03) 40%, transparent 70%);
+  background: radial-gradient(circle, rgba(201,148,58,0.03) 0%, transparent 65%);
   pointer-events: none; z-index: 0;
-  animation: ambFloat3 24s ease-in-out infinite alternate;
 }
 
 /* ── SITE HEADER (two-tier) ── */
@@ -185,12 +182,11 @@ body::before {
 /* ── REVEAL ── */
 .rv {
   opacity: 0;
-  transform: translateY(1.5rem);
-  filter: blur(4px);
-  transition: opacity 0.85s var(--out), transform 0.85s var(--out), filter 0.85s var(--out);
-  will-change: transform, opacity, filter;
+  transform: translateY(1.2rem);
+  transition: opacity 0.7s var(--out), transform 0.7s var(--out);
+  will-change: transform, opacity;
 }
-.rv.in { opacity: 1; transform: translateY(0); filter: blur(0); }
+.rv.in { opacity: 1; transform: translateY(0); }
 .d1 { transition-delay: 0.1s; }
 .d2 { transition-delay: 0.2s; }
 .d3 { transition-delay: 0.3s; }
@@ -486,10 +482,10 @@ footer {
 @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; gap: 3rem; } .grid-3 { grid-template-columns: 1fr; } }
 
 /* ── PAGE TRANSITION ── */
-body { animation: pageIn 0.55s var(--out) both; }
+body { animation: pageIn 0.4s var(--out) both; }
 @keyframes pageIn {
-  from { opacity: 0; transform: translateY(10px); filter: blur(3px); }
-  to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
   --link-out-done: 0;
