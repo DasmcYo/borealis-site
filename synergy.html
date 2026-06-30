@@ -207,6 +207,38 @@
   </div>
 </div>
 
+
+<div class="nl-wrap rv">
+  <div class="nl-card">
+    <div class="nl-in">
+      <div>
+        <div class="nl-eye">Newsletter</div>
+        <h3 class="nl-h">Research updates on <em>Taxifolin & DHQ</em></h3>
+        <p class="nl-sub">New peer-reviewed publications, regulatory changes, and field data — sent only when there is something substantive to report. No marketing, no noise.</p>
+      </div>
+      <div>
+        <form class="nl-form" id="nlForm" onsubmit="nlSubmit(event)">
+          <div class="nl-row">
+            <input type="email" class="nl-input" placeholder="your@company.com" required autocomplete="email">
+            <button type="submit" class="nl-btn">Subscribe <span class="nl-arr">→</span></button>
+          </div>
+          <p class="nl-note">No marketing. Unsubscribe at any time.</p>
+        </form>
+        <div class="nl-ok" id="nlOk">
+          <i class="ph ph-check-circle"></i> Subscribed. We will be in touch when there is something worth reading.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+function nlSubmit(e){
+  e.preventDefault();
+  var f=document.getElementById('nlForm'),ok=document.getElementById('nlOk');
+  if(!f||!ok)return;
+  f.style.display='none'; ok.style.display='flex';
+}
+</script>
 <footer>
   <div class="ft-brand"><a href="index.html" class="ft-logo">Borealis</a><p>Taxifolin &amp; Arabiogalactan from Siberian larch.</p></div>
   <nav class="ft-nav">
