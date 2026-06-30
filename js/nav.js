@@ -54,3 +54,12 @@
     initDropdowns();
   }
 })();
+
+function nlSub(e) {
+  e.preventDefault();
+  var f = document.getElementById('nlForm');
+  var ok = document.getElementById('nlOk');
+  if (!f || !ok) return;
+  f.style.display = 'none';
+  ok.style.display = 'block';
+}
