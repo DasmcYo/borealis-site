@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chain of Custody — BOREALIS</title>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .coc-chain{display:flex;flex-direction:column;gap:0;margin-top:2.5rem;}
+    .coc-node{display:grid;grid-template-columns:56px 1fr;gap:1.5rem;position:relative;padding-bottom:2.5rem;}
+    .coc-node:last-child{padding-bottom:0;}
+    .coc-node::before{content:'';position:absolute;left:27px;top:56px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--accent-border),transparent);}
+    .coc-node:last-child::before{display:none;}
+    .coc-ico-wrap{width:56px;height:56px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .coc-ico{color:var(--accent);font-size:1.3rem;}
+    .coc-body{padding-top:0.75rem;}
+    .coc-tag{font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.15em;color:var(--accent);text-transform:uppercase;margin-bottom:0.35rem;}
+    .coc-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;margin-bottom:0.5rem;}
+    .coc-desc{font-size:0.83rem;color:var(--text-2);line-height:1.7;}
+    .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+    .cert-card{display:flex;align-items:flex-start;gap:0.85rem;padding:1.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-inner);}
+    .cert-ico{color:var(--accent);font-size:1.3rem;flex-shrink:0;}
+    .cert-t{font-size:0.88rem;font-weight:500;color:var(--text);margin-bottom:0.2rem;}
+    .cert-d{font-size:0.75rem;color:var(--text-2);line-height:1.5;}
+    @media(max-width:700px){.cert-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<div id="scroll-prog"></div>
+<div class="amb-r"></div><div class="amb-l"></div>
+
+<header class="site-header">
+  <div class="nav-top">
+    <div class="nav-top-r">
+      <div class="nav-top-social">
+        <a href="#" class="nav-top-soc" title="Facebook" target="_blank" rel="noopener"><i class="ph ph-facebook-logo"></i></a>
+        <a href="#" class="nav-top-soc" title="LinkedIn" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="#" class="nav-top-soc" title="YouTube" target="_blank" rel="noopener"><i class="ph ph-youtube-logo"></i></a>
+      </div>
+      <div class="nav-top-sep"></div>
+      <a href="contact.html" class="nav-top-link">Contact us</a>
+      <div class="nav-top-sep"></div>
+      <button class="nav-top-search" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button>
+      <div class="nav-top-sep"></div>
+      <div id="langSw">
+        <button class="lang-btn" id="langBtn" onclick="bI18nToggleDrop()">EN</button>
+        <div class="lang-drop" id="langDrop">
+          <button data-lang="en" onclick="bI18nSetLang('en')">EN · English</button>
+          <button data-lang="ru" onclick="bI18nSetLang('ru')">RU · Русский</button>
+          <button data-lang="fr" onclick="bI18nSetLang('fr')">FR · Français</button>
+          <button data-lang="es" onclick="bI18nSetLang('es')">ES · Español</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="nav-main">
+    <a href="index.html" class="nav-main-logo">Borealis</a>
+    <ul class="nav-main-links">
+      <li class="nav-main-item nav-has-drop">
+        <a href="molecule.html">The Molecule</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="dhq.html" class="nd-link"><span class="nd-body"><span class="nd-title">DHQ — Dihydroquercetin</span><span class="nd-desc">Molecular profile · ORAC · structure</span></span><span class="nd-arr">›</span></a>
+          <a href="ag.html" class="nd-link"><span class="nd-body"><span class="nd-title">Arabiogalactan</span><span class="nd-desc">Bioavailability ×2.8</span></span><span class="nd-arr">›</span></a>
+          <div class="nd-sep"></div>
+          <a href="mechanisms.html" class="nd-link"><span class="nd-body"><span class="nd-title">Mechanisms of Action</span><span class="nd-desc">4 molecular pathways</span></span><span class="nd-arr">›</span></a>
+          <a href="synergy.html" class="nd-link"><span class="nd-body"><span class="nd-title">DHQ + AG Synergy</span><span class="nd-desc">Why together works differently</span></span><span class="nd-arr">›</span></a>
+          <a href="product.html" class="nd-link"><span class="nd-body"><span class="nd-title">Technical Dossier</span><span class="nd-desc">Spec sheet · CoA · analytical data</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+      <li class="nav-main-item nav-has-drop active">
+        <a href="source.html">Siberia</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="larch.html" class="nd-link"><span class="nd-body"><span class="nd-title">Larix Gmelinii</span><span class="nd-desc">The only commercial DHQ source</span></span><span class="nd-arr">›</span></a>
+          <a href="geography.html" class="nd-link"><span class="nd-body"><span class="nd-title">62°N · 130°E</span><span class="nd-desc">Geography of exclusivity</span></span><span class="nd-arr">›</span></a>
+          <div class="nd-sep"></div>
+          <a href="extraction.html" class="nd-link"><span class="nd-body"><span class="nd-title">Extraction Process</span><span class="nd-desc">From tree to molecule, 95%+ purity</span></span><span class="nd-arr">›</span></a>
+          <a href="custody.html" class="nd-link"><span class="nd-body"><span class="nd-title">Chain of Custody</span><span class="nd-desc">Traceability · certifications</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+      <li class="nav-main-item nav-has-drop">
+        <a href="research.html">Evidence</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="publications.html" class="nd-link"><span class="nd-body"><span class="nd-title">Key Publications</span><span class="nd-desc">PNAS · Nutrients · Antioxidants</span></span><span class="nd-arr">›</span></a>
+          <a href="neuroprotection.html" class="nd-link"><span class="nd-body"><span class="nd-title">Neuroprotection — PNAS 2019</span><span class="nd-desc">Blood-brain barrier crossing confirmed</span></span><span class="nd-arr">›</span></a>
+          <div class="nd-sep"></div>
+          <a href="database.html" class="nd-link"><span class="nd-body"><span class="nd-title">Research Database</span><span class="nd-desc">18+ peer-reviewed studies</span></span><span class="nd-arr">›</span></a>
+          <a href="regulatory.html" class="nd-link"><span class="nd-body"><span class="nd-title">Regulatory Map</span><span class="nd-desc">Status: EU · USA · Asia-Pacific</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+      <li class="nav-main-item nav-has-drop">
+        <a href="benefits.html">Sectors</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="supplements.html" class="nd-link"><span class="nd-body"><span class="nd-title">Dietary Supplements</span><span class="nd-desc">Nutraceutical brands · capsules · powders</span></span><span class="nd-arr">›</span></a>
+          <a href="pharma.html" class="nd-link"><span class="nd-body"><span class="nd-title">Pharmaceutical / OTC</span><span class="nd-desc">Proprietary formulas · clinical-grade</span></span><span class="nd-arr">›</span></a>
+          <a href="sports.html" class="nd-link"><span class="nd-body"><span class="nd-title">Sports Nutrition</span><span class="nd-desc">Recovery · VO₂ · antioxidant protection</span></span><span class="nd-arr">›</span></a>
+          <a href="functional.html" class="nd-link"><span class="nd-body"><span class="nd-title">Functional Food & Beverage</span><span class="nd-desc">Enriched formats · functional drinks</span></span><span class="nd-arr">›</span></a>
+          <a href="longevity.html" class="nd-link"><span class="nd-body"><span class="nd-title">Longevity & Anti-aging</span><span class="nd-desc">Fastest-growing ingredient segment</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+      <li class="nav-main-item nav-has-drop">
+        <a href="about.html">About</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="story.html" class="nd-link"><span class="nd-body"><span class="nd-title">Our Story</span><span class="nd-desc">How Borealis began · our mission</span></span><span class="nd-arr">›</span></a>
+          <a href="beliefs.html" class="nd-link"><span class="nd-body"><span class="nd-title">Our Beliefs</span><span class="nd-desc">Science-first · radical transparency</span></span><span class="nd-arr">›</span></a>
+          <div class="nd-sep"></div>
+          <a href="certifications.html" class="nd-link"><span class="nd-body"><span class="nd-title">Our Certifications</span><span class="nd-desc">ISO · GMP · HACCP · analytical compliance</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+      <li class="nav-main-item"><a href="contact.html">Access</a></li>
+    </ul>
+    <div class="nav-main-cta">
+      <a href="contact.html" class="btn-p" style="font-size:0.74rem;padding:0.58rem 0.58rem 0.58rem 1.1rem;">
+        <span>Start Partnership</span><span class="btn-p-ic" style="width:1.55rem;height:1.55rem;font-size:0.8rem;">→</span>
+      </a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="molecule.html" class="mob-link">The Molecule</a>
+  <a href="source.html" class="mob-link">Siberia</a>
+  <a href="research.html" class="mob-link">Evidence</a>
+  <a href="benefits.html" class="mob-link">Sectors</a>
+  <a href="about.html" class="mob-link">About</a>
+  <a href="contact.html" class="mob-link">Access</a>
+  <a href="contact.html" class="mob-cta">Start Partnership →</a>
+</div>
+
+<div class="page-hero rv">
+  <a href="source.html" style="display:inline-flex;align-items:center;gap:0.5rem;font-family:'JetBrains Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;color:var(--text-3);text-decoration:none;text-transform:uppercase;margin-bottom:1.5rem"><i class="ph ph-arrow-left"></i> Siberia</a>
+  <div class="eye-pill" style="margin-bottom:1.5rem"><span class="eye-dot"></span>Traceability · Certifications · Lot Tracking</div>
+  <h1 class="page-h1">Chain of <em>Custody</em></h1>
+  <p class="page-sub">Every kilogram of DHQ and AG shipped by Borealis is fully traceable — from the specific forest origin in Yakutia to the analytical certificate accompanying your shipment.</p>
+</div>
+
+<section class="sec" style="padding-top:0">
+  <div class="sec-eye rv">Traceability Chain</div>
+  <h2 class="sec-h2 rv d1">From tree <em>to your facility</em></h2>
+  <div class="dbezel rv d2" style="margin-top:2rem">
+    <div class="dbezel-in" style="padding:2rem 3rem">
+      <div class="coc-chain">
+        <div class="coc-node">
+          <div class="coc-ico-wrap"><i class="ph ph-tree coc-ico"></i></div>
+          <div class="coc-body">
+            <div class="coc-tag">Origin</div>
+            <div class="coc-title">Certified forest origin</div>
+            <div class="coc-desc">Raw material (larch sawmill chips) sourced from documented mills in Yakutia and Irkutsk Oblast. Forest region, mill ID, and harvest date recorded per lot.</div>
+          </div>
+        </div>
+        <div class="coc-node">
+          <div class="coc-ico-wrap"><i class="ph ph-flask coc-ico"></i></div>
+          <div class="coc-body">
+            <div class="coc-tag">Production</div>
+            <div class="coc-title">GMP batch record</div>
+            <div class="coc-desc">Each production batch has a unique lot number. Full batch manufacturing record retained: raw material lot → extraction parameters → purification results → final product QC.</div>
+          </div>
+        </div>
+        <div class="coc-node">
+          <div class="coc-ico-wrap"><i class="ph ph-test-tube coc-ico"></i></div>
+          <div class="coc-body">
+            <div class="coc-tag">QC Release</div>
+            <div class="coc-title">Certificate of Analysis per lot</div>
+            <div class="coc-desc">HPLC purity ≥99%, heavy metals (Pb, Cd, As, Hg) by ICP-MS, microbiology (TAMC, TYMC), residual solvents (ICH Q3C). No lot ships without passing release testing.</div>
+          </div>
+        </div>
+        <div class="coc-node">
+          <div class="coc-ico-wrap"><i class="ph ph-package coc-ico"></i></div>
+          <div class="coc-body">
+            <div class="coc-tag">Packaging</div>
+            <div class="coc-title">Nitrogen-flushed, sealed containers</div>
+            <div class="coc-desc">Packed under nitrogen atmosphere in food-grade HDPE drums or double-layered PE bags. Lot number and expiry date labeled. Desiccant included. Cold chain documentation for temperature-sensitive orders.</div>
+          </div>
+        </div>
+        <div class="coc-node">
+          <div class="coc-ico-wrap"><i class="ph ph-truck coc-ico"></i></div>
+          <div class="coc-body">
+            <div class="coc-tag">Delivery</div>
+            <div class="coc-title">Full documentation package</div>
+            <div class="coc-desc">Every shipment includes: Certificate of Analysis, Technical Data Sheet, Safety Data Sheet, Certificate of Origin, and MSDS. Available in English, Russian, and on request for other EU languages.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eye rv">Certifications</div>
+  <h2 class="sec-h2 rv d1">Quality <em>standards</em></h2>
+  <div class="cert-grid" style="margin-top:2rem">
+    <div class="cert-card rv d1"><i class="ph ph-medal cert-ico"></i><div><div class="cert-t">GMP Certified Facility</div><div class="cert-d">Production under current Good Manufacturing Practice. Third-party audit performed annually.</div></div></div>
+    <div class="cert-card rv d2"><i class="ph ph-certificate cert-ico"></i><div><div class="cert-t">ISO 9001:2015</div><div class="cert-d">Quality management system certification covering production, QC, and logistics processes.</div></div></div>
+    <div class="cert-card rv d3"><i class="ph ph-leaf cert-ico"></i><div><div class="cert-t">HACCP Compliant</div><div class="cert-d">Hazard Analysis and Critical Control Points compliance. Food-grade production environment.</div></div></div>
+    <div class="cert-card rv d1"><i class="ph ph-files cert-ico"></i><div><div class="cert-t">CoA Per Lot</div><div class="cert-d">HPLC purity, ICP-MS metals, microbiological testing. No exceptions — every shipment, every time.</div></div></div>
+  </div>
+</section>
+
+<div class="cta-block">
+  <div class="cta-card rv">
+    <div class="cta-in">
+      <div class="cta-glow"></div>
+      <div>
+        <h2 class="cta-h">Request full <em>documentation</em></h2>
+        <p class="cta-sub">CoA, TDS, SDS, and Certificate of Origin available on request. Contact us with your lot requirements.</p>
+      </div>
+      <div class="cta-acts">
+        <a href="contact.html" class="btn-p"><span>Request Documents</span><span class="btn-p-ic">→</span></a>
+        <a href="product.html" class="btn-s">Technical Dossier</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-brand"><a href="index.html" class="ft-logo">Borealis</a><p>Taxifolin &amp; Arabiogalactan from Siberian larch.</p></div>
+  <nav class="ft-nav">
+    <a href="molecule.html">The Molecule</a><a href="benefits.html">Sectors</a>
+    <a href="research.html">Evidence</a><a href="source.html">Siberia</a>
+    <a href="product.html">Technical Dossier</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="ft-copy"><p>© 2025 Borealis</p></div>
+</footer>
+
+<script>
+  const obs=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('in'),obs.unobserve(x.target))),{threshold:0.05});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.page-hero .rv').forEach(el=>el.classList.add('in')),80);
+  const burger=document.getElementById('navBurger'),mob=document.getElementById('mobMenu');
+  if(burger&&mob){burger.addEventListener('click',()=>{const o=mob.classList.toggle('open');burger.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});}
+  document.querySelectorAll('.mob-link,.mob-cta').forEach(l=>l.addEventListener('click',()=>{mob.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
+</script>
+<script src="js/i18n.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(function(){var el=document.getElementById('scroll-prog');if(!el)return;window.addEventListener('scroll',function(){var s=document.documentElement;el.style.width=Math.min(s.scrollTop/(s.scrollHeight-s.clientHeight)*100,100)+'%';},{passive:true});})();
+</script>
+</body></html>

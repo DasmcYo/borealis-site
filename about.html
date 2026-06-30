@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Borealis — BOREALIS</title>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .photo-hero .page-h1 { color: rgba(238,242,255,0.9) !important; }
+    .photo-hero .page-sub { color: rgba(238,242,255,0.7) !important; }
+    .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .about-card { text-decoration: none; display: block; }
+    .about-card .dbezel-in { min-height: 300px; display: flex; flex-direction: column; gap: 1rem; transition: box-shadow 0.4s var(--spring); }
+    .about-card:hover .dbezel { border-color: var(--accent-border); transform: translateY(-4px); box-shadow: 0 24px 64px rgba(14,12,9,0.12); }
+    .ac-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--accent-dim); border: 1px solid var(--accent-border); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--accent); }
+    .ac-h { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; line-height: 1.2; color: var(--text); }
+    .ac-p { font-size: 0.85rem; color: var(--text-2); line-height: 1.75; flex: 1; }
+    .ac-link { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase; }
+    @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div id="scroll-prog"></div>
+<div class="amb-r"></div><div class="amb-l"></div>
+
+<header class="site-header">
+  <div class="nav-top">
+    <div class="nav-top-r">
+      <div class="nav-top-social">
+        <a href="#" class="nav-top-soc" title="Facebook" target="_blank" rel="noopener"><i class="ph ph-facebook-logo"></i></a>
+        <a href="#" class="nav-top-soc" title="LinkedIn" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="#" class="nav-top-soc" title="YouTube" target="_blank" rel="noopener"><i class="ph ph-youtube-logo"></i></a>
+      </div>
+      <div class="nav-top-sep"></div>
+      <a href="contact.html" class="nav-top-link">Contact us</a>
+      <div class="nav-top-sep"></div>
+      <button class="nav-top-search" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button>
+      <div class="nav-top-sep"></div>
+      <div id="langSw">
+        <button class="lang-btn" id="langBtn" onclick="bI18nToggleDrop()">EN</button>
+        <div class="lang-drop" id="langDrop">
+          <button data-lang="en" onclick="bI18nSetLang('en')">EN · English</button>
+          <button data-lang="ru" onclick="bI18nSetLang('ru')">RU · Русский</button>
+          <button data-lang="fr" onclick="bI18nSetLang('fr')">FR · Français</button>
+          <button data-lang="es" onclick="bI18nSetLang('es')">ES · Español</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="nav-main">
+    <a href="index.html" class="nav-main-logo">Borealis</a>
+    <ul class="nav-main-links">
+      <li class="nav-main-item nav-has-drop">
+        <a href="molecule.html">The Molecule</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="dhq.html" class="nd-link"><span class="nd-body"><span class="nd-title">DHQ — Dihydroquercetin</span><span class="nd-desc">Molecular profile · ORAC · structure</span></span><span class="nd-arr">›</span></a>
+          <a href="ag.html" class="nd-link"><span class="nd-body"><span class="nd-title">Arabiogalactan</span><span class="nd-desc">Bioavailability ×2.8</span></span><span class="nd-arr">›</span></a>
+          <div class="nd-sep"></div>
+          <a href="mechanisms.html" class="nd-link"><span class="nd-body"><span class="nd-title">Mechanisms of Action</span><span class="nd-desc">4 molecular pathways</span></span><span class="nd-arr">›</span></a>
+          <a href="synergy.html" class="nd-link"><span class="nd-body"><span class="nd-title">DHQ + AG Synergy</span><span class="nd-desc">Why together works differently</span></span><span class="nd-arr">›</span></a>
+          <a href="product.html" class="nd-link"><span class="nd-body"><span class="nd-title">Technical Dossier</span><span class="nd-desc">Spec sheet · CoA · analytical data</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+      <li class="nav-main-item nav-has-drop">
+        <a href="source.html">Siberia</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="larch.html" class="nd-link"><span class="nd-body"><span class="nd-title">Larix Gmelinii</span><span class="nd-desc">The only commercial DHQ source</span></span><span class="nd-arr">›</span></a>
+          <a href="geography.html" class="nd-link"><span class="nd-body"><span class="nd-title">62°N · 130°E</span><span class="nd-desc">Geography of exclusivity</span></span><span class="nd-arr">›</span></a>
+          <div class="nd-sep"></div>
+          <a href="extraction.html" class="nd-link"><span class="nd-body"><span class="nd-title">Extraction Process</span><span class="nd-desc">From tree to molecule, 95%+ purity</span></span><span class="nd-arr">›</span></a>
+          <a href="custody.html" class="nd-link"><span class="nd-body"><span class="nd-title">Chain of Custody</span><span class="nd-desc">Traceability · certifications</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+      <li class="nav-main-item nav-has-drop">
+        <a href="research.html">Evidence</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="publications.html" class="nd-link"><span class="nd-body"><span class="nd-title">Key Publications</span><span class="nd-desc">PNAS · Nutrients · Antioxidants</span></span><span class="nd-arr">›</span></a>
+          <a href="neuroprotection.html" class="nd-link"><span class="nd-body"><span class="nd-title">Neuroprotection — PNAS 2019</span><span class="nd-desc">Blood-brain barrier crossing confirmed</span></span><span class="nd-arr">›</span></a>
+          <div class="nd-sep"></div>
+          <a href="database.html" class="nd-link"><span class="nd-body"><span class="nd-title">Research Database</span><span class="nd-desc">18+ peer-reviewed studies</span></span><span class="nd-arr">›</span></a>
+          <a href="regulatory.html" class="nd-link"><span class="nd-body"><span class="nd-title">Regulatory Map</span><span class="nd-desc">Status: EU · USA · Asia-Pacific</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+      <li class="nav-main-item nav-has-drop">
+        <a href="benefits.html">Sectors</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="supplements.html" class="nd-link"><span class="nd-body"><span class="nd-title">Dietary Supplements</span><span class="nd-desc">Nutraceutical brands · capsules · powders</span></span><span class="nd-arr">›</span></a>
+          <a href="pharma.html" class="nd-link"><span class="nd-body"><span class="nd-title">Pharmaceutical / OTC</span><span class="nd-desc">Proprietary formulas · clinical-grade</span></span><span class="nd-arr">›</span></a>
+          <a href="sports.html" class="nd-link"><span class="nd-body"><span class="nd-title">Sports Nutrition</span><span class="nd-desc">Recovery · VO₂ · antioxidant protection</span></span><span class="nd-arr">›</span></a>
+          <a href="functional.html" class="nd-link"><span class="nd-body"><span class="nd-title">Functional Food & Beverage</span><span class="nd-desc">Enriched formats · functional drinks</span></span><span class="nd-arr">›</span></a>
+          <a href="longevity.html" class="nd-link"><span class="nd-body"><span class="nd-title">Longevity & Anti-aging</span><span class="nd-desc">Fastest-growing ingredient segment</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+      <li class="nav-main-item nav-has-drop active">
+        <a href="about.html">About</a>
+        <div class="nav-drop"><div class="nav-drop-shell"><div class="nav-drop-in">
+          <a href="story.html" class="nd-link"><span class="nd-body"><span class="nd-title">Our Story</span><span class="nd-desc">How Borealis began · our mission</span></span><span class="nd-arr">›</span></a>
+          <a href="beliefs.html" class="nd-link"><span class="nd-body"><span class="nd-title">Our Beliefs</span><span class="nd-desc">Science-first · radical transparency</span></span><span class="nd-arr">›</span></a>
+          <div class="nd-sep"></div>
+          <a href="certifications.html" class="nd-link"><span class="nd-body"><span class="nd-title">Our Certifications</span><span class="nd-desc">ISO · GMP · HACCP · analytical compliance</span></span><span class="nd-arr">›</span></a>
+        </div></div></div>
+      </li>
+      <li class="nav-main-item"><a href="contact.html">Access</a></li>
+    </ul>
+    <div class="nav-main-cta">
+      <a href="contact.html" class="btn-p" style="font-size:0.74rem;padding:0.58rem 0.58rem 0.58rem 1.1rem;">
+        <span>Start Partnership</span><span class="btn-p-ic" style="width:1.55rem;height:1.55rem;font-size:0.8rem;">→</span>
+      </a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="molecule.html" class="mob-link">The Molecule</a>
+  <a href="source.html" class="mob-link">Siberia</a>
+  <a href="research.html" class="mob-link">Evidence</a>
+  <a href="benefits.html" class="mob-link">Sectors</a>
+  <a href="about.html" class="mob-link">About</a>
+  <a href="story.html" class="mob-link" style="padding-left:2rem;font-size:0.8rem">· Our Story</a>
+  <a href="beliefs.html" class="mob-link" style="padding-left:2rem;font-size:0.8rem">· Our Beliefs</a>
+  <a href="certifications.html" class="mob-link" style="padding-left:2rem;font-size:0.8rem">· Certifications</a>
+  <a href="contact.html" class="mob-link">Access</a>
+  <a href="contact.html" class="mob-cta">Start Partnership →</a>
+</div>
+
+<section class="photo-hero" style="min-height:55vh">
+  <div class="ph-bg" style="background-image:url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1920&q=85&fit=crop');background-position:center 40%"></div>
+  <div class="ph-tint"></div>
+  <div class="ph-overlay" style="background:linear-gradient(180deg,rgba(7,11,24,0.65) 0%,rgba(7,11,24,0.85) 100%)"></div>
+  <div class="ph-vignette"></div>
+  <div class="ph-content page-hero" style="min-height:55vh">
+    <div class="eye-pill rv" style="margin-bottom:1.5rem"><span class="eye-dot"></span>About Borealis · Eastern Siberia · Est. 2019</div>
+    <h1 class="page-h1 rv d1">The Company<br>Behind the <em>Molecule</em></h1>
+    <p class="page-sub rv d2">Science-first. Radical transparency. Six years on one molecule from a forest no one cared about.</p>
+  </div>
+  <div class="ph-credit"><a href="https://unsplash.com" target="_blank">Photo: Unsplash</a></div>
+</section>
+
+<section class="sec">
+  <div class="sec-eye rv">Who We Are</div>
+  <h2 class="sec-h2 rv d1">Three things<br><em>define us</em></h2>
+  <div class="about-grid">
+
+    <div class="rv d1">
+      <div class="dbezel">
+        <div class="dbezel-in" style="display:flex;flex-direction:column;gap:1.25rem;min-height:300px">
+          <div class="ac-icon"><i class="ph ph-book-open"></i></div>
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.18em;color:var(--text-3);text-transform:uppercase;margin-bottom:0.5rem">Our Story</div>
+            <div class="ac-h">How Borealis<br><em>Began</em></div>
+          </div>
+          <p class="ac-p">Six years. One molecule. A group of researchers who bet everything on a Siberian forest no one cared about — and found the world's most potent natural antioxidant hiding inside.</p>
+          <a href="story.html" class="ac-link">Read the story →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv d2">
+      <div class="dbezel">
+        <div class="dbezel-in" style="display:flex;flex-direction:column;gap:1.25rem;min-height:300px">
+          <div class="ac-icon"><i class="ph ph-compass"></i></div>
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.18em;color:var(--text-3);text-transform:uppercase;margin-bottom:0.5rem">Our Beliefs</div>
+            <div class="ac-h">What We<br><em>Stand For</em></div>
+          </div>
+          <p class="ac-p">Science-first. Radical transparency. We say exactly what the data shows — and exactly what it doesn't. No overclaiming. No marketing that outruns the evidence.</p>
+          <a href="beliefs.html" class="ac-link">Our principles →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv d3">
+      <div class="dbezel">
+        <div class="dbezel-in" style="display:flex;flex-direction:column;gap:1.25rem;min-height:300px">
+          <div class="ac-icon"><i class="ph ph-medal"></i></div>
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:0.58rem;letter-spacing:0.18em;color:var(--text-3);text-transform:uppercase;margin-bottom:0.5rem">Our Certifications</div>
+            <div class="ac-h">Verified at<br><em>Every Step</em></div>
+          </div>
+          <p class="ac-p">ISO, GMP, HACCP. Full analytical compliance stack. Every lot comes with a CoA. We don't ask you to trust us — we give you the data to verify.</p>
+          <a href="certifications.html" class="ac-link">View certifications →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<section class="sec">
+  <div class="sec-eye rv">Key Facts</div>
+  <h2 class="sec-h2 rv d1">Borealis <em>in numbers</em></h2>
+  <div class="stats-strip rv d2" style="margin-top:2.5rem">
+    <div class="stat"><div class="stat-n">2019</div><div class="stat-l">Founded</div></div>
+    <div class="stat"><div class="stat-n">12+</div><div class="stat-l">Countries served</div></div>
+    <div class="stat"><div class="stat-n">99%</div><div class="stat-l">DHQ purity (HPLC)</div></div>
+    <div class="stat"><div class="stat-n">70+</div><div class="stat-l">Scientific publications</div></div>
+    <div class="stat"><div class="stat-n">6yr</div><div class="stat-l">R&D before first sale</div></div>
+  </div>
+</section>
+
+<div class="cta-block">
+  <div class="cta-card rv">
+    <div class="cta-in">
+      <div class="cta-glow"></div>
+      <div>
+        <h2 class="cta-h">Ready to<br><em>work together?</em></h2>
+        <p class="cta-sub">Start with a conversation. Sample available. No pitch decks.</p>
+      </div>
+      <div class="cta-acts">
+        <a href="contact.html" class="btn-p"><span>Start Partnership</span><span class="btn-p-ic">→</span></a>
+        <a href="product.html" class="btn-s">Technical Dossier</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-brand"><a href="index.html" class="ft-logo">Borealis</a><p>Taxifolin &amp; Arabiogalactan from Siberian larch.</p></div>
+  <nav class="ft-nav">
+    <a href="molecule.html">The Molecule</a><a href="benefits.html">Sectors</a>
+    <a href="research.html">Evidence</a><a href="source.html">Siberia</a>
+    <a href="product.html">Technical Dossier</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="ft-copy"><p>© 2025 Borealis</p></div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('in'),obs.unobserve(x.target))),{threshold:0.05});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.page-hero .rv, .photo-hero .rv').forEach(el=>el.classList.add('in')),80);
+  const burger=document.getElementById('navBurger'),mob=document.getElementById('mobMenu');
+  if(burger&&mob){burger.addEventListener('click',()=>{const o=mob.classList.toggle('open');burger.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});}
+  document.querySelectorAll('.mob-link,.mob-cta').forEach(l=>l.addEventListener('click',()=>{mob.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
+</script>
+<script src="js/i18n.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(function(){
+  var el=document.getElementById('scroll-prog');
+  if(!el)return;
+  window.addEventListener('scroll',function(){
+    var s=document.documentElement;
+    el.style.width=Math.min(s.scrollTop/(s.scrollHeight-s.clientHeight)*100,100)+'%';
+  },{passive:true});
+})();
+</script>
+</body></html>
