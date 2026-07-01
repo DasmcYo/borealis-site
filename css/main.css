@@ -525,16 +525,12 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
   position: fixed; top: 3.75rem; left: 0; right: 0; bottom: 0;
   background: var(--bg); z-index: 490;
   padding: 2rem 2.5rem 3rem;
-  display: flex; flex-direction: column; gap: 0.25rem;
+  display: none; flex-direction: column; gap: 0.25rem;
   overflow-y: auto;
   border-top: 1px solid var(--border);
-  visibility: hidden; opacity: 0; pointer-events: none;
-  transform: translateY(-12px);
-  transition: opacity 0.3s var(--out), transform 0.3s var(--out), visibility 0.3s;
 }
 .mob-menu.open {
-  visibility: visible; opacity: 1; pointer-events: all;
-  transform: translateY(0);
+  display: flex;
 }
 .mob-link {
   font-family: 'JetBrains Mono', monospace;
