@@ -715,14 +715,9 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
 .mega-left { width: 320px; flex-shrink: 0; }
 .mega-intro { display: none; }
 .mega-intro.active { display: block; animation: megaFadeL 0.25s var(--out); }
-.mega-intro-eye {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.6rem;
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
-  margin-bottom: 0.9rem;
-}
 .mega-intro-h {
   font-family: 'Cormorant Garamond', serif; font-weight: 300;
-  font-size: 2.1rem; line-height: 1.1; margin-bottom: 0.9rem;
+  font-size: 2.6rem; line-height: 1.1; margin-bottom: 0.9rem;
 }
 .mega-intro-d {
   font-size: 0.84rem; color: var(--text-2); line-height: 1.65;
