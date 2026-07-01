@@ -66,7 +66,7 @@ body::before {
   pointer-events: none; z-index: 0;
 }
 .amb-l {
-  position: fixed; bottom: -25vh; left: -8vw;
+  position: fixed; bottom: 0; left: -8vw;
   width: 44vw; height: 44vw; max-width: 500px; max-height: 500px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(176,120,40,0.035) 0%, transparent 65%);
