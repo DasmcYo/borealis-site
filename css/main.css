@@ -411,7 +411,7 @@ body::before {
 
 /* ── CTA BLOCK ── */
 .cta-block {
-  padding: 5rem 5vw 5rem;
+  padding: 4rem 5vw 2.5rem;
   max-width: 1400px; margin: 0 auto;
   position: relative; z-index: 1;
 }
@@ -452,9 +452,9 @@ body::before {
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid var(--border);
-  padding: 3rem 5vw; max-width: 1400px; margin: 0 auto;
-  display: grid; grid-template-columns: 1fr auto 1.4fr auto;
-  align-items: start; gap: 3rem;
+  padding: 1.75rem 5vw; max-width: 1400px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr auto auto auto;
+  align-items: center; gap: 2.5rem;
   position: relative; z-index: 1;
 }
 .ft-brand .ft-logo {
