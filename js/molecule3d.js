@@ -1,4 +1,4 @@
-/* ── BOREALIS — DHQ Orbital Visualization (Three.js) ── */
+﻿/* ── BIOLAR — DHQ Orbital Visualization (Three.js) ── */
 (function () {
   'use strict';
 

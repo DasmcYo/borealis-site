@@ -1,5 +1,5 @@
-/* ── BOREALIS i18n ── */
-const BOREALIS_T = {
+﻿/* ── BIOLAR i18n ── */
+const BIOLAR_T = {
 
   en: {
     nav: {
@@ -8,7 +8,7 @@ const BOREALIS_T = {
     },
     footer: {
       molecule: 'Molecule', benefits: 'Applications', research: 'Research',
-      source: 'Source', contact: 'Contact', copy: '© 2025 Borealis',
+      source: 'Source', contact: 'Contact', copy: '© 2025 BIOLAR',
       tagline: 'Taxifolin and arabinogalactan from Siberian larch. Bulk ingredient supplier.',
       reg: 'Authorized EU 2018/461<br>China NHC 2021',
     },
@@ -354,7 +354,7 @@ const BOREALIS_T = {
       geo: 'LARIX GMELINII · EASTERN SIBERIA · 62°N 130°E',
     },
     story: {
-      pill: 'About Borealis · Eastern Siberia · Est. 2019',
+      pill: 'About BIOLAR · Eastern Siberia · Est. 2019',
       h1: 'We didn\'t discover<br>DHQ. We <em>unlocked</em> it.',
       sub: 'A molecule hiding in Siberian larch for 120 million years. A team that spent years building the supply chain to bring it to the world\'s nutraceutical brands.',
       ch_eye: 'Chapter One',
@@ -365,9 +365,9 @@ const BOREALIS_T = {
       body3: 'So we built it.',
       tl_eye: 'Our Timeline',
       tl_h2: 'From forest <em>to formula</em>',
-      tl1_year: '2019', tl1_t: 'Foundation', tl1_d: 'Borealis is established with one mandate: make Siberian DHQ accessible to global ingredient buyers. First extraction partnerships formed in Yakutia.',
+      tl1_year: '2019', tl1_t: 'Foundation', tl1_d: 'BIOLAR is established with one mandate: make Siberian DHQ accessible to global ingredient buyers. First extraction partnerships formed in Yakutia.',
       tl2_year: '2020', tl2_t: 'First 99% purity extraction', tl2_d: 'Cryogenic extraction reaches 99% DHQ purity confirmed by HPLC. First batch shipped to a European clinical research lab.',
-      tl3_year: '2021', tl3_t: 'AG synergy research begins', tl3_d: 'Internal program confirms Arabiogalactan boosts DHQ bioavailability by 2.8×. The Borealis DHQ+AG matrix is born.',
+      tl3_year: '2021', tl3_t: 'AG synergy research begins', tl3_d: 'Internal program confirms Arabiogalactan boosts DHQ bioavailability by 2.8×. The BIOLAR DHQ+AG matrix is born.',
       tl4_year: '2022', tl4_t: 'First B2B partnerships', tl4_d: 'Supply agreements signed with manufacturers in Germany, Switzerland, and Japan. Full chain-of-custody documentation completed.',
       tl5_year: '2023', tl5_t: 'ISO & GMP certification', tl5_d: 'Production facility achieves ISO 22000 and GMP certification. HACCP protocols implemented across the full extraction chain.',
       tl6_year: '2024–25', tl6_t: 'Global expansion', tl6_d: 'Partnerships in 12 countries. Ongoing support for the T-COG clinical trial in Japan. New distribution nodes in Singapore and the Netherlands.',
@@ -396,7 +396,7 @@ const BOREALIS_T = {
       man_h2: 'What we won\'t <em>compromise on</em>',
       man_l: '"An ingredient company that <em>doesn\'t publish its CoA</em> is asking you to trust marketing over chemistry. We find that unacceptable — for our partners, and for end consumers."',
       man_r1: 'The supplement industry has a documentation problem. Ingredients are sourced from opaque supply chains, tested internally with no independent verification, and marketed with claims that range from optimistic to misleading.',
-      man_r2: 'We built Borealis to be the opposite of that. Every batch we ship includes third-party HPLC analysis. Every partnership starts with a full technical dossier, not a sales deck.',
+      man_r2: 'We built BIOLAR to be the opposite of that. Every batch we ship includes third-party HPLC analysis. Every partnership starts with a full technical dossier, not a sales deck.',
       man_r3: 'This makes us slower to close deals. It means fewer partners, but better ones. Our partners can put "clinically studied" on their labels and actually mean it.',
       man_r4: 'We believe that\'s the only sustainable model for a premium ingredient supplier — and the only way to build something that lasts.',
       cta_h: 'Do our beliefs<br><em>align with yours?</em>',
@@ -413,7 +413,7 @@ const BOREALIS_T = {
       c02_badge: 'GMP', c02_t: 'Good Manufacturing Practice', c02_d: 'Production facility operates under GMP guidelines consistent with EU Directive 2003/94/EC and WHO guidelines for pharmaceutical-grade botanical ingredients.', c02_scope: 'Scope · Facility · Equipment · Personnel · QC',
       c03_badge: 'HACCP', c03_t: 'Hazard Analysis & Critical Control Points', c03_d: 'HACCP plan identifies all biological, chemical, and physical hazards across the DHQ extraction process. Critical control points are monitored and documented at every shift.', c03_scope: 'Scope · Raw material intake · Extraction · Final QC',
       c04_badge: 'GOST R', c04_t: 'Russian State Standard Compliance', c04_d: 'All production processes comply with GOST R standards for food additives and botanical extracts. Full documentation available for Russian Customs Union (EAEU) requirements.', c04_scope: 'Scope · Product standards · Labelling · Safety limits',
-      c05_badge: 'Halal eligible', c05_t: 'Halal-Compatible Process', c05_d: 'The extraction process uses no animal-derived solvents or excipients. DHQ & AG from Borealis are fully eligible for Halal certification by recognized bodies.', c05_scope: 'Scope · No animal derivatives · Solvent-free extraction',
+      c05_badge: 'Halal eligible', c05_t: 'Halal-Compatible Process', c05_d: 'The extraction process uses no animal-derived solvents or excipients. DHQ & AG from BIOLAR are fully eligible for Halal certification by recognized bodies.', c05_scope: 'Scope · No animal derivatives · Solvent-free extraction',
       c06_badge: '3rd-party tested', c06_t: 'Independent Batch Analysis', c06_d: 'Every production batch is tested by an accredited independent laboratory. HPLC purity, heavy metals, microbiology screening, and residual solvents are standard for each shipment.', c06_scope: 'Scope · HPLC · ICP-MS · Microbio · Residuals',
       test_eye: 'Quality Control',
       test_h2: 'How every batch <em>gets verified</em>',
@@ -438,7 +438,7 @@ const BOREALIS_T = {
     },
     footer: {
       molecule: 'Молекула', benefits: 'Применения', research: 'Исследования',
-      source: 'Источник', contact: 'Контакт', copy: '© 2025 Borealis',
+      source: 'Источник', contact: 'Контакт', copy: '© 2025 BIOLAR',
       tagline: 'Таксифолин и арабиногалактан из сибирской лиственницы. Bulk ingredient supplier.',
       reg: 'Авторизован EU 2018/461<br>China NHC 2021',
     },
@@ -780,9 +780,9 @@ const BOREALIS_T = {
       body3: 'Мы её создали.',
       tl_eye: 'Хронология',
       tl_h2: 'От тайги <em>к формуле</em>',
-      tl1_year: '2019', tl1_t: 'Основание', tl1_d: 'Borealis создана с одной задачей: сделать сибирский ДКВ доступным для глобальных покупателей ингредиентов. Первые партнёрства по экстракции в Якутии.',
+      tl1_year: '2019', tl1_t: 'Основание', tl1_d: 'BIOLAR создана с одной задачей: сделать сибирский ДКВ доступным для глобальных покупателей ингредиентов. Первые партнёрства по экстракции в Якутии.',
       tl2_year: '2020', tl2_t: 'Первая экстракция с чистотой 99%', tl2_d: 'Процесс достигает 99% чистоты ДКВ по HPLC. Первая партия отправлена в европейскую клиническую лабораторию.',
-      tl3_year: '2021', tl3_t: 'Исследование синергии АГ', tl3_d: 'Программа подтверждает: арабиногалактан повышает биодоступность ДКВ в 2,8 раза. Матрица ДКВ+АГ Borealis создана.',
+      tl3_year: '2021', tl3_t: 'Исследование синергии АГ', tl3_d: 'Программа подтверждает: арабиногалактан повышает биодоступность ДКВ в 2,8 раза. Матрица ДКВ+АГ BIOLAR создана.',
       tl4_year: '2022', tl4_t: 'Первые B2B-партнёрства', tl4_d: 'Соглашения с производителями в Германии, Швейцарии и Японии. Полная документация по цепочке поставок завершена.',
       tl5_year: '2023', tl5_t: 'Сертификация ISO и GMP', tl5_d: 'Производство получает ISO 22000 и GMP. Протоколы HACCP внедрены по всей цепочке экстракции.',
       tl6_year: '2024–25', tl6_t: 'Глобальная экспансия', tl6_d: 'Партнёрства в 12 странах. Поддержка T-COG в Японии. Дистрибуционные узлы в Сингапуре и Нидерландах.',
@@ -811,7 +811,7 @@ const BOREALIS_T = {
       man_h2: 'На чём мы <em>не идём на компромисс</em>',
       man_l: '"Поставщик ингредиентов, который <em>не публикует свой CoA</em>, просит доверять маркетингу вместо химии. Мы считаем это недопустимым — как для партнёров, так и для конечных потребителей."',
       man_r1: 'В индустрии добавок проблема с документацией. Ингредиенты источаются из непрозрачных цепочек, тестируются внутренне без независимой проверки.',
-      man_r2: 'Borealis создана как противоположность этому. Каждая партия сопровождается HPLC-анализом третьей стороны. Каждое партнёрство начинается с технического досье, а не презентации продаж.',
+      man_r2: 'BIOLAR создана как противоположность этому. Каждая партия сопровождается HPLC-анализом третьей стороны. Каждое партнёрство начинается с технического досье, а не презентации продаж.',
       man_r3: 'Это делает нас медленнее в заключении сделок. Это означает меньше партнёров, но лучших. Наши партнёры могут написать «клинически изучен» — и это правда.',
       man_r4: 'Мы считаем, что это единственная устойчивая модель для поставщика премиального ингредиента.',
       cta_h: 'Наши убеждения<br><em>совпадают с вашими?</em>',
@@ -828,7 +828,7 @@ const BOREALIS_T = {
       c02_badge: 'GMP', c02_t: 'Надлежащая производственная практика', c02_d: 'Производство работает по GMP в соответствии с директивой ЕС 2003/94/EC и руководством ВОЗ. Весь персонал обучен и задокументирован.', c02_scope: 'Область · Предприятие · Оборудование · Персонал · КК',
       c03_badge: 'HACCP', c03_t: 'Анализ опасностей и критических контрольных точек', c03_d: 'HACCP-план выявляет все биологические, химические и физические опасности в процессе экстракции. Критические точки контролируются в каждую смену.', c03_scope: 'Область · Входной контроль · Экстракция · Итоговый КК',
       c04_badge: 'ГОСТ Р', c04_t: 'Соответствие российским государственным стандартам', c04_d: 'Все процессы соответствуют ГОСТ Р для пищевых добавок. Полная документация для Таможенного союза ЕАЭС.', c04_scope: 'Область · Стандарты · Маркировка · Пределы безопасности',
-      c05_badge: 'Халяль-совместимый', c05_t: 'Халяль-совместимый процесс', c05_d: 'В процессе не используются вещества животного происхождения. ДКВ и АГ Borealis подходят для халяль-сертификации. Сертификат по запросу.', c05_scope: 'Область · Без животных компонентов · Без растворителей',
+      c05_badge: 'Халяль-совместимый', c05_t: 'Халяль-совместимый процесс', c05_d: 'В процессе не используются вещества животного происхождения. ДКВ и АГ BIOLAR подходят для халяль-сертификации. Сертификат по запросу.', c05_scope: 'Область · Без животных компонентов · Без растворителей',
       c06_badge: 'Тест 3-й стороны', c06_t: 'Независимый анализ каждой партии', c06_d: 'Каждая партия тестируется аккредитованной независимой лабораторией: HPLC, тяжёлые металлы, микробиология, остаточные растворители.', c06_scope: 'Область · HPLC · ICP-MS · Микробиология · Остатки',
       test_eye: 'Контроль качества',
       test_h2: 'Как каждая партия <em>проходит проверку</em>',
@@ -853,7 +853,7 @@ const BOREALIS_T = {
     },
     footer: {
       molecule: 'Molécule', benefits: 'Applications', research: 'Recherche',
-      source: 'Source', contact: 'Contact', copy: '© 2025 Borealis',
+      source: 'Source', contact: 'Contact', copy: '© 2025 BIOLAR',
       tagline: 'Taxifoline et arabinogalactane du mélèze de Sibérie. Fournisseur d\'ingrédients en vrac.',
       reg: 'Autorisé EU 2018/461<br>China NHC 2021',
     },
@@ -1170,7 +1170,7 @@ const BOREALIS_T = {
       body3: 'Alors nous l\'avons construite.',
       tl_eye: 'Notre chronologie',
       tl_h2: 'De la forêt <em>à la formule</em>',
-      tl1_year: '2019', tl1_t: 'Fondation', tl1_d: 'Borealis est créée avec un seul mandat : rendre la DHQ sibérienne accessible aux acheteurs d\'ingrédients mondiaux. Premiers partenariats formés en Yakoutie.',
+      tl1_year: '2019', tl1_t: 'Fondation', tl1_d: 'BIOLAR est créée avec un seul mandat : rendre la DHQ sibérienne accessible aux acheteurs d\'ingrédients mondiaux. Premiers partenariats formés en Yakoutie.',
       tl2_year: '2020', tl2_t: 'Première extraction à 99% de pureté', tl2_d: 'Le processus atteint 99% de pureté DHQ confirmé par HPLC. Premier lot expédié à un laboratoire de recherche clinique européen.',
       tl3_year: '2021', tl3_t: 'Recherches sur la synergie AG', tl3_d: 'Un programme interne confirme que l\'arabinogalactane augmente la biodisponibilité de la DHQ de 2,8×.',
       tl4_year: '2022', tl4_t: 'Premiers partenariats B2B', tl4_d: 'Accords signés avec des fabricants en Allemagne, Suisse et Japon. Documentation complète de la chaîne de traçabilité.',
@@ -1201,7 +1201,7 @@ const BOREALIS_T = {
       man_h2: 'Ce sur quoi nous ne <em>transigeons pas</em>',
       man_l: '"Une entreprise d\'ingrédients qui <em>ne publie pas son CoA</em> vous demande de faire confiance au marketing plutôt qu\'à la chimie. Nous trouvons cela inacceptable."',
       man_r1: 'L\'industrie des compléments alimentaires a un problème de documentation. Les ingrédients proviennent de chaînes d\'approvisionnement opaques, testés en interne sans vérification indépendante.',
-      man_r2: 'Nous avons construit Borealis pour être le contraire de ça. Chaque lot comprend une analyse HPLC tierce. Chaque partenariat commence par un dossier technique complet.',
+      man_r2: 'Nous avons construit BIOLAR pour être le contraire de ça. Chaque lot comprend une analyse HPLC tierce. Chaque partenariat commence par un dossier technique complet.',
       man_r3: 'Cela nous rend plus lents à conclure des accords. Cela signifie moins de partenaires, mais de meilleurs. Nos partenaires peuvent mettre "cliniquement étudié" sur leurs étiquettes et le penser vraiment.',
       man_r4: 'Nous croyons que c\'est le seul modèle durable pour un fournisseur d\'ingrédients premium.',
       cta_h: 'Nos convictions<br><em>correspondent aux vôtres?</em>',
@@ -1218,7 +1218,7 @@ const BOREALIS_T = {
       c02_badge: 'BPF', c02_t: 'Bonnes Pratiques de Fabrication', c02_d: 'L\'installation fonctionne selon les directives BPF conformes à la directive UE 2003/94/CE et aux directives OMS pour les ingrédients botaniques pharmaceutiques.', c02_scope: 'Portée · Installation · Équipement · Personnel · CQ',
       c03_badge: 'HACCP', c03_t: 'Analyse des dangers et points critiques de contrôle', c03_d: 'Le plan HACCP identifie tous les dangers biologiques, chimiques et physiques dans le processus d\'extraction DHQ. Contrôlé et documenté à chaque équipe.', c03_scope: 'Portée · Réception · Extraction · CQ final',
       c04_badge: 'GOST R', c04_t: 'Conformité aux normes d\'État russes', c04_d: 'Tous les processus de production sont conformes aux normes GOST R applicables. Documentation complète pour l\'Union douanière EAEU.', c04_scope: 'Portée · Normes produit · Étiquetage · Limites de sécurité',
-      c05_badge: 'Compatible Halal', c05_t: 'Processus compatible Halal', c05_d: 'Le processus d\'extraction n\'utilise pas de solvants ou d\'excipients d\'origine animale. DHQ & AG de Borealis sont entièrement éligibles à la certification Halal.', c05_scope: 'Portée · Sans dérivés animaux · Sans solvants',
+      c05_badge: 'Compatible Halal', c05_t: 'Processus compatible Halal', c05_d: 'Le processus d\'extraction n\'utilise pas de solvants ou d\'excipients d\'origine animale. DHQ & AG de BIOLAR sont entièrement éligibles à la certification Halal.', c05_scope: 'Portée · Sans dérivés animaux · Sans solvants',
       c06_badge: 'Testé tiers', c06_t: 'Analyse de lot indépendante', c06_d: 'Chaque lot est testé par un laboratoire indépendant accrédité : pureté HPLC, métaux lourds, dépistage microbiologique, solvants résiduels.', c06_scope: 'Portée · HPLC · ICP-MS · Microbiologie · Résidus',
       test_eye: 'Contrôle qualité',
       test_h2: 'Comment chaque lot <em>est vérifié</em>',
@@ -1243,7 +1243,7 @@ const BOREALIS_T = {
     },
     footer: {
       molecule: 'Molécula', benefits: 'Aplicaciones', research: 'Investigación',
-      source: 'Fuente', contact: 'Contacto', copy: '© 2025 Borealis',
+      source: 'Fuente', contact: 'Contacto', copy: '© 2025 BIOLAR',
       tagline: 'Taxifolina y arabinogalactano del alerce siberiano. Proveedor de ingredientes a granel.',
       reg: 'Autorizado EU 2018/461<br>China NHC 2021',
     },
@@ -1560,9 +1560,9 @@ const BOREALIS_T = {
       body3: 'Así que la construimos.',
       tl_eye: 'Nuestra cronología',
       tl_h2: 'Del bosque <em>a la fórmula</em>',
-      tl1_year: '2019', tl1_t: 'Fundación', tl1_d: 'Borealis se establece con un mandato: hacer el DHQ siberiano accesible a los compradores globales. Primeras asociaciones de extracción en Yakutia.',
+      tl1_year: '2019', tl1_t: 'Fundación', tl1_d: 'BIOLAR se establece con un mandato: hacer el DHQ siberiano accesible a los compradores globales. Primeras asociaciones de extracción en Yakutia.',
       tl2_year: '2020', tl2_t: 'Primera extracción 99% pureza', tl2_d: 'El proceso de extracción criogénica alcanza 99% de pureza DHQ confirmado por HPLC. Primer lote enviado a laboratorio europeo.',
-      tl3_year: '2021', tl3_t: 'Investigación de sinergia AG', tl3_d: 'Programa interno confirma que el arabinogalactano aumenta la biodisponibilidad de DHQ en 2,8×. La matriz DHQ+AG de Borealis nace.',
+      tl3_year: '2021', tl3_t: 'Investigación de sinergia AG', tl3_d: 'Programa interno confirma que el arabinogalactano aumenta la biodisponibilidad de DHQ en 2,8×. La matriz DHQ+AG de BIOLAR nace.',
       tl4_year: '2022', tl4_t: 'Primeras asociaciones B2B', tl4_d: 'Acuerdos firmados con fabricantes en Alemania, Suiza y Japón. Documentación completa de cadena de custodia.',
       tl5_year: '2023', tl5_t: 'Certificación ISO y BPF', tl5_d: 'La instalación obtiene certificación ISO 22000 y BPF. Protocolos HACCP implementados en toda la cadena.',
       tl6_year: '2024–25', tl6_t: 'Expansión global', tl6_d: 'Asociaciones en 12 países. Apoyo al ensayo T-COG en Japón. Nuevos nodos en Singapur y los Países Bajos.',
@@ -1591,7 +1591,7 @@ const BOREALIS_T = {
       man_h2: 'En lo que no <em>transigimos</em>',
       man_l: '"Una empresa de ingredientes que <em>no publica su CoA</em> le pide que confíe en el marketing sobre la química. Encontramos eso inaceptable — para nuestros socios y para los consumidores finales."',
       man_r1: 'La industria de suplementos tiene un problema de documentación. Los ingredientes se obtienen de cadenas opacas, se prueban internamente sin verificación independiente.',
-      man_r2: 'Construimos Borealis para ser lo opuesto. Cada lote incluye análisis HPLC de terceros. Cada asociación comienza con un dossier técnico completo.',
+      man_r2: 'Construimos BIOLAR para ser lo opuesto. Cada lote incluye análisis HPLC de terceros. Cada asociación comienza con un dossier técnico completo.',
       man_r3: 'Esto nos hace más lentos en cerrar acuerdos. Significa menos socios, pero mejores. Nuestros socios pueden poner "clínicamente estudiado" en sus etiquetas y realmente significarlo.',
       man_r4: 'Creemos que ese es el único modelo sostenible para un proveedor de ingredientes premium.',
       cta_h: '¿Nuestras creencias<br><em>coinciden con las suyas?</em>',
@@ -1608,7 +1608,7 @@ const BOREALIS_T = {
       c02_badge: 'BPF', c02_t: 'Buenas Prácticas de Fabricación', c02_d: 'La instalación opera bajo BPF consistentes con la Directiva UE 2003/94/CE y las directrices OMS para ingredientes botánicos farmacéuticos.', c02_scope: 'Alcance · Instalación · Equipo · Personal · CC',
       c03_badge: 'HACCP', c03_t: 'Análisis de peligros y puntos críticos de control', c03_d: 'El plan HACCP identifica todos los peligros en el proceso de extracción de DHQ. Los puntos críticos son monitoreados en cada turno.', c03_scope: 'Alcance · Recepción · Extracción · CC final',
       c04_badge: 'GOST R', c04_t: 'Cumplimiento con normas estatales rusas', c04_d: 'Todos los procesos cumplen con GOST R para aditivos alimentarios. Documentación completa para la Unión Aduanera UEEA.', c04_scope: 'Alcance · Normas · Etiquetado · Límites de seguridad',
-      c05_badge: 'Compatible Halal', c05_t: 'Proceso compatible con Halal', c05_d: 'El proceso no usa solventes de origen animal. DHQ y AG de Borealis son elegibles para certificación Halal. Certificado disponible bajo pedido.', c05_scope: 'Alcance · Sin derivados animales · Sin solventes',
+      c05_badge: 'Compatible Halal', c05_t: 'Proceso compatible con Halal', c05_d: 'El proceso no usa solventes de origen animal. DHQ y AG de BIOLAR son elegibles para certificación Halal. Certificado disponible bajo pedido.', c05_scope: 'Alcance · Sin derivados animales · Sin solventes',
       c06_badge: 'Probado por terceros', c06_t: 'Análisis de lote independiente', c06_d: 'Cada lote es probado por laboratorio independiente acreditado: HPLC, metales pesados, microbiología, solventes residuales.', c06_scope: 'Alcance · HPLC · ICP-MS · Microbiología · Residuos',
       test_eye: 'Control de calidad',
       test_h2: 'Cómo se verifica <em>cada lote</em>',
@@ -1629,7 +1629,7 @@ const BOREALIS_T = {
 
 /* ── ENGINE ── */
 function bI18nGet(lang, page, key) {
-  const t = BOREALIS_T[lang];
+  const t = BIOLAR_T[lang];
   if (!t) return null;
   return (t[page] && t[page][key] !== undefined) ? t[page][key]
        : (t.common && t.common[key] !== undefined) ? t.common[key]
@@ -1660,7 +1660,7 @@ function bI18nApply(lang) {
 }
 
 function bI18nSetLang(lang) {
-  localStorage.setItem('borealis_lang', lang);
+  localStorage.setItem('BIOLAR_lang', lang);
   bI18nApply(lang);
   const drop = document.getElementById('langDrop');
   if (drop) drop.classList.remove('open');
@@ -1672,7 +1672,7 @@ function bI18nToggleDrop() {
 }
 
 function bI18nInit() {
-  const saved = localStorage.getItem('borealis_lang');
+  const saved = localStorage.getItem('BIOLAR_lang');
   const lang = saved || 'en';
   bI18nApply(lang);
   // close on outside click
