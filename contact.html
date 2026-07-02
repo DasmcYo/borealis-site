@@ -1,7 +1,8 @@
 ﻿<!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact BIOLAR for bulk DHQ Taxifolin and Arabinogalactan. Request test samples (100g), CoA, SDS, specifications, or partnership terms. 24h response.">
   <title>Контакт — BIOLAR</title>
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <link rel="preconnect" href="https://unpkg.com">
@@ -146,7 +147,7 @@
       <li class="nav-main-item" data-mega="about">
         <a href="about.html">About</a>
       </li>
-      <li class="nav-main-item"><a href="contact.html">Access</a></li>
+      <li class="nav-main-item active"><a href="contact.html">Access</a></li>
     </ul>
     <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
   </nav>
@@ -290,21 +291,21 @@
 
           <div class="f-row">
             <div class="f-group">
-              <label class="f-label" data-i18n="contact.f_name">Имя</label>
-              <input type="text" class="f-input" placeholder="Иван Петров" data-i18n="contact.f_name_ph">
+              <label class="f-label" for="f-name" data-i18n="contact.f_name">Имя</label>
+              <input id="f-name" type="text" class="f-input" placeholder="Иван Петров" data-i18n="contact.f_name_ph">
             </div>
             <div class="f-group">
-              <label class="f-label" data-i18n="contact.f_company">Компания</label>
-              <input type="text" class="f-input" placeholder="Название компании" data-i18n="contact.f_company_ph">
+              <label class="f-label" for="f-company" data-i18n="contact.f_company">Компания</label>
+              <input id="f-company" type="text" class="f-input" placeholder="Название компании" data-i18n="contact.f_company_ph">
             </div>
           </div>
           <div class="f-group">
-            <label class="f-label" data-i18n="contact.f_email">Email</label>
-            <input type="email" class="f-input" placeholder="ivan@company.com">
+            <label class="f-label" for="f-email" data-i18n="contact.f_email">Email</label>
+            <input id="f-email" type="email" class="f-input" placeholder="ivan@company.com">
           </div>
           <div class="f-group">
-            <label class="f-label" data-i18n="contact.f_type">Тип запроса</label>
-            <select class="f-select">
+            <label class="f-label" for="f-type" data-i18n="contact.f_type">Тип запроса</label>
+            <select id="f-type" class="f-select">
               <option value="" disabled selected data-i18n="contact.f_type_ph">Выберите...</option>
               <option data-i18n="contact.f_type_1">Тестовый образец (100 г)</option>
               <option data-i18n="contact.f_type_2">Certificate of Analysis (CoA)</option>
@@ -315,8 +316,8 @@
             </select>
           </div>
           <div class="f-group">
-            <label class="f-label" data-i18n="contact.f_ing">Ингредиент</label>
-            <select class="f-select">
+            <label class="f-label" for="f-ing" data-i18n="contact.f_ing">Ингредиент</label>
+            <select id="f-ing" class="f-select">
               <option value="" disabled selected data-i18n="contact.f_ing_ph">Что интересует...</option>
               <option data-i18n="contact.f_ing_1">ДКВ (Таксифолин) — стандартный порошок</option>
               <option data-i18n="contact.f_ing_2">ДКВ — водорастворимая форма</option>
@@ -326,8 +327,8 @@
             </select>
           </div>
           <div class="f-group">
-            <label class="f-label" data-i18n="contact.f_comment">Комментарий</label>
-            <textarea class="f-textarea" placeholder="Объём, применение, дополнительные требования..." data-i18n="contact.f_comment_ph"></textarea>
+            <label class="f-label" for="f-comment" data-i18n="contact.f_comment">Комментарий</label>
+            <textarea id="f-comment" class="f-textarea" placeholder="Объём, применение, дополнительные требования..." data-i18n="contact.f_comment_ph"></textarea>
           </div>
           <button class="f-submit" onclick="handleSubmit()" data-i18n="contact.f_submit">Отправить запрос</button>
           <p class="f-note" data-i18n="contact.f_note">Ваши данные используются только для ответа на запрос и не передаются третьим лицам.</p>

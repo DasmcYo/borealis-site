@@ -8,7 +8,7 @@ const BIOLAR_T = {
     },
     footer: {
       molecule: 'Molecule', benefits: 'Applications', research: 'Research',
-      source: 'Source', contact: 'Contact', copy: '© 2025 BIOLAR',
+      source: 'Source', product: 'Technical Dossier', contact: 'Contact', copy: '© 2025 BIOLAR',
       tagline: 'Taxifolin and arabinogalactan from Siberian larch. Bulk ingredient supplier.',
       reg: 'Authorized EU 2018/461<br>China NHC 2021',
     },
@@ -438,7 +438,7 @@ const BIOLAR_T = {
     },
     footer: {
       molecule: 'Молекула', benefits: 'Применения', research: 'Исследования',
-      source: 'Источник', contact: 'Контакт', copy: '© 2025 BIOLAR',
+      source: 'Источник', product: 'Ингредиент', contact: 'Контакт', copy: '© 2025 BIOLAR',
       tagline: 'Таксифолин и арабиногалактан из сибирской лиственницы. Bulk ingredient supplier.',
       reg: 'Авторизован EU 2018/461<br>China NHC 2021',
     },
