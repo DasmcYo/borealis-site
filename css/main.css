@@ -813,6 +813,15 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
   display: block; font-size: 0.7rem; color: var(--text-3); line-height: 1.3;
   font-family: 'JetBrains Mono', monospace; letter-spacing: 0.01em;
 }
+.mega-link-full {
+  grid-column: 1 / -1;
+  background: var(--accent-dim); border: 1px solid var(--accent-border);
+  border-radius: 0.75rem; display: flex; align-items: center; justify-content: space-between;
+}
+.mega-link-full:hover { background: rgba(176,120,40,0.14); transform: none; }
+.mega-link-full .mega-link-t { color: var(--accent); font-weight: 500; }
+.mega-link-full .mega-link-d { color: var(--text-2); }
+.mega-link-full::after { content: '×2.8'; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--accent); opacity: 0.55; white-space: nowrap; padding-right: 0.25rem; }
 @media (max-width: 960px) { .mega-menu { display: none; } }
 
 .related-link:hover { background: rgba(176,120,40,0.06) !important; transform: translateX(2px); }
