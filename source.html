@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Taxifolin sourced from Dahurian larch (Larix gmelinii), Eastern Siberia — the world's only commercial-scale source. Permafrost, 800-year trees, monopoly supply.">
+  <title>Источник — Сибирская лиственница — BIOLAR</title>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* ── PHOTO HERO ── */
+    .tree-hero {
+      min-height: 100dvh; display: flex; flex-direction: column;
+      justify-content: flex-end; padding: 0 5vw 6rem;
+      position: relative; z-index: 1;
+    }
+    .tree-hero-content { max-width: 700px; position: relative; z-index: 4; }
+    /* Larch silhouette overlay on photo */
+    .larch-silhouette {
+      position: absolute; inset: 0; z-index: 3; pointer-events: none;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900' preserveAspectRatio='xMidYMid slice'%3E%3Cg opacity='0.18'%3E%3Cpolygon points='1320,60 1280,380 1360,380' fill='%23C9943A'/%3E%3Cpolygon points='1320,120 1270,440 1370,440' fill='%23C9943A'/%3E%3Cpolygon points='1320,180 1260,510 1380,510' fill='%23C9943A'/%3E%3Crect x='1312' y='510' width='16' height='200' fill='%23C9943A'/%3E%3Cpolygon points='1180,120 1148,400 1212,400' fill='%23C9943A'/%3E%3Cpolygon points='1180,170 1140,450 1220,450' fill='%23C9943A'/%3E%3Crect x='1174' y='450' width='12' height='160' fill='%23C9943A'/%3E%3C/g%3E%3C/svg%3E")
+        right bottom / cover no-repeat;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline { position: relative; padding-left: 3rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0.65rem; top: 0; bottom: 0;
+      width: 1px; background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+    .tl-item { position: relative; margin-bottom: 3rem; }
+    .tl-dot {
+      position: absolute; left: -3rem; top: 0.35rem;
+      width: 10px; height: 10px; border-radius: 50%;
+      border: 2px solid var(--accent); background: var(--bg);
+    }
+    .tl-dot.big { width: 16px; height: 16px; left: calc(-3rem - 3px); background: var(--accent); }
+    .tl-year { font-family: 'JetBrains Mono', monospace; font-size: 0.62rem; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 0.5rem; }
+    .tl-t { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; margin-bottom: 0.5rem; }
+    .tl-d { font-size: 0.83rem; color: var(--text-2); line-height: 1.7; }
+
+    /* ── PHOTO HERO TEXT OVERRIDE (white text over dark photo) ── */
+    .photo-hero .page-h1 { color: rgba(238,242,255,0.9) !important; }
+    .photo-hero .page-sub { color: rgba(238,242,255,0.7) !important; }
+
+    /* ── FOREST STATS ── */
+    .forest-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
+    .fg {
+      background: rgba(14,12,9,0.03); border: 1px solid var(--border);
+      padding: 4px; border-radius: var(--r-card);
+    }
+    .fg-in {
+      background: var(--bg-card); border-radius: var(--r-inner);
+      padding: 2rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .fg-ico { font-size: 2rem; margin-bottom: 0.25rem; }
+    .fg-n { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--accent); line-height: 1; }
+    .fg-l { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; color: var(--text-3); text-transform: uppercase; }
+    .fg-d { font-size: 0.8rem; color: var(--text-2); line-height: 1.6; }
+
+    /* ── MAP ── */
+    .map-card {
+      background: rgba(14,12,9,0.03); border: 1px solid var(--border);
+      padding: 5px; border-radius: 2rem; overflow: hidden;
+    }
+    .map-in {
+      background: var(--bg-card-2); border-radius: calc(2rem - 5px);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+      display: grid; grid-template-columns: 1fr 1fr; min-height: 380px;
+    }
+    .map-l { padding: 3rem; display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; }
+    .map-r { position: relative; overflow: hidden; }
+    .map-svg { width: 100%; height: 100%; opacity: 0.7; }
+
+    /* SVG Russia map simplified */
+    .monopoly-badge {
+      background: var(--accent); color: #FFFFFF; padding: 0.2rem 0.7rem;
+      border-radius: 9999px; font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; letter-spacing: 0.1em; font-weight: 600;
+      display: inline-block;
+    }
+
+    @media (max-width: 1024px) { .forest-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) {
+      .forest-grid { grid-template-columns: 1fr; }
+      .map-in { grid-template-columns: 1fr; }
+      .map-r { min-height: 200px; }
+    }
+  </style>
+</head>
+<body>
+<div id="scroll-prog"></div>
+<div class="amb-r"></div><div class="amb-l"></div>
+<header class="site-header">
+  <div class="nav-top">
+
+    <div class="nav-top-r">
+      <div class="nav-top-social">
+        <a href="#" class="nav-top-soc" title="Facebook" target="_blank" rel="noopener"><i class="ph ph-facebook-logo"></i></a>
+        <a href="#" class="nav-top-soc" title="LinkedIn" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="#" class="nav-top-soc" title="YouTube" target="_blank" rel="noopener"><i class="ph ph-youtube-logo"></i></a>
+      </div>
+      <div class="nav-top-sep"></div>
+      <a href="contact.html" class="nav-top-link">Contact us</a>
+      <div class="nav-top-sep"></div>
+      <button class="nav-top-search" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button>
+      <div class="nav-top-sep"></div>
+      <div id="langSw">
+        <button class="lang-btn" id="langBtn" onclick="bI18nToggleDrop()">EN</button>
+        <div class="lang-drop" id="langDrop">
+          <button data-lang="en" onclick="bI18nSetLang('en')">EN · English</button>
+          <button data-lang="ru" onclick="bI18nSetLang('ru')">RU · Русский</button>
+          <button data-lang="fr" onclick="bI18nSetLang('fr')">FR · Français</button>
+          <button data-lang="es" onclick="bI18nSetLang('es')">ES · Español</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav-main">
+    <a href="index.html" class="nav-main-logo">BIOLAR</a>
+    <ul class="nav-main-links">
+      <li class="nav-main-item" data-mega="molecule">
+        <a href="molecule.html">The Molecule</a>
+      </li>
+      <li class="nav-main-item active" data-mega="siberia">
+        <a href="source.html">Siberia</a>
+      </li>
+      <li class="nav-main-item" data-mega="evidence">
+        <a href="research.html">Evidence</a>
+      </li>
+      <li class="nav-main-item" data-mega="sectors">
+        <a href="benefits.html">Sectors</a>
+      </li>
+      <li class="nav-main-item" data-mega="about">
+        <a href="about.html">About</a>
+      </li>
+      <li class="nav-main-item"><a href="contact.html">Access</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
+  </nav>
+
+<div class="mega-menu" id="megaMenu">
+  <div class="mega-wrap">
+    <div class="mega-left">
+      <div class="mega-intro active" data-col="molecule">
+        <h3 class="mega-intro-h">The Molecule</h3>
+        <p class="mega-intro-d">DHQ and Arabinogalactan — molecular profile, mechanisms of action, and the science behind their synergy.</p>
+        <a href="molecule.html" class="mega-intro-link">Overview <span>&rarr;</span></a>
+      </div>
+      <div class="mega-intro" data-col="siberia">
+        <h3 class="mega-intro-h">Siberia</h3>
+        <p class="mega-intro-d">Geography of exclusivity, the extraction process, and full chain-of-custody for Daurian larch.</p>
+        <a href="source.html" class="mega-intro-link">Overview <span>&rarr;</span></a>
+      </div>
+      <div class="mega-intro" data-col="evidence">
+        <h3 class="mega-intro-h">Evidence</h3>
+        <p class="mega-intro-d">Peer-reviewed research, neuroprotection data, and the global regulatory map.</p>
+        <a href="research.html" class="mega-intro-link">Overview <span>&rarr;</span></a>
+      </div>
+      <div class="mega-intro" data-col="sectors">
+        <h3 class="mega-intro-h">Sectors</h3>
+        <p class="mega-intro-d">Where DHQ and AG are used — supplements, pharma, sports nutrition, functional food, longevity.</p>
+        <a href="benefits.html" class="mega-intro-link">Overview <span>&rarr;</span></a>
+      </div>
+      <div class="mega-intro" data-col="about">
+        <h3 class="mega-intro-h">About</h3>
+        <p class="mega-intro-d">Our story, the beliefs that guide the company, and our certifications.</p>
+        <a href="about.html" class="mega-intro-link">Overview <span>&rarr;</span></a>
+      </div>
+    </div>
+    <div class="mega-right">
+      <div class="mega-col active" data-col="molecule">
+        <a href="dhq.html" class="mega-link"><span class="mega-link-t">DHQ — Dihydroquercetin</span><span class="mega-link-d">Molecular profile · ORAC · structure</span></a>
+        <a href="ag.html" class="mega-link"><span class="mega-link-t">Arabinogalactan</span><span class="mega-link-d">Bioavailability ×2.8 · gut matrix</span></a>
+        <a href="synergy.html" class="mega-link mega-link-full"><span class="mls-eye">Synergy</span><span class="mega-link-t">DHQ <em>&amp;</em> AG</span></a>
+        <a href="mechanisms.html" class="mega-link"><span class="mega-link-t">Mechanisms of Action</span><span class="mega-link-d">4 molecular pathways</span></a>
+        <a href="product.html" class="mega-link"><span class="mega-link-t">Technical Dossier</span><span class="mega-link-d">Spec sheet · CoA · analytical data</span></a>
+      </div>
+      <div class="mega-col" data-col="siberia">
+        <a href="geography.html" class="mega-link"><span class="mega-link-t">62°N · 130°E</span><span class="mega-link-d">Geography of exclusivity</span></a>
+        <a href="extraction.html" class="mega-link"><span class="mega-link-t">Extraction Process</span><span class="mega-link-d">From tree to molecule · 95%+ purity</span></a>
+        <a href="custody.html" class="mega-link"><span class="mega-link-t">Chain of Custody</span><span class="mega-link-d">Traceability · certifications</span></a>
+      </div>
+      <div class="mega-col" data-col="evidence">
+        <a href="neuroprotection.html" class="mega-link"><span class="mega-link-t">Neuroprotection — PNAS 2019</span><span class="mega-link-d">Blood-brain barrier crossing confirmed</span></a>
+        <a href="database.html" class="mega-link"><span class="mega-link-t">Research Database</span><span class="mega-link-d">18+ peer-reviewed studies</span></a>
+        <a href="regulatory.html" class="mega-link"><span class="mega-link-t">Regulatory Map</span><span class="mega-link-d">Status: EU · USA · Asia-Pacific</span></a>
+      </div>
+      <div class="mega-col" data-col="sectors">
+        <a href="supplements.html" class="mega-link"><span class="mega-link-t">Dietary Supplements</span><span class="mega-link-d">Nutraceutical brands · capsules · powders</span></a>
+        <a href="pharma.html" class="mega-link"><span class="mega-link-t">Pharmaceutical / OTC</span><span class="mega-link-d">Proprietary formulas · clinical-grade</span></a>
+        <a href="sports.html" class="mega-link"><span class="mega-link-t">Sports Nutrition</span><span class="mega-link-d">Recovery · VO2 · antioxidant protection</span></a>
+        <a href="functional.html" class="mega-link"><span class="mega-link-t">Functional Food &amp; Beverage</span><span class="mega-link-d">Enriched formats · functional drinks</span></a>
+        <a href="longevity.html" class="mega-link"><span class="mega-link-t">Longevity &amp; Anti-aging</span><span class="mega-link-d">Fastest-growing ingredient segment</span></a>
+      </div>
+      <div class="mega-col" data-col="about">
+        <a href="story.html" class="mega-link"><span class="mega-link-t">Our Story</span><span class="mega-link-d">How BIOLAR began · our mission</span></a>
+        <a href="beliefs.html" class="mega-link"><span class="mega-link-t">Our Beliefs</span><span class="mega-link-d">Science-first · radical transparency</span></a>
+        <a href="certifications.html" class="mega-link"><span class="mega-link-t">Our Certifications</span><span class="mega-link-d">ISO · GMP · HACCP · analytical compliance</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="molecule.html" class="mob-link">The Molecule</a>
+  <a href="source.html" class="mob-link">Siberia</a>
+  <a href="research.html" class="mob-link">Evidence</a>
+  <a href="benefits.html" class="mob-link">Sectors</a>
+  <a href="about.html" class="mob-link">About</a>
+  <a href="contact.html" class="mob-link">Access</a>
+</div>
+
+<!-- PHOTO HERO -->
+<section class="photo-hero tree-hero">
+  <div class="ph-bg" id="srcBg" style="background-image:url('img/mountains-hero.jpg');background-position:center 35%"></div>
+  <div class="ph-tint"></div>
+  <div class="ph-overlay" style="background:linear-gradient(110deg,rgba(7,11,24,0.96) 0%,rgba(7,11,24,0.88) 38%,rgba(7,11,24,0.55) 65%,rgba(7,11,24,0.2) 100%)"></div>
+  <div class="ph-vignette"></div>
+  <div class="larch-silhouette"></div>
+  <div class="tree-hero-content ph-content" style="padding:0 5vw 6rem;width:100%;max-width:1400px;margin:0 auto">
+    <h1 class="page-h1 rv d1" data-i18n="source.h1">Дерево которое<br>не <em>умирает.</em></h1>
+    <p class="page-sub rv d2" data-i18n="source.sub">800 лет в условиях -60°C. Промёрзшая земля. 6 месяцев полярной ночи. Лиственница даурская выжила — и накопила молекулу выживания.</p>
+  </div>
+</section>
+
+<!-- FOREST STATS -->
+<section class="sec" id="larch">
+  <div class="sec-eye rv" data-i18n="source.geo_eye">Уникальность источника</div>
+  <h2 class="sec-h2 rv d1" data-i18n="source.geo_h2">Там где <em>растёт сила</em></h2>
+  <div class="forest-grid" style="margin-top:2.5rem">
+    <div class="fg rv d1"><div class="fg-in">
+      <div class="fg-ico">🌲</div>
+      <div class="fg-n">800</div>
+      <div class="fg-l" data-i18n="source.fg1_l">Лет жизни дерева</div>
+      <div class="fg-d" data-i18n="source.fg1_d">Лиственница даурская живёт до 800 лет в условиях вечной мерзлоты — рекорд среди хвойных Сибири.</div>
+    </div></div>
+    <div class="fg rv d2"><div class="fg-in">
+      <div class="fg-ico">🌡️</div>
+      <div class="fg-n">-60°C</div>
+      <div class="fg-l" data-i18n="source.fg2_l">Минимальная температура</div>
+      <div class="fg-d" data-i18n="source.fg2_d">Выдерживает якутские зимы до -60°C. Экстремальный холодовой стресс — движущая сила биосинтеза ДКВ.</div>
+    </div></div>
+    <div class="fg rv d3"><div class="fg-in">
+      <div class="fg-ico">🗺️</div>
+      <div class="fg-n">7M км²</div>
+      <div class="fg-l" data-i18n="source.fg3_l">Ареал в Сибири</div>
+      <div class="fg-d" data-i18n="source.fg3_d">Крупнейший лесной массив планеты. Larix gmelinii покрывает большую часть Восточной Сибири и Дальнего Востока.</div>
+    </div></div>
+    <div class="fg rv d1"><div class="fg-in">
+      <div class="fg-ico">⚗️</div>
+      <div class="fg-n">99%</div>
+      <div class="fg-l" data-i18n="source.fg4_l">Чистота ДКВ (HPLC)</div>
+      <div class="fg-d" data-i18n="source.fg4_d">Криоэкстракция без растворителей. Контроль качества на каждом этапе: от дерева до капсулы.</div>
+    </div></div>
+    <div class="fg rv d2"><div class="fg-in">
+      <div class="fg-ico">🔒</div>
+      <div class="fg-n" data-i18n="source.fg5_n">Монополия</div>
+      <div class="fg-l" data-i18n="source.fg5_l">На мировом рынке</div>
+      <div class="fg-d" data-i18n="source.fg5_d">Dahurian Larch — единственный промышленно значимый источник ДКВ в мире. Альтернативы нет.</div>
+    </div></div>
+    <div class="fg rv d3"><div class="fg-in">
+      <div class="fg-ico">♻️</div>
+      <div class="fg-n" data-i18n="source.fg6_n">Отходы</div>
+      <div class="fg-l" data-i18n="source.fg6_l">Деревообработки</div>
+      <div class="fg-d" data-i18n="source.fg6_d">ДКВ извлекается из древесных отходов лесопереработки. Нет вырубки живых деревьев. Экологичный цикл.</div>
+    </div></div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<!-- TIMELINE -->
+<section class="sec" id="monopoly">
+  <div class="sec-eye rv" data-i18n="source.tl_eye">История открытия</div>
+  <h2 class="sec-h2 rv d1" data-i18n="source.tl_h2">От дерева <em>к науке</em></h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:3rem">
+    <div class="timeline rv d1">
+      <div class="tl-item">
+        <div class="tl-dot big"></div>
+        <div class="tl-year" data-i18n="source.tl1_date">~120 000 000 лет</div>
+        <div class="tl-t" data-i18n="source.tl1_title">Появление рода Larix</div>
+        <div class="tl-d" data-i18n="source.tl1_desc">Лиственничные леса появились в меловом периоде. С тех пор молекула ДКВ эволюционировала как защита дерева.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year" data-i18n="source.tl2_date">1940s</div>
+        <div class="tl-t" data-i18n="source.tl2_title">Первые советские исследования</div>
+        <div class="tl-d" data-i18n="source.tl2_desc">Советские фитохимики выделили ДКВ из Larix dahurica. Первые данные об антиоксидантной активности.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year" data-i18n="source.tl3_date">1990s–2000s</div>
+        <div class="tl-t" data-i18n="source.tl3_title">Индустриализация добычи</div>
+        <div class="tl-d" data-i18n="source.tl3_desc">Первое промышленное производство ДКВ из отходов лиственничных предприятий Красноярска и Иркутска.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot big"></div>
+        <div class="tl-year" data-i18n="source.tl4_date">2019</div>
+        <div class="tl-t" data-i18n="source.tl4_title">Прорыв в PNAS</div>
+        <div class="tl-d" data-i18n="source.tl4_desc">Публикация в PNAS о нейропротекторных свойствах ДКВ вывела молекулу на международный уровень.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot big"></div>
+        <div class="tl-year" data-i18n="source.tl5_date">2025</div>
+        <div class="tl-t" data-i18n="source.tl5_title">Активный RCT в Японии</div>
+        <div class="tl-d" data-i18n="source.tl5_desc">Первое клиническое испытание на людях — T-COG, Национальный центр мозга Японии.</div>
+      </div>
+    </div>
+    <div class="rv d2">
+      <div class="map-card">
+        <div class="map-in">
+          <div class="map-l">
+            <div class="monopoly-badge" data-i18n="source.mono_badge">МОНОПОЛИЯ</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;line-height:1.2" data-i18n="source.mono_title">Восточная<br>Сибирь</div>
+            <p style="font-size:0.82rem;color:var(--text-2);line-height:1.65" data-i18n="source.mono_desc">Якутия, Бурятия, Иркутская область — единственные в мире промышленные источники ДКВ из Larix gmelinii.</p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+              <span class="tag" data-i18n="source.mono_t1">Якутия</span>
+              <span class="tag" data-i18n="source.mono_t2">Красноярск</span>
+              <span class="tag" data-i18n="source.mono_t3">Иркутск</span>
+            </div>
+          </div>
+          <div class="map-r">
+            <!-- Simplified Russia/Siberia SVG map -->
+            <svg class="map-svg" viewBox="0 0 400 380" fill="none">
+              <!-- Russia simplified outline -->
+              <path d="M 20,120 Q 40,80 80,70 L 140,60 L 200,50 L 260,55 L 320,65 L 380,80 L 395,120 L 390,180 L 370,220 L 340,250 L 300,265 L 260,270 L 220,260 L 180,270 L 150,280 L 120,275 L 90,260 L 60,240 L 30,200 Z"
+                fill="rgba(201,148,58,0.06)" stroke="rgba(201,148,58,0.2)" stroke-width="1.5"/>
+              <!-- Eastern Siberia highlight -->
+              <path d="M 200,50 L 320,65 L 380,80 L 395,120 L 390,180 L 340,250 L 260,270 L 220,260 L 210,200 L 200,150 Z"
+                fill="rgba(201,148,58,0.15)" stroke="rgba(201,148,58,0.4)" stroke-width="1.5"/>
+              <!-- Pin -->
+              <circle cx="290" cy="155" r="10" fill="rgba(201,148,58,0.2)" stroke="var(--accent)" stroke-width="1.5"/>
+              <circle cx="290" cy="155" r="4" fill="var(--accent)"/>
+              <!-- Pulse rings -->
+              <circle cx="290" cy="155" r="18" fill="none" stroke="rgba(201,148,58,0.2)" stroke-width="1" opacity="0.8">
+                <animate attributeName="r" values="10;28" dur="2.5s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.8;0" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+              <!-- Label -->
+              <text x="290" y="188" text-anchor="middle" fill="rgba(201,148,58,0.7)" font-family="JetBrains Mono" font-size="9" letter-spacing="0.1em">ЯКУТИЯ</text>
+              <!-- Compass N -->
+              <text x="370" y="100" fill="rgba(201,148,58,0.3)" font-family="JetBrains Mono" font-size="11">N</text>
+              <line x1="374" y1="103" x2="374" y2="115" stroke="rgba(201,148,58,0.2)" stroke-width="1"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="production" style="padding-top:1rem">
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+    <div class="rv" style="border-radius:1.5rem;overflow:hidden;height:280px">
+      <img loading="lazy" src="img/larch-forest-card.jpg" alt="Лиственница даурская" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.65) brightness(0.65)">
+    </div>
+    <div class="rv d1" style="border-radius:1.5rem;overflow:hidden;height:280px">
+      <img loading="lazy" src="img/taiga-aerial-card.jpg" alt="Тайга с высоты" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.65) brightness(0.65)">
+    </div>
+    <div class="rv d2" style="border-radius:1.5rem;overflow:hidden;height:280px">
+      <img loading="lazy" src="img/larch-bark-card.jpg" alt="Кора лиственницы" style="width:100%;height:100%;object-fit:cover;filter:saturate(0.65) brightness(0.65)">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-block">
+  <div class="cta-card rv">
+    <div class="cta-in">
+      <div class="cta-glow"></div>
+      <div><h2 class="cta-h" data-i18n="source.cta_h">Спецификация<br><em>ингредиента</em></h2><p class="cta-sub" data-i18n="source.cta_sub">Технические характеристики, формы поставки и сертификаты.</p></div>
+      <div class="cta-acts">
+        <a href="product.html" class="btn-p"><span data-i18n="source.cta_btn1">Спецификация</span> <span class="btn-p-ic">→</span></a>
+        <a href="contact.html" class="btn-s" data-i18n="source.cta_btn2">Запросить CoA</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="ft-brand"><a href="index.html" class="ft-logo">BIOLAR</a><p data-i18n="footer.tagline">Таксифолин и арабиногалактан из сибирской лиственницы.</p></div>
+  <nav class="ft-nav">
+    <a href="molecule.html" data-i18n="footer.molecule">Молекула</a><a href="benefits.html" data-i18n="footer.benefits">Применения</a>
+    <a href="research.html" data-i18n="footer.research">Исследования</a><a href="source.html" data-i18n="footer.source">Источник</a>
+    <a href="product.html" data-i18n="footer.product">Ингредиент</a><a href="contact.html" data-i18n="footer.contact">Контакт</a>
+  </nav>
+    <div class="ft-nl">
+    <div class="ft-nl-lbl">Newsletter</div>
+    <form id="nlForm" onsubmit="nlSub(event)">
+      <div class="ft-nl-row">
+        <input type="email" class="ft-nl-in" placeholder="your@company.com" required autocomplete="email">
+        <button type="submit" class="ft-nl-btn">→</button>
+      </div>
+      <p class="ft-nl-note">Research updates only. No marketing.</p>
+    </form>
+    <div class="ft-nl-ok" id="nlOk">✓ Subscribed</div>
+  </div><div class="ft-copy"><p data-i18n="footer.copy">© 2025 BIOLAR</p></div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('in'),obs.unobserve(x.target))),{threshold:0.07});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.tree-hero .rv').forEach(el=>el.classList.add('in')),80);
+  const bg=document.getElementById('srcBg');if(bg){const i=new Image();i.src='img/mountains-hero.jpg';i.onload=()=>bg.classList.add('loaded');}
+  const burger=document.getElementById('navBurger'),mob=document.getElementById('mobMenu');
+  if(burger&&mob){burger.addEventListener('click',()=>{const o=mob.classList.toggle('open');burger.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});}
+  document.querySelectorAll('.mob-link,.mob-cta').forEach(l=>l.addEventListener('click',()=>{mob.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
+</script>
+<script src="js/i18n.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('scroll-prog');
+  if(!el) return;
+  window.addEventListener('scroll', function(){
+    var s = document.documentElement;
+    var pct = s.scrollTop / (s.scrollHeight - s.clientHeight) * 100;
+    el.style.width = Math.min(pct, 100) + '%';
+  }, {passive: true});
+})();
+</script>
+</body></html>

@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="22 scientifically validated application areas for DHQ Taxifolin: nutraceuticals, pharma, sports nutrition, functional food, cosmetics, longevity.">
+  <title>BIOLAR — Sectors</title>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* ── FILTER TABS ── */
+    .filter-wrap { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 3rem; }
+    .f-btn {
+      padding: 0.5rem 1.25rem; border-radius: 9999px;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em;
+      text-transform: uppercase; border: 1px solid var(--border);
+      background: transparent; color: var(--text-3); cursor: pointer;
+      transition: all 0.4s var(--out); font-weight: 400;
+    }
+    .f-btn:hover { color: var(--text-2); border-color: var(--border-2); }
+    .f-btn.on { background: var(--accent-dim); border-color: var(--accent-border); color: var(--accent); }
+
+    /* ── BENTO GRID ── */
+    .bento {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: 140px;
+      gap: 1rem;
+    }
+    .b-s1 { grid-column: span 2; grid-row: span 1; }
+    .b-s2 { grid-column: span 2; grid-row: span 2; }
+    .b-s3 { grid-column: span 3; grid-row: span 1; }
+    .b-s4 { grid-column: span 3; grid-row: span 2; }
+    .b-s6 { grid-column: span 6; grid-row: span 1; }
+    .b-s2h { grid-column: span 2; grid-row: span 2; }
+
+    .bc {
+      background: rgba(14,12,9,0.03); border: 1px solid var(--border);
+      padding: 4px; border-radius: var(--r-card);
+      text-decoration: none; display: block;
+      transition: all 0.55s var(--spring); cursor: pointer;
+    }
+    .bc:hover { border-color: var(--accent-border); transform: translateY(-3px); box-shadow: 0 16px 50px rgba(14,12,9,0.10); }
+    .bc.hidden { display: none; }
+    .bc-in {
+      background: var(--bg-card); border-radius: var(--r-inner);
+      padding: 1.5rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9);
+      height: 100%; display: flex; flex-direction: column; justify-content: space-between;
+      overflow: hidden;
+    }
+    .bc-top { display: flex; align-items: flex-start; justify-content: space-between; }
+    .bc-ico { font-size: 1.6rem; }
+    .bc-ev {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.56rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.2rem 0.55rem; border-radius: 9999px;
+      border: 1px solid; flex-shrink: 0;
+    }
+    .ev-a { color: #86efac; border-color: rgba(134,239,172,0.35); background: rgba(34,197,94,0.08); }
+    .ev-b { color: #fcd34d; border-color: rgba(252,211,77,0.35); background: rgba(234,179,8,0.08); }
+    .ev-c { color: #93c5fd; border-color: rgba(147,197,253,0.35); background: rgba(59,130,246,0.08); }
+    .bc-cat {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.56rem;
+      letter-spacing: 0.12em; color: var(--text-3); text-transform: uppercase;
+    }
+    .bc-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; line-height: 1.2; color: var(--text); }
+    .b-s2 .bc-name, .b-s4 .bc-name, .b-s2h .bc-name { font-size: 1.5rem; }
+    .bc-desc { font-size: 0.75rem; color: var(--text-2); line-height: 1.55; }
+    .b-s1 .bc-desc { display: none; }
+    .bc-ref { font-family: 'JetBrains Mono', monospace; font-size: 0.56rem; color: var(--text-3); }
+
+    /* Legend */
+    .legend { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .leg { display: flex; align-items: center; gap: 0.5rem; font-size: 0.78rem; color: var(--text-2); }
+    .leg-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    @media (max-width: 1024px) {
+      .bento { grid-template-columns: repeat(4, 1fr); }
+      .b-s3 { grid-column: span 2; }
+      .b-s4 { grid-column: span 2; }
+      .b-s6 { grid-column: span 4; }
+    }
+    @media (max-width: 768px) {
+      .bento { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
+      .b-s1,.b-s2,.b-s3,.b-s4,.b-s6,.b-s2h { grid-column: span 1; grid-row: span 1; }
+      .bc-in { min-height: 120px; }
+      .bc-desc { display: block !important; }
+    }
+    @media (max-width: 480px) {
+      .bento { grid-template-columns: 1fr; }
+    }
+    .bc.has-photo { background-size: cover; background-position: center; }
+    .bc.has-photo .bc-in { background: rgba(10,16,28,0.82); }
+    .bc.has-photo:hover .bc-in { background: rgba(10,16,28,0.72); }
+    .tag-g { display:inline-block; font-family:'JetBrains Mono',monospace; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.25rem 0.65rem; border-radius:9999px; background:var(--accent-dim); color:var(--accent); border:1px solid var(--accent-border); }
+    .sec-lead { font-size:0.97rem; color:var(--text-2); line-height:1.78; max-width:52ch; margin-top:1rem; }
+
+@media (max-width:768px) {
+      .dbezel-in[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+<div id="scroll-prog"></div>
+<div class="amb-r"></div><div class="amb-l"></div>
+
+<header class="site-header">
+  <div class="nav-top">
+
+    <div class="nav-top-r">
+      <div class="nav-top-social">
+        <a href="#" class="nav-top-soc" title="Facebook" target="_blank" rel="noopener"><i class="ph ph-facebook-logo"></i></a>
+        <a href="#" class="nav-top-soc" title="LinkedIn" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="#" class="nav-top-soc" title="YouTube" target="_blank" rel="noopener"><i class="ph ph-youtube-logo"></i></a>
+      </div>
+      <div class="nav-top-sep"></div>
+      <a href="contact.html" class="nav-top-link">Contact us</a>
+      <div class="nav-top-sep"></div>
+      <button class="nav-top-search" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button>
+      <div class="nav-top-sep"></div>
+      <div id="langSw">
+        <button class="lang-btn" id="langBtn" onclick="bI18nToggleDrop()">EN</button>
+        <div class="lang-drop" id="langDrop">
+          <button data-lang="en" onclick="bI18nSetLang('en')">EN · English</button>
+          <button data-lang="ru" onclick="bI18nSetLang('ru')">RU · Русский</button>
+          <button data-lang="fr" onclick="bI18nSetLang('fr')">FR · Français</button>
+          <button data-lang="es" onclick="bI18nSetLang('es')">ES · Español</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav-main">
+    <a href="index.html" class="nav-main-logo">BIOLAR</a>
+    <ul class="nav-main-links">
+      <li class="nav-main-item" data-mega="molecule">
+        <a href="molecule.html">The Molecule</a>
+      </li>
+      <li class="nav-main-item" data-mega="siberia">
+        <a href="source.html">Siberia</a>
+      </li>
+      <li class="nav-main-item" data-mega="evidence">
+        <a href="research.html">Evidence</a>
+      </li>
+      <li class="nav-main-item active" data-mega="sectors">
+        <a href="benefits.html">Sectors</a>
+      </li>
+      <li class="nav-main-item" data-mega="about">
+        <a href="about.html">About</a>
+      </li>
+      <li class="nav-main-item"><a href="contact.html">Access</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
+  </nav>
+
+<div class="mega-menu" id="megaMenu">
+  <div class="mega-wrap">
+    <div class="mega-left">
+      <div class="mega-intro active" data-col="molecule">
+        <h3 class="mega-intro-h">The Molecule</h3>
+        <p class="mega-intro-d">DHQ and Arabinogalactan — molecular profile, mechanisms of action, and the science behind their synergy.</p>
+        <a href="molecule.html" class="mega-intro-link">Overview <span>&rarr;</span></a>
+      </div>
+      <div class="mega-intro" data-col="siberia">
+        <h3 class="mega-intro-h">Siberia</h3>
+        <p class="mega-intro-d">Geography of exclusivity, the extraction process, and full chain-of-custody for Daurian larch.</p>
+        <a href="source.html" class="mega-intro-link">Overview <span>&rarr;</span></a>
+      </div>
+      <div class="mega-intro" data-col="evidence">
+        <h3 class="mega-intro-h">Evidence</h3>
+        <p class="mega-intro-d">Peer-reviewed research, neuroprotection data, and the global regulatory map.</p>
+        <a href="research.html" class="mega-intro-link">Overview <span>&rarr;</span></a>
+      </div>
+      <div class="mega-intro" data-col="sectors">
+        <h3 class="mega-intro-h">Sectors</h3>
+        <p class="mega-intro-d">Where DHQ and AG are used — supplements, pharma, sports nutrition, functional food, longevity.</p>
+        <a href="benefits.html" class="mega-intro-link">Overview <span>&rarr;</span></a>
+      </div>
+      <div class="mega-intro" data-col="about">
+        <h3 class="mega-intro-h">About</h3>
+        <p class="mega-intro-d">Our story, the beliefs that guide the company, and our certifications.</p>
+        <a href="about.html" class="mega-intro-link">Overview <span>&rarr;</span></a>
+      </div>
+    </div>
+    <div class="mega-right">
+      <div class="mega-col active" data-col="molecule">
+        <a href="dhq.html" class="mega-link"><span class="mega-link-t">DHQ — Dihydroquercetin</span><span class="mega-link-d">Molecular profile · ORAC · structure</span></a>
+        <a href="ag.html" class="mega-link"><span class="mega-link-t">Arabiogalactan</span><span class="mega-link-d">Bioavailability ×2.8 · gut matrix</span></a>
+        <a href="mechanisms.html" class="mega-link"><span class="mega-link-t">Mechanisms of Action</span><span class="mega-link-d">4 molecular pathways</span></a>
+        <a href="synergy.html" class="mega-link"><span class="mega-link-t">DHQ + AG Synergy</span><span class="mega-link-d">Why together works differently</span></a>
+        <a href="product.html" class="mega-link"><span class="mega-link-t">Technical Dossier</span><span class="mega-link-d">Spec sheet · CoA · analytical data</span></a>
+      </div>
+      <div class="mega-col" data-col="siberia">
+        <a href="geography.html" class="mega-link"><span class="mega-link-t">62°N · 130°E</span><span class="mega-link-d">Geography of exclusivity</span></a>
+        <a href="extraction.html" class="mega-link"><span class="mega-link-t">Extraction Process</span><span class="mega-link-d">From tree to molecule · 95%+ purity</span></a>
+        <a href="custody.html" class="mega-link"><span class="mega-link-t">Chain of Custody</span><span class="mega-link-d">Traceability · certifications</span></a>
+      </div>
+      <div class="mega-col" data-col="evidence">
+        <a href="neuroprotection.html" class="mega-link"><span class="mega-link-t">Neuroprotection — PNAS 2019</span><span class="mega-link-d">Blood-brain barrier crossing confirmed</span></a>
+        <a href="database.html" class="mega-link"><span class="mega-link-t">Research Database</span><span class="mega-link-d">18+ peer-reviewed studies</span></a>
+        <a href="regulatory.html" class="mega-link"><span class="mega-link-t">Regulatory Map</span><span class="mega-link-d">Status: EU · USA · Asia-Pacific</span></a>
+      </div>
+      <div class="mega-col" data-col="sectors">
+        <a href="supplements.html" class="mega-link"><span class="mega-link-t">Dietary Supplements</span><span class="mega-link-d">Nutraceutical brands · capsules · powders</span></a>
+        <a href="pharma.html" class="mega-link"><span class="mega-link-t">Pharmaceutical / OTC</span><span class="mega-link-d">Proprietary formulas · clinical-grade</span></a>
+        <a href="sports.html" class="mega-link"><span class="mega-link-t">Sports Nutrition</span><span class="mega-link-d">Recovery · VO2 · antioxidant protection</span></a>
+        <a href="functional.html" class="mega-link"><span class="mega-link-t">Functional Food &amp; Beverage</span><span class="mega-link-d">Enriched formats · functional drinks</span></a>
+        <a href="longevity.html" class="mega-link"><span class="mega-link-t">Longevity &amp; Anti-aging</span><span class="mega-link-d">Fastest-growing ingredient segment</span></a>
+      </div>
+      <div class="mega-col" data-col="about">
+        <a href="story.html" class="mega-link"><span class="mega-link-t">Our Story</span><span class="mega-link-d">How BIOLAR began · our mission</span></a>
+        <a href="beliefs.html" class="mega-link"><span class="mega-link-t">Our Beliefs</span><span class="mega-link-d">Science-first · radical transparency</span></a>
+        <a href="certifications.html" class="mega-link"><span class="mega-link-t">Our Certifications</span><span class="mega-link-d">ISO · GMP · HACCP · analytical compliance</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+</header>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="molecule.html" class="mob-link">The Molecule</a>
+  <a href="source.html" class="mob-link">Siberia</a>
+  <a href="research.html" class="mob-link">Evidence</a>
+  <a href="benefits.html" class="mob-link">Sectors</a>
+  <a href="about.html" class="mob-link">About</a>
+  <a href="contact.html" class="mob-link">Access</a>
+</div>
+
+<div class="page-hero rv">
+  <h1 class="page-h1">Sectors</h1>
+  <p class="page-sub">Where DHQ enters the formula. Five industries, one molecule.</p>
+</div>
+
+<section class="sec" id="sectors-intro">
+  <div class="sec-eye">Ingredient Applications</div>
+  <h2 class="sec-h2">Five Industries.<br><em>One Molecule.</em></h2>
+  <p class="sec-lead">DHQ and Arabiogalactan from BIOLAR enter finished products across five fast-growing categories. We supply the ingredient. Our partners build the brand.</p>
+
+  <div class="sector-grid rv">
+
+    <!-- 01 Dietary Supplements -->
+    <a href="supplements.html" class="sector-tile has-photo" style="background-image:url('img/sector-supplements.jpg')">
+      <div class="st-in">
+        <div class="st-num">01</div>
+        <h3 class="st-h">Dietary <em>Supplements</em></h3>
+        <p class="st-d">The primary DHQ+AG application. Antioxidant capsules, immune complexes, cardiovascular formulas — softgel, hard capsule, powder, stick-pack.</p>
+        <div class="st-metric">50–500 <span>mg/day · typical dose</span></div>
+        <div class="st-arr"><i class="ph ph-arrow-right"></i></div>
+      </div>
+    </a>
+
+    <!-- 02 Pharmaceutical -->
+    <a href="pharma.html" class="sector-tile has-photo" style="background-image:url('img/sector-pharma.jpg')">
+      <div class="st-in">
+        <div class="st-num">02</div>
+        <h3 class="st-h">Pharmaceutical <em>/ OTC</em></h3>
+        <p class="st-d">High-purity DHQ for proprietary formulations. Hepatoprotection, venous health, neuroprotective OTC. Full regulatory dossier on request.</p>
+        <div class="st-metric">95%+ <span>DHQ purity grade</span></div>
+        <div class="st-arr"><i class="ph ph-arrow-right"></i></div>
+      </div>
+    </a>
+
+    <!-- 03 Sports Nutrition -->
+    <a href="sports.html" class="sector-tile has-photo" style="background-image:url('img/sector-sports.jpg')">
+      <div class="st-in">
+        <div class="st-num">03</div>
+        <h3 class="st-h">Sports <em>Nutrition</em></h3>
+        <p class="st-d">Capillary-protective antioxidant for endurance and recovery. Supports O₂ delivery, cuts oxidative stress during exercise. Cycling, running, triathlon.</p>
+        <div class="st-metric">5× <span>ORAC vs Vitamin C</span></div>
+        <div class="st-arr"><i class="ph ph-arrow-right"></i></div>
+      </div>
+    </a>
+
+    <!-- 04 Functional Food -->
+    <a href="functional.html" class="sector-tile has-photo" style="background-image:url('img/sector-functional.jpg')">
+      <div class="st-in">
+        <div class="st-num">04</div>
+        <h3 class="st-h">Functional Food <em>&amp; Beverage</em></h3>
+        <p class="st-d">Water-soluble DHQ+AG for enriched drinks and wellness shots. AG matrix stabilises DHQ in liquid formats and extends shelf life.</p>
+        <div class="st-metric">Water<span>-soluble · AG carrier</span></div>
+        <div class="st-arr"><i class="ph ph-arrow-right"></i></div>
+      </div>
+    </a>
+
+    <!-- 05 Longevity — full-width tile -->
+    <a href="longevity.html" class="sector-tile has-photo" style="background-image:url('img/sector-longevity.jpg')">
+      <div class="st-in">
+        <div>
+          <div class="st-num">05</div>
+          <h3 class="st-h">Longevity <em>&amp; Anti-aging</em></h3>
+          <p class="st-d">The fastest-growing ingredient segment globally. DHQ crosses the blood-brain barrier (PNAS 2019), supporting neuroprotective, mitochondrial, and anti-inflammatory pathways in one molecule.</p>
+          <div class="st-arr" style="margin-top:1rem"><i class="ph ph-arrow-right"></i></div>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.15em;color:var(--accent);text-transform:uppercase;margin-bottom:0.75rem">Confirmed mechanism · PNAS 2019</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.05;color:var(--text)">Crosses the<br><em style="color:var(--accent)">Blood-Brain<br>Barrier</em></div>
+          <div style="font-size:0.78rem;color:var(--text-2);line-height:1.65;margin-top:1rem;max-width:36ch">Detected in murine cerebrospinal fluid. Fastest-growing longevity ingredient category, 2023–2028 projection.</div>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-block">
+  <div class="cta-card rv">
+    <div class="cta-in">
+      <div class="cta-glow"></div>
+      <div><h2 class="cta-h" data-i18n="benefits.cta_h">Источники: <em>70+ публикаций</em></h2><p class="cta-sub" data-i18n="benefits.cta_sub">Каждое применение подкреплено исследованиями. База публикаций открыта.</p></div>
+      <div class="cta-acts">
+        <a href="research.html" class="btn-p"><span data-i18n="benefits.cta_btn1">Исследования</span> <span class="btn-p-ic">→</span></a>
+        <a href="contact.html" class="btn-s" data-i18n="benefits.cta_btn2">Запросить CoA</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <div class="ft-brand"><a href="index.html" class="ft-logo">BIOLAR</a><p data-i18n="footer.tagline">Таксифолин и арабиногалактан из сибирской лиственницы.</p></div>
+  <nav class="ft-nav">
+    <a href="molecule.html" data-i18n="footer.molecule">Молекула</a><a href="benefits.html" data-i18n="footer.benefits">Применения</a>
+    <a href="research.html" data-i18n="footer.research">Исследования</a><a href="source.html" data-i18n="footer.source">Источник</a>
+    <a href="product.html" data-i18n="footer.product">Ингредиент</a><a href="contact.html" data-i18n="footer.contact">Контакт</a>
+  </nav>
+    <div class="ft-nl">
+    <div class="ft-nl-lbl">Newsletter</div>
+    <form id="nlForm" onsubmit="nlSub(event)">
+      <div class="ft-nl-row">
+        <input type="email" class="ft-nl-in" placeholder="your@company.com" required autocomplete="email">
+        <button type="submit" class="ft-nl-btn">→</button>
+      </div>
+      <p class="ft-nl-note">Research updates only. No marketing.</p>
+    </form>
+    <div class="ft-nl-ok" id="nlOk">✓ Subscribed</div>
+  </div><div class="ft-copy"><p data-i18n="footer.copy">© 2025 BIOLAR</p></div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('in'),obs.unobserve(x.target))),{threshold:0.05,rootMargin:'0px 0px -30px 0px'});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.page-hero .rv').forEach(el=>el.classList.add('in')),80);
+
+  const burger=document.getElementById('navBurger'),mob=document.getElementById('mobMenu');
+  if(burger&&mob){burger.addEventListener('click',()=>{const o=mob.classList.toggle('open');burger.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});}
+  document.querySelectorAll('.mob-link,.mob-cta').forEach(l=>l.addEventListener('click',()=>{mob.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
+</script>
+<script src="js/i18n.js"></script>
+<script src="js/nav.js"></script>
+<script>
+(function(){
+  var el = document.getElementById('scroll-prog');
+  if(!el) return;
+  window.addEventListener('scroll', function(){
+    var s = document.documentElement;
+    var pct = s.scrollTop / (s.scrollHeight - s.clientHeight) * 100;
+    el.style.width = Math.min(pct, 100) + '%';
+  }, {passive: true});
+})();
+</script>
+</body></html>
