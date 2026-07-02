@@ -96,6 +96,21 @@
     .bc.has-photo:hover .bc-in { background: rgba(10,16,28,0.72); }
     .tag-g { display:inline-block; font-family:'JetBrains Mono',monospace; font-size:0.58rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.25rem 0.65rem; border-radius:9999px; background:var(--accent-dim); color:var(--accent); border:1px solid var(--accent-border); }
     .sec-lead { font-size:0.97rem; color:var(--text-2); line-height:1.78; max-width:52ch; margin-top:1rem; }
+
+    /* ── PHOTO TILES ── */
+    .sector-tile.has-photo { background-size: cover; background-position: center; }
+    .sector-tile.has-photo .st-in {
+      background: rgba(10,9,8,0.78);
+      backdrop-filter: blur(1px);
+    }
+    .sector-tile.has-photo .st-num { color: var(--accent); opacity: 0.45; }
+    .sector-tile.has-photo .st-h { color: #f0ece5; }
+    .sector-tile.has-photo .st-h em { color: var(--accent); }
+    .sector-tile.has-photo .st-d { color: rgba(240,236,229,0.6); }
+    .sector-tile.has-photo .st-metric { color: #f0ece5; }
+    .sector-tile.has-photo .st-metric span { color: rgba(240,236,229,0.45); }
+    .sector-tile.has-photo .st-arr { background: rgba(255,255,255,0.08); color: rgba(240,236,229,0.55); }
+    .sector-tile.has-photo:hover .st-arr { background: var(--accent); color: #fff; }
     @media (max-width:768px) {
       .dbezel-in[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
     }
@@ -240,7 +255,7 @@
   <div class="sector-grid rv">
 
     <!-- 01 Dietary Supplements -->
-    <a href="supplements.html" class="sector-tile">
+    <a href="supplements.html" class="sector-tile has-photo" style="background-image:url('img/sector-supplements.jpg')">
       <div class="st-in">
         <div class="st-num">01</div>
         <h3 class="st-h">Dietary <em>Supplements</em></h3>
@@ -251,7 +266,7 @@
     </a>
 
     <!-- 02 Pharmaceutical -->
-    <a href="pharma.html" class="sector-tile">
+    <a href="pharma.html" class="sector-tile has-photo" style="background-image:url('img/sector-pharma.jpg')">
       <div class="st-in">
         <div class="st-num">02</div>
         <h3 class="st-h">Pharmaceutical <em>/ OTC</em></h3>
@@ -262,7 +277,7 @@
     </a>
 
     <!-- 03 Sports Nutrition -->
-    <a href="sports.html" class="sector-tile">
+    <a href="sports.html" class="sector-tile has-photo" style="background-image:url('img/sector-sports.jpg')">
       <div class="st-in">
         <div class="st-num">03</div>
         <h3 class="st-h">Sports <em>Nutrition</em></h3>
@@ -273,7 +288,7 @@
     </a>
 
     <!-- 04 Functional Food -->
-    <a href="functional.html" class="sector-tile">
+    <a href="functional.html" class="sector-tile has-photo" style="background-image:url('img/sector-functional.jpg')">
       <div class="st-in">
         <div class="st-num">04</div>
         <h3 class="st-h">Functional Food <em>&amp; Beverage</em></h3>
@@ -284,7 +299,7 @@
     </a>
 
     <!-- 05 Longevity — full-width tile -->
-    <a href="longevity.html" class="sector-tile">
+    <a href="longevity.html" class="sector-tile has-photo" style="background-image:url('img/sector-longevity.jpg');background-position:center 30%">
       <div class="st-in">
         <div>
           <div class="st-num">05</div>
