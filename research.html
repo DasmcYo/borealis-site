@@ -89,7 +89,12 @@
     .search-inp:focus { border-color: var(--accent-border); }
     .search-inp::placeholder { color: var(--text-3); }
 
-    @media (max-width: 768px) { .anchor-grid { grid-template-columns: 1fr; } .pt-journal, .pt-year { display: none; } }
+    @media (max-width: 768px) {
+      .anchor-grid { grid-template-columns: 1fr; }
+      /* Hide Year (col 1) + Journal (col 3) — both td and th — so 2-col layout fits 390px */
+      .pub-table th:nth-child(1), .pub-table td:nth-child(1),
+      .pub-table th:nth-child(3), .pub-table td:nth-child(3) { display: none; }
+    }
   </style>
 </head>
 <body>

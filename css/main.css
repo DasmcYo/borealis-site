@@ -900,3 +900,130 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
 @media (max-width: 960px) { .mega-menu { display: none; } }
 
 .related-link:hover { background: rgba(176,120,40,0.06) !important; transform: translateX(2px); }
+
+/* ═══════════════════════════════════════════════════════
+   MOBILE EXCELLENCE — v2.0
+   Mobile is the primary platform for B2B presentations
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Pub-table horizontal scroll wrapper ── */
+.pub-scroller {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  /* Scroll-shadow hint: fades at edges so user knows it scrolls */
+  background:
+    linear-gradient(to right, var(--bg-card) 20px, rgba(245,241,235,0)),
+    linear-gradient(to left,  var(--bg-card) 20px, rgba(245,241,235,0)) right,
+    radial-gradient(farthest-side at 0   50%, rgba(14,12,9,0.07), transparent) left,
+    radial-gradient(farthest-side at 100% 50%, rgba(14,12,9,0.07), transparent) right;
+  background-repeat: no-repeat;
+  background-size: 40px 100%, 40px 100%, 10px 100%, 10px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+
+@media (max-width: 768px) {
+
+  /* ── SECTION SPACING ── */
+  .sec    { padding: 3rem 1.25rem 3.5rem; }
+  .sec-sm { padding: 2rem 1.25rem 2.5rem; }
+  .cta-block { padding: 1.5rem 1.25rem 3rem; }
+
+  /* ── PAGE HERO ── */
+  .page-hero    { padding: 7rem 1.25rem 2.5rem; min-height: 38vh; }
+  .page-hero-sm { padding: 6.5rem 1.25rem 2rem; min-height: 30vh; }
+
+  /* ── TYPOGRAPHY ── */
+  .page-h1  { font-size: clamp(1.9rem, 9vw, 3rem) !important; line-height: 1.08 !important; }
+  .page-sub { font-size: 0.88rem !important; max-width: 100%; }
+  .hero-h1  { font-size: clamp(2.3rem, 10vw, 5rem) !important; line-height: 1.0 !important; }
+  .sec-h2   { font-size: clamp(1.6rem, 6.5vw, 3rem) !important; line-height: 1.1 !important; }
+  .sec-body { font-size: 0.9rem; }
+
+  /* ── STATS STRIP ── */
+  .stats-strip { padding: 1rem 1.25rem; }
+  .stat        { padding: 1rem 0.5rem; }
+  .stat-n      { font-size: 1.85rem !important; }
+  .stat-l      { font-size: 0.53rem; }
+
+  /* ── CTA BLOCK ── */
+  .cta-in { padding: 2rem 1.5rem; }
+
+  /* ── BUTTONS — 48px tap target ── */
+  .btn-p { min-height: 48px; }
+  .btn-s { min-height: 48px; }
+
+  /* ── MOB MENU LINKS — 44px tap target ── */
+  .mob-link { padding: 0.72rem 0 0.72rem 1rem; }
+
+  /* ── PUB TABLE (research.html, database.html)
+        Year (col 1) + Journal (col 3) are hidden via page CSS;
+        Study + Type fit within ~340px. Reduce padding to ensure fit. ── */
+  .pub-table td  { padding: 0.75rem; }
+  .pub-table th  { padding: 0.6rem 0.75rem; }
+
+  /* ── SPEC TABLE → CARD LAYOUT (product.html)
+        Each row becomes a vertical card: no horizontal scroll needed ── */
+  .spec-table,
+  .spec-table tbody { display: block; }
+  .spec-table thead { display: none; }
+  .spec-table tr {
+    display: flex;
+    flex-direction: column;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    gap: 0;
+  }
+  .spec-table tr:last-child { border-bottom: none; }
+  .spec-table td { display: block; padding: 0 !important; }
+
+  /* Visual hierarchy: gray label → gold value → tiny method */
+  .sp-param { font-size: 0.82rem; color: var(--text-2); margin-bottom: 0.3rem; }
+  .sp-val   { font-size: 0.97rem; line-height: 1.3; margin-bottom: 0.2rem; }
+  .sp-method { font-size: 0.6rem; margin-top: 0.1rem; opacity: 0.75; }
+
+  /* ── SECTOR NAV ── */
+  .sector-nav { padding: 1.25rem; }
+  .sn-link    { font-size: 0.58rem; }
+
+  /* ── FOOTER ── */
+  .ft-brand p { max-width: 100%; }
+
+  /* ── SECTOR PAGE DBEZEL-IN GRIDS (longevity, pharma, sports, functional)
+        2-col inline grid → single column on mobile ── */
+  .dbezel-in[style*="columns:1fr 1fr;"] {
+    grid-template-columns: 1fr !important;
+    padding: 2rem 1.5rem !important;
+    gap: 2rem !important;
+  }
+
+  /* ── SUPPLEMENTS PAGE: 3-col dbezel → single column ── */
+  .dbezel-in[style*="columns:1fr 1fr 1fr;"] {
+    grid-template-columns: 1fr !important;
+    padding: 2rem 1.5rem !important;
+    gap: 1.5rem !important;
+  }
+
+}
+
+/* ── PHOTO TRIO — 3-image gallery ── */
+.photo-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 768px) {
+  .photo-trio { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .photo-trio > div { height: 160px !important; }
+}
+@media (max-width: 400px) {
+  .photo-trio { grid-template-columns: 1fr; }
+  .photo-trio > div { height: 200px !important; }
+}
+
+@media (max-width: 480px) {
+  .sec     { padding: 2.5rem 1rem 3rem; }
+  .cta-in  { padding: 1.75rem 1.25rem; }
+  .stat-n  { font-size: 1.6rem !important; }
+  .page-h1 { font-size: clamp(1.65rem, 9vw, 2.4rem) !important; }
+  .hero-h1 { font-size: clamp(2rem, 10vw, 4rem) !important; }
+}
