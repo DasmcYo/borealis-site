@@ -580,64 +580,92 @@ a[href]:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]) {
 
 /* ── MOB MENU ── */
 @keyframes mobIn {
-  from { opacity: 0; transform: translateY(-6px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 .mob-menu {
-  position: fixed;
-  top: 3.75rem; left: 0; right: 0;
-  height: calc(100dvh - 3.75rem);
-  background: var(--bg); z-index: 490;
-  display: none; flex-direction: column;
-  overflow-y: auto; overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  border-top: 1px solid var(--border);
+  position: fixed; inset: 0;
+  background: var(--bg); z-index: 600;
+  display: none; flex-direction: column; overflow: hidden;
 }
 .mob-menu.open {
   display: flex;
-  animation: mobIn 0.25s cubic-bezier(0.32,0.72,0,1) both;
+  animation: mobIn 0.2s ease both;
 }
-.mob-inner {
-  padding: 0.5rem 1.5rem 5rem;
-  display: flex; flex-direction: column;
-  min-height: 100%;
+/* Top bar with logo + close */
+.mob-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 1.5rem; height: 3.75rem;
+  border-bottom: 2px solid var(--accent-border);
+  flex-shrink: 0;
 }
-.mob-section {
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.5rem; margin-bottom: 0.5rem;
-}
-.mob-cat {
+.mob-logo {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.56rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--accent); padding: 1.1rem 0 0.5rem;
+  font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--accent); text-decoration: none;
+}
+.mob-close {
+  width: 2.2rem; height: 2.2rem; padding: 0;
+  background: none; border: none; cursor: pointer;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+}
+.mob-close span {
+  display: block; width: 18px; height: 1.5px;
+  background: var(--text-3); border-radius: 2px;
+}
+.mob-close span:first-child { transform: rotate(45deg) translate(0, 0.75px); }
+.mob-close span:last-child  { transform: rotate(-45deg) translate(0, -0.75px); }
+/* Scrollable nav */
+.mob-nav {
+  flex: 1; overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 1.5rem 1.5rem;
+}
+.mob-section { margin-bottom: 0.5rem; }
+/* Category label — BIG, visually dominant */
+.mob-cat {
   display: block;
-}
-.mob-link {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.92rem; font-weight: 400;
-  color: var(--text-2); text-decoration: none;
-  padding: 0.55rem 0 0.55rem 0.9rem;
-  border-left: 2px solid transparent;
-  transition: color 0.18s, border-color 0.18s;
-  display: block; line-height: 1.4;
+  font-size: 1.05rem; font-weight: 600; line-height: 1.2;
+  color: var(--text);
+  padding: 1.4rem 0 0.75rem;
+  border-top: 1px solid var(--border);
 }
-.mob-link:active, .mob-link:hover { color: var(--accent); border-left-color: var(--accent); }
-.mob-bottom {
-  margin-top: auto; padding-top: 1.75rem;
-  display: flex; flex-direction: column; gap: 1rem;
+.mob-section:first-child .mob-cat { border-top: none; padding-top: 1rem; }
+/* Sub-links — smaller, indented, clearly subordinate */
+.mob-link {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.83rem; font-weight: 400; line-height: 1.35;
+  color: var(--text-2); text-decoration: none;
+  padding: 0.5rem 0 0.5rem 1rem;
+  margin-left: 0.1rem;
+  border-left: 1.5px solid var(--border);
+  transition: color 0.15s, border-color 0.15s;
+}
+.mob-link + .mob-link { margin-top: 0.1rem; }
+.mob-link:active { color: var(--accent); border-left-color: var(--accent); }
+/* Bottom: CTA + language */
+.mob-foot {
+  flex-shrink: 0;
+  padding: 1rem 1.5rem max(1.25rem, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 1rem;
+  background: var(--bg-2);
 }
 .mob-cta {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: var(--accent); color: #FFFFFF;
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: var(--accent); color: #fff;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.66rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-  padding: 0.85rem 1.5rem; border-radius: 9999px; text-decoration: none;
-  align-self: flex-start;
-  transition: background 0.25s;
+  font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.75rem 1.2rem; border-radius: 9999px; text-decoration: none;
+  transition: background 0.2s; flex-shrink: 0;
 }
 .mob-cta:active { background: var(--gold); }
 .mob-lang {
-  display: flex; gap: 0.5rem; align-items: center;
+  display: flex; gap: 0.35rem; align-items: center;
 }
 .mob-lang button {
   background: transparent; border: 1px solid var(--border);
