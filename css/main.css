@@ -173,7 +173,7 @@ body::before {
 
 @media (max-width: 960px) {
   .nav-main-links { display: none; }
-  .nav-burger { display: flex; }
+  .nav-burger { display: flex; margin-left: auto; }
   .nav-main-cta .btn-p { display: none; }
   .nav-top { display: none; }
 }
