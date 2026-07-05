@@ -2626,7 +2626,7 @@ function bI18nApply(lang) {
   const btn = document.getElementById('langBtn');
   if (btn) btn.textContent = lang.toUpperCase();
   // mark active
-  document.querySelectorAll('.lang-drop button[data-lang]').forEach(b => {
+  document.querySelectorAll('.lang-drop button[data-lang], .mob-lang button[data-lang]').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
   });
 }
