@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Larifolin applications — five manufacturing sectors, each with a precision DHQ+AG ratio. Nutraceuticals, sports nutrition, functional food, pharmaceuticals, longevity.">
+  <title>Applications — BIOLAR · Larifolin</title>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .photo-hero .page-h1 { color: rgba(238,242,255,0.92) !important; }
+    .photo-hero .page-sub { color: rgba(238,242,255,0.68) !important; }
+
+    .sector-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 3rem; }
+    .sector-row {
+      text-decoration: none; display: block;
+      transition: all 0.45s var(--spring);
+    }
+    .sector-row:hover { transform: translateX(4px); }
+    .sector-row-in {
+      display: grid; grid-template-columns: 72px 1fr auto;
+      gap: 2.5rem; align-items: center; padding: 2rem 2.5rem;
+    }
+    .sector-ico {
+      width: 56px; height: 56px; border-radius: 14px;
+      background: var(--accent-dim); border: 1px solid var(--accent-border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; color: var(--accent); flex-shrink: 0;
+    }
+    .sector-body {}
+    .sector-tag {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-3);
+      margin-bottom: 0.4rem;
+    }
+    .sector-name {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
+      font-weight: 300; color: var(--text); line-height: 1.15; margin-bottom: 0.5rem;
+    }
+    .sector-desc { font-size: 0.85rem; color: var(--text-2); line-height: 1.7; max-width: 70ch; }
+    .sector-arrow {
+      font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+      letter-spacing: 0.12em; color: var(--accent); white-space: nowrap;
+      transition: transform 0.25s var(--out); flex-shrink: 0;
+    }
+    .sector-row:hover .sector-arrow { transform: translateX(4px); }
+
+    .ratio-note {
+      display: flex; align-items: flex-start; gap: 1.25rem;
+      padding: 2rem 2.5rem; margin-top: 3rem;
+      border-radius: var(--r-card); border: 1px solid var(--accent-border);
+      background: var(--accent-dim);
+    }
+    .ratio-note-icon { font-size: 1.25rem; color: var(--accent); flex-shrink: 0; margin-top: 0.1rem; }
+    .ratio-note-text { font-size: 0.85rem; color: var(--text-2); line-height: 1.75; }
+    .ratio-note-text strong { color: var(--text); font-weight: 500; }
+
+    @media (max-width: 800px) {
+      .sector-row-in { grid-template-columns: 52px 1fr; gap: 1.5rem; }
+      .sector-arrow { display: none; }
+    }
+    @media (max-width: 500px) {
+      .sector-row-in { grid-template-columns: 1fr; }
+      .sector-ico { width: 44px; height: 44px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div id="scroll-prog"></div>
+<div class="amb-r"></div><div class="amb-l"></div>
+
+<header class="site-header">
+  <div class="nav-top">
+    <div class="nav-top-r">
+      <div class="nav-top-social">
+        <a href="#" class="nav-top-soc" title="Facebook" target="_blank" rel="noopener"><i class="ph ph-facebook-logo"></i></a>
+        <a href="#" class="nav-top-soc" title="LinkedIn" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i></a>
+        <a href="#" class="nav-top-soc" title="YouTube" target="_blank" rel="noopener"><i class="ph ph-youtube-logo"></i></a>
+      </div>
+      <div class="nav-top-sep"></div>
+      <a href="contact.html" class="nav-top-link">Contact us</a>
+      <div class="nav-top-sep"></div>
+      <button class="nav-top-search" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button>
+      <div class="nav-top-sep"></div>
+      <div id="langSw">
+        <button class="lang-btn" id="langBtn" onclick="bI18nToggleDrop()">EN</button>
+        <div class="lang-drop" id="langDrop">
+          <button data-lang="en" onclick="bI18nSetLang('en')">EN · English</button>
+          <button data-lang="ru" onclick="bI18nSetLang('ru')">RU · Русский</button>
+          <button data-lang="fr" onclick="bI18nSetLang('fr')">FR · Français</button>
+          <button data-lang="es" onclick="bI18nSetLang('es')">ES · Español</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="nav-main">
+    <a href="index.html" class="nav-main-logo">BIOLAR</a>
+    <ul class="nav-main-links">
+      <li class="nav-main-item"><a href="about.html">About</a></li>
+      <li class="nav-main-item active" data-mega="applications"><a href="applications.html">Applications</a></li>
+      <li class="nav-main-item"><a href="science.html">Science</a></li>
+      <li class="nav-main-item"><a href="company.html">Company</a></li>
+      <li class="nav-main-item"><a href="contact.html">Partners</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button>
+  </nav>
+  <div class="mega-menu" id="megaMenu">
+    <div class="mega-wrap">
+      <div class="mega-left">
+        <div class="mega-intro active" data-col="applications">
+          <h3 class="mega-intro-h">Applications</h3>
+          <p class="mega-intro-d">Larifolin is calibrated for five distinct manufacturing sectors — each with a precision DHQ+AG ratio engineered for that category's requirements.</p>
+          <a href="applications.html" class="mega-intro-link">All Applications <span>&rarr;</span></a>
+        </div>
+      </div>
+      <div class="mega-right">
+        <div class="mega-col active" data-col="applications">
+          <a href="app-nutra.html" class="mega-link"><span class="mega-link-t">Nutraceuticals &amp; Supplements</span><span class="mega-link-d">Vitamins · minerals · botanicals · bioavailability</span></a>
+          <a href="app-sports.html" class="mega-link"><span class="mega-link-t">Sports Nutrition</span><span class="mega-link-d">Recovery · endurance · oxidative stress</span></a>
+          <a href="app-food.html" class="mega-link"><span class="mega-link-t">Functional Food &amp; Beverage</span><span class="mega-link-d">Heat stability · clean label · water-soluble</span></a>
+          <a href="app-pharma.html" class="mega-link"><span class="mega-link-t">Pharmaceuticals</span><span class="mega-link-d">GMP · clinical-grade · BBB penetration</span></a>
+          <a href="app-longevity.html" class="mega-link"><span class="mega-link-t">Longevity &amp; Anti-aging</span><span class="mega-link-d">Inflammaging · neuroprotection · cellular health</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mob-menu" id="mobMenu">
+  <div class="mob-header">
+    <a href="index.html" class="mob-logo">BIOLAR</a>
+    <button class="mob-close" aria-label="Close menu" onclick="document.getElementById('navBurger').click()"><span></span><span></span></button>
+  </div>
+  <div class="mob-nav">
+    <div class="mob-section">
+      <span class="mob-cat">About Larifolin</span>
+      <a href="about.html" class="mob-link">What is Larifolin</a>
+      <a href="about.html#mechanism" class="mob-link">How it works</a>
+      <a href="about.html#provenance" class="mob-link">Provenance</a>
+    </div>
+    <div class="mob-section">
+      <span class="mob-cat">Applications</span>
+      <a href="applications.html" class="mob-link">All Applications</a>
+      <a href="app-nutra.html" class="mob-link">Nutraceuticals &amp; Supplements</a>
+      <a href="app-sports.html" class="mob-link">Sports Nutrition</a>
+      <a href="app-food.html" class="mob-link">Functional Food &amp; Beverage</a>
+      <a href="app-pharma.html" class="mob-link">Pharmaceuticals</a>
+      <a href="app-longevity.html" class="mob-link">Longevity &amp; Anti-aging</a>
+    </div>
+    <div class="mob-section">
+      <span class="mob-cat">Science</span>
+      <a href="science.html" class="mob-link">Research Overview</a>
+    </div>
+    <div class="mob-section">
+      <span class="mob-cat">Company</span>
+      <a href="company.html" class="mob-link">About Us</a>
+    </div>
+  </div>
+  <div class="mob-foot">
+    <a href="contact.html" class="mob-cta">Become a Partner →</a>
+    <div class="mob-lang">
+      <button data-lang="en" onclick="bI18nSetLang('en')">EN</button>
+      <button data-lang="ru" onclick="bI18nSetLang('ru')">RU</button>
+      <button data-lang="fr" onclick="bI18nSetLang('fr')">FR</button>
+      <button data-lang="es" onclick="bI18nSetLang('es')">ES</button>
+    </div>
+  </div>
+</div>
+
+<section class="photo-hero" style="min-height:50vh">
+  <div class="ph-bg" style="background-image:url('img/aerial-forest-hero.jpg');background-position:center 50%"></div>
+  <div class="ph-tint"></div>
+  <div class="ph-overlay" style="background:linear-gradient(180deg,rgba(7,11,24,0.55) 0%,rgba(7,11,24,0.9) 100%)"></div>
+  <div class="ph-vignette"></div>
+  <div class="ph-content page-hero" style="min-height:50vh">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;opacity:0.85" class="rv d1">Larifolin · Applications</div>
+    <h1 class="page-h1 rv d2">One ingredient.<br><em>Five sectors.</em></h1>
+    <p class="page-sub rv d3">Each application uses a precision DHQ+AG ratio calibrated for that sector's formulation requirements.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sec-eye rv">Select your sector</div>
+  <h2 class="sec-h2 rv d1">Where does Larifolin<br><em>fit your formulation?</em></h2>
+
+  <div class="sector-list">
+    <a href="app-nutra.html" class="sector-row dbezel rv d1">
+      <div class="dbezel-in sector-row-in">
+        <div class="sector-ico"><i class="ph ph-pill"></i></div>
+        <div class="sector-body">
+          <div class="sector-tag">Application 01</div>
+          <div class="sector-name">Nutraceuticals &amp; Supplements</div>
+          <div class="sector-desc">Vitamins, minerals, botanicals, collagen — any active with bioavailability challenges. Larifolin's AG matrix enhances the absorption of co-formulated actives while DHQ adds antioxidant protection and AG contributes prebiotic fibre value.</div>
+        </div>
+        <div class="sector-arrow">Explore →</div>
+      </div>
+    </a>
+
+    <a href="app-sports.html" class="sector-row dbezel rv d2">
+      <div class="dbezel-in sector-row-in">
+        <div class="sector-ico"><i class="ph ph-lightning"></i></div>
+        <div class="sector-body">
+          <div class="sector-tag">Application 02</div>
+          <div class="sector-name">Sports Nutrition</div>
+          <div class="sector-desc">Intense training generates reactive oxygen species that impair recovery. DHQ neutralises exercise-induced oxidative stress; AG supports the gut microbiome that underpins protein absorption and immune function in athletes.</div>
+        </div>
+        <div class="sector-arrow">Explore →</div>
+      </div>
+    </a>
+
+    <a href="app-food.html" class="sector-row dbezel rv d3">
+      <div class="dbezel-in sector-row-in">
+        <div class="sector-ico"><i class="ph ph-coffee"></i></div>
+        <div class="sector-body">
+          <div class="sector-tag">Application 03</div>
+          <div class="sector-name">Functional Food &amp; Beverage</div>
+          <div class="sector-desc">Stable to 150°C, water-soluble at ~1.5 g/L, neutral organoleptic profile, no emulsifiers required. Larifolin passes through food-processing conditions intact and qualifies as a clean-label functional ingredient.</div>
+        </div>
+        <div class="sector-arrow">Explore →</div>
+      </div>
+    </a>
+
+    <a href="app-pharma.html" class="sector-row dbezel rv d1">
+      <div class="dbezel-in sector-row-in">
+        <div class="sector-ico"><i class="ph ph-first-aid-kit"></i></div>
+        <div class="sector-body">
+          <div class="sector-tag">Application 04</div>
+          <div class="sector-name">Pharmaceuticals</div>
+          <div class="sector-desc">GMP-certified, ≥99% HPLC purity, full documentation on every lot. DHQ is the only flavonoid with peer-reviewed confirmation of blood-brain barrier penetration (PNAS 2019), making it relevant to CNS and neuroprotective pharmaceutical development.</div>
+        </div>
+        <div class="sector-arrow">Explore →</div>
+      </div>
+    </a>
+
+    <a href="app-longevity.html" class="sector-row dbezel rv d2">
+      <div class="dbezel-in sector-row-in">
+        <div class="sector-ico"><i class="ph ph-heart"></i></div>
+        <div class="sector-body">
+          <div class="sector-tag">Application 05</div>
+          <div class="sector-name">Longevity &amp; Anti-aging</div>
+          <div class="sector-desc">Inflammaging — chronic low-grade inflammation — is the primary molecular driver of accelerated aging. DHQ directly addresses inflammatory pathways; AG supports the gut-brain axis through prebiotic activity; together they address multiple hallmarks of cellular aging simultaneously.</div>
+        </div>
+        <div class="sector-arrow">Explore →</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="ratio-note rv">
+    <i class="ph ph-info ratio-note-icon"></i>
+    <div class="ratio-note-text">
+      <strong>About precision ratios.</strong> Each application sector uses a specific DHQ:AG ratio calibrated for that category's absorption kinetics, processing conditions, and regulatory context. The ratio is disclosed at the formulation stage. Contact us to discuss which configuration fits your product.
+    </div>
+  </div>
+</section>
+
+<div class="cta-block">
+  <div class="cta-card rv">
+    <div class="cta-in">
+      <div class="cta-glow"></div>
+      <div>
+        <h2 class="cta-h">Not sure which sector<br><em>fits your product?</em></h2>
+        <p class="cta-sub">Send us your formulation brief. We'll identify the right Larifolin configuration and send a sample with the corresponding CoA and technical documentation.</p>
+      </div>
+      <div class="cta-acts">
+        <a href="contact.html" class="btn-p"><span>Talk to us</span> <span class="btn-p-ic">→</span></a>
+        <a href="science.html" class="btn-s">Explore the Science</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-brand"><a href="index.html" class="ft-logo">BIOLAR</a><p>Larifolin — a precision DHQ+Arabinogalactan ingredient from Siberian Dahurian larch.</p></div>
+  <nav class="ft-nav">
+    <a href="about.html">About Larifolin</a>
+    <a href="applications.html">Applications</a>
+    <a href="science.html">Science</a>
+    <a href="company.html">Company</a>
+    <a href="contact.html">Partners</a>
+  </nav>
+  <div class="ft-nl">
+    <div class="ft-nl-lbl">Newsletter</div>
+    <form id="nlForm" onsubmit="nlSub(event)">
+      <div class="ft-nl-row"><input type="email" class="ft-nl-in" placeholder="your@company.com" required autocomplete="email"><button type="submit" class="ft-nl-btn">→</button></div>
+      <p class="ft-nl-note">Research updates only. No marketing.</p>
+    </form>
+    <div class="ft-nl-ok" id="nlOk">✓ Subscribed</div>
+  </div>
+  <div class="ft-copy"><p>© 2025 BIOLAR</p></div>
+</footer>
+
+<script>
+  const obs=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('in'),obs.unobserve(x.target))),{threshold:0.05,rootMargin:'0px 0px -36px 0px'});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.page-hero .rv,.photo-hero .rv').forEach(el=>el.classList.add('in')),80);
+  const burger=document.getElementById('navBurger'),mob=document.getElementById('mobMenu');
+  if(burger&&mob){burger.addEventListener('click',()=>{const o=mob.classList.toggle('open');burger.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});}
+  document.querySelectorAll('.mob-link,.mob-cta').forEach(l=>l.addEventListener('click',()=>{mob.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
+  function nlSub(e){e.preventDefault();document.getElementById('nlForm').style.display='none';document.getElementById('nlOk').style.display='block';}
+  (function(){var el=document.getElementById('scroll-prog');if(!el)return;window.addEventListener('scroll',function(){var s=document.documentElement;el.style.width=Math.min(s.scrollTop/(s.scrollHeight-s.clientHeight)*100,100)+'%';},{passive:true});})();
+</script>
+<script src="js/i18n.js"></script>
+<script src="js/nav.js"></script>
+</body>
+</html>

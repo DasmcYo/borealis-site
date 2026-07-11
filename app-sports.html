@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Larifolin for sports nutrition — DHQ neutralises exercise-induced oxidative stress; AG supports gut microbiome and protein absorption in athletes.">
+  <title>Sports Nutrition — BIOLAR · Larifolin</title>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .photo-hero .page-h1 { color: rgba(238,242,255,0.92) !important; }
+    .photo-hero .page-sub { color: rgba(238,242,255,0.68) !important; }
+    .app-nav { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .app-nav-link { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; padding: 0.45rem 1rem; border-radius: 9999px; border: 1px solid var(--border); color: var(--text-3); transition: all 0.25s; }
+    .app-nav-link:hover,.app-nav-link.active { border-color: var(--accent-border); color: var(--accent); background: var(--accent-dim); }
+    .challenge-split { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 2.5rem; }
+    .challenge-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 2.2vw, 2.2rem); font-weight: 300; line-height: 1.15; margin-bottom: 1.25rem; }
+    .challenge-h em { font-style: italic; color: var(--accent); }
+    .challenge-p { font-size: 0.88rem; color: var(--text-2); line-height: 1.82; }
+    .benefit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+    .benefit-card-in { padding: 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.75rem; min-height: 220px; }
+    .benefit-icon { font-size: 1.4rem; color: var(--accent); opacity: 0.8; }
+    .benefit-h { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; line-height: 1.2; color: var(--text); }
+    .benefit-d { font-size: 0.8rem; color: var(--text-2); line-height: 1.7; flex: 1; }
+    .formats-list { display: flex; gap: 0.65rem; flex-wrap: wrap; margin-top: 2rem; }
+    .fmt-tag { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--border); border-radius: 9999px; padding: 0.35rem 0.85rem; color: var(--text-3); }
+    @media (max-width: 900px) { .challenge-split { grid-template-columns: 1fr; gap: 2rem; } .benefit-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .benefit-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div id="scroll-prog"></div>
+<div class="amb-r"></div><div class="amb-l"></div>
+<header class="site-header">
+  <div class="nav-top"><div class="nav-top-r"><div class="nav-top-social"><a href="#" class="nav-top-soc" title="Facebook" target="_blank" rel="noopener"><i class="ph ph-facebook-logo"></i></a><a href="#" class="nav-top-soc" title="LinkedIn" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i></a><a href="#" class="nav-top-soc" title="YouTube" target="_blank" rel="noopener"><i class="ph ph-youtube-logo"></i></a></div><div class="nav-top-sep"></div><a href="contact.html" class="nav-top-link">Contact us</a><div class="nav-top-sep"></div><button class="nav-top-search" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button><div class="nav-top-sep"></div><div id="langSw"><button class="lang-btn" id="langBtn" onclick="bI18nToggleDrop()">EN</button><div class="lang-drop" id="langDrop"><button data-lang="en" onclick="bI18nSetLang('en')">EN · English</button><button data-lang="ru" onclick="bI18nSetLang('ru')">RU · Русский</button><button data-lang="fr" onclick="bI18nSetLang('fr')">FR · Français</button><button data-lang="es" onclick="bI18nSetLang('es')">ES · Español</button></div></div></div></div>
+  <nav class="nav-main"><a href="index.html" class="nav-main-logo">BIOLAR</a><ul class="nav-main-links"><li class="nav-main-item"><a href="about.html">About</a></li><li class="nav-main-item active" data-mega="applications"><a href="applications.html">Applications</a></li><li class="nav-main-item"><a href="science.html">Science</a></li><li class="nav-main-item"><a href="company.html">Company</a></li><li class="nav-main-item"><a href="contact.html">Partners</a></li></ul><button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button></nav>
+  <div class="mega-menu" id="megaMenu"><div class="mega-wrap"><div class="mega-left"><div class="mega-intro active" data-col="applications"><h3 class="mega-intro-h">Applications</h3><p class="mega-intro-d">Larifolin is calibrated for five distinct manufacturing sectors — each with a precision DHQ+AG ratio engineered for that category's requirements.</p><a href="applications.html" class="mega-intro-link">All Applications <span>&rarr;</span></a></div></div><div class="mega-right"><div class="mega-col active" data-col="applications"><a href="app-nutra.html" class="mega-link"><span class="mega-link-t">Nutraceuticals &amp; Supplements</span><span class="mega-link-d">Vitamins · minerals · botanicals · bioavailability</span></a><a href="app-sports.html" class="mega-link"><span class="mega-link-t">Sports Nutrition</span><span class="mega-link-d">Recovery · endurance · oxidative stress</span></a><a href="app-food.html" class="mega-link"><span class="mega-link-t">Functional Food &amp; Beverage</span><span class="mega-link-d">Heat stability · clean label · water-soluble</span></a><a href="app-pharma.html" class="mega-link"><span class="mega-link-t">Pharmaceuticals</span><span class="mega-link-d">GMP · clinical-grade · BBB penetration</span></a><a href="app-longevity.html" class="mega-link"><span class="mega-link-t">Longevity &amp; Anti-aging</span><span class="mega-link-d">Inflammaging · neuroprotection · cellular health</span></a></div></div></div></div>
+</header>
+<div class="mob-menu" id="mobMenu"><div class="mob-header"><a href="index.html" class="mob-logo">BIOLAR</a><button class="mob-close" aria-label="Close menu" onclick="document.getElementById('navBurger').click()"><span></span><span></span></button></div><div class="mob-nav"><div class="mob-section"><span class="mob-cat">About Larifolin</span><a href="about.html" class="mob-link">What is Larifolin</a><a href="about.html#mechanism" class="mob-link">How it works</a></div><div class="mob-section"><span class="mob-cat">Applications</span><a href="applications.html" class="mob-link">All Applications</a><a href="app-nutra.html" class="mob-link">Nutraceuticals &amp; Supplements</a><a href="app-sports.html" class="mob-link">Sports Nutrition</a><a href="app-food.html" class="mob-link">Functional Food &amp; Beverage</a><a href="app-pharma.html" class="mob-link">Pharmaceuticals</a><a href="app-longevity.html" class="mob-link">Longevity &amp; Anti-aging</a></div><div class="mob-section"><span class="mob-cat">Science</span><a href="science.html" class="mob-link">Research Overview</a></div><div class="mob-section"><span class="mob-cat">Company</span><a href="company.html" class="mob-link">About Us</a></div></div><div class="mob-foot"><a href="contact.html" class="mob-cta">Become a Partner →</a><div class="mob-lang"><button data-lang="en" onclick="bI18nSetLang('en')">EN</button><button data-lang="ru" onclick="bI18nSetLang('ru')">RU</button><button data-lang="fr" onclick="bI18nSetLang('fr')">FR</button><button data-lang="es" onclick="bI18nSetLang('es')">ES</button></div></div></div>
+
+<section class="photo-hero" style="min-height:52vh">
+  <div class="ph-bg" style="background-image:url('img/sector-sports.jpg');background-position:center 35%"></div>
+  <div class="ph-tint"></div>
+  <div class="ph-overlay" style="background:linear-gradient(180deg,rgba(7,11,24,0.55) 0%,rgba(7,11,24,0.9) 100%)"></div>
+  <div class="ph-vignette"></div>
+  <div class="ph-content page-hero" style="min-height:52vh">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;opacity:0.85" class="rv d1">Application 02</div>
+    <h1 class="page-h1 rv d2">Sports<br><em>Nutrition</em></h1>
+    <p class="page-sub rv d3">Targeting oxidative stress at the source — and the gut that drives recovery.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="app-nav rv">
+    <a href="app-nutra.html" class="app-nav-link">Nutraceuticals</a>
+    <a href="app-sports.html" class="app-nav-link active">Sports Nutrition</a>
+    <a href="app-food.html" class="app-nav-link">Food &amp; Beverage</a>
+    <a href="app-pharma.html" class="app-nav-link">Pharmaceuticals</a>
+    <a href="app-longevity.html" class="app-nav-link">Longevity</a>
+  </div>
+  <div class="challenge-split">
+    <div class="rv d1">
+      <h2 class="challenge-h">The challenge:<br><em>training destroys as it builds.</em></h2>
+      <p class="challenge-p">High-intensity training triggers a cascade of reactive oxygen species — free radicals generated by mitochondrial respiration under load. This oxidative stress is a normal byproduct of adaptation, but when it outpaces the body's endogenous antioxidant capacity, it delays recovery, increases DOMS severity, and impairs subsequent training quality.<br><br>The sports nutrition market has responded with antioxidant blends — but most plant-derived antioxidants have poor bioavailability and inconsistent systemic reach. A great ORAC score in a lab does not translate directly to the muscle cell.</p>
+    </div>
+    <div class="rv d2">
+      <h2 class="challenge-h">How Larifolin<br><em>addresses it.</em></h2>
+      <p class="challenge-p">DHQ's flavonoid structure provides direct free-radical scavenging — one of the highest ORAC values in natural chemistry (28,000 μmol TE/100g). Crucially, the AG matrix in Larifolin enhances DHQ's systemic absorption, closing the gap between in-vitro antioxidant capacity and in-vivo effect.<br><br>AG also acts as a prebiotic, feeding the gut bacteria that sustain immune function during heavy training blocks. Athletes under high load are known to experience gut permeability challenges — AG's fibre content and microbiome support addresses this directly, improving the environment in which protein and other recovery nutrients are absorbed.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<section class="sec">
+  <div class="sec-eye rv">Key Benefits</div>
+  <h2 class="sec-h2 rv d1">What Larifolin adds<br>to your <em>sports formula</em></h2>
+  <div class="benefit-grid">
+    <div class="dbezel rv d1"><div class="dbezel-in benefit-card-in">
+      <i class="ph ph-lightning benefit-icon"></i>
+      <h3 class="benefit-h">Exercise-Induced Oxidative Stress</h3>
+      <p class="benefit-d">DHQ directly neutralises the reactive oxygen species generated during high-intensity exercise. Natural origin, no banned substances, no stimulants — compatible with all major sport certifications.</p>
+    </div></div>
+    <div class="dbezel rv d2"><div class="dbezel-in benefit-card-in">
+      <i class="ph ph-arrows-clockwise benefit-icon"></i>
+      <h3 class="benefit-h">Recovery Support</h3>
+      <p class="benefit-d">By reducing oxidative and inflammatory burden post-exercise, Larifolin supports the conditions for faster recovery — allowing the next training session to start from a cleaner physiological baseline.</p>
+    </div></div>
+    <div class="dbezel rv d3"><div class="dbezel-in benefit-card-in">
+      <i class="ph ph-plant benefit-icon"></i>
+      <h3 class="benefit-h">Gut Health in Athletes</h3>
+      <p class="benefit-d">AG is a prebiotic fibre that selectively feeds Bifidobacterium and Lactobacillus — supporting the gut barrier integrity that heavy training can compromise. Better gut health means better absorption of protein, creatine, and other co-formulated actives.</p>
+    </div></div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<section class="sec">
+  <div class="sec-eye rv">Typical Formats</div>
+  <h2 class="sec-h2 rv d1">Where manufacturers<br><em>use Larifolin</em></h2>
+  <p class="rv d2" style="font-size:0.9rem;color:var(--text-2);line-height:1.75;max-width:62ch;margin-top:0.75rem">Larifolin blends uniformly into dry sports nutrition formats and is soluble enough for ready-to-drink applications.</p>
+  <div class="formats-list rv d3">
+    <span class="fmt-tag">Protein powders</span>
+    <span class="fmt-tag">Pre-workout</span>
+    <span class="fmt-tag">Post-workout</span>
+    <span class="fmt-tag">Recovery drinks</span>
+    <span class="fmt-tag">RTD beverages</span>
+    <span class="fmt-tag">Capsules</span>
+    <span class="fmt-tag">Energy bars</span>
+  </div>
+</section>
+
+<div class="cta-block">
+  <div class="cta-card rv">
+    <div class="cta-in">
+      <div class="cta-glow"></div>
+      <div><h2 class="cta-h">Request a sample<br>for your <em>formulation</em></h2><p class="cta-sub">100g sample, Certificate of Analysis, and technical documentation available on request.</p></div>
+      <div class="cta-acts"><a href="contact.html" class="btn-p"><span>Request Sample</span> <span class="btn-p-ic">→</span></a><a href="science.html" class="btn-s">See the Science</a></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-brand"><a href="index.html" class="ft-logo">BIOLAR</a><p>Larifolin — a precision DHQ+Arabinogalactan ingredient from Siberian Dahurian larch.</p></div>
+  <nav class="ft-nav"><a href="about.html">About Larifolin</a><a href="applications.html">Applications</a><a href="science.html">Science</a><a href="company.html">Company</a><a href="contact.html">Partners</a></nav>
+  <div class="ft-nl"><div class="ft-nl-lbl">Newsletter</div><form id="nlForm" onsubmit="nlSub(event)"><div class="ft-nl-row"><input type="email" class="ft-nl-in" placeholder="your@company.com" required autocomplete="email"><button type="submit" class="ft-nl-btn">→</button></div><p class="ft-nl-note">Research updates only. No marketing.</p></form><div class="ft-nl-ok" id="nlOk">✓ Subscribed</div></div>
+  <div class="ft-copy"><p>© 2025 BIOLAR</p></div>
+</footer>
+<script>
+  const obs=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('in'),obs.unobserve(x.target))),{threshold:0.05,rootMargin:'0px 0px -36px 0px'});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.page-hero .rv,.photo-hero .rv').forEach(el=>el.classList.add('in')),80);
+  const burger=document.getElementById('navBurger'),mob=document.getElementById('mobMenu');
+  if(burger&&mob){burger.addEventListener('click',()=>{const o=mob.classList.toggle('open');burger.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});}
+  document.querySelectorAll('.mob-link,.mob-cta').forEach(l=>l.addEventListener('click',()=>{mob.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
+  function nlSub(e){e.preventDefault();document.getElementById('nlForm').style.display='none';document.getElementById('nlOk').style.display='block';}
+  (function(){var el=document.getElementById('scroll-prog');if(!el)return;window.addEventListener('scroll',function(){var s=document.documentElement;el.style.width=Math.min(s.scrollTop/(s.scrollHeight-s.clientHeight)*100,100)+'%';},{passive:true});})();
+</script>
+<script src="js/i18n.js"></script><script src="js/nav.js"></script>
+</body>
+</html>
