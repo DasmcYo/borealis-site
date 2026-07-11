@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About BIOLAR — the company behind Larifolin. Precision ingredient development from Siberian Dahurian larch with a mission to make DHQ+Arabinogalactan the global standard.">
+  <title>Company — BIOLAR · Larifolin</title>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .company-intro { max-width: 700px; font-size: 0.93rem; color: var(--text-2); line-height: 1.9; margin-top: 1.5rem; }
+    .mission-split { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 3.5rem; }
+    .mission-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 2.4vw, 2.4rem); font-weight: 300; line-height: 1.15; margin-bottom: 1.25rem; }
+    .mission-h em { font-style: italic; color: var(--accent); }
+    .mission-p { font-size: 0.88rem; color: var(--text-2); line-height: 1.85; }
+    .provenance-section { position: relative; border-radius: 16px; overflow: hidden; margin-top: 2.5rem; }
+    .provenance-img { width: 100%; height: 420px; object-fit: cover; display: block; filter: brightness(0.55); }
+    .provenance-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7,11,24,0.9) 0%, rgba(7,11,24,0.4) 60%, rgba(7,11,24,0.15) 100%); display: flex; align-items: flex-end; padding: 3rem; }
+    .provenance-content { max-width: 460px; }
+    .provenance-eye { font-family: 'JetBrains Mono', monospace; font-size: 0.54rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.85rem; opacity: 0.85; }
+    .provenance-h { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.8vw, 2.8rem); font-weight: 300; color: rgba(238,242,255,0.92); line-height: 1.1; margin-bottom: 1rem; }
+    .provenance-h em { font-style: italic; color: var(--accent); }
+    .provenance-p { font-size: 0.84rem; color: rgba(238,242,255,0.68); line-height: 1.75; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2.5rem; }
+    .value-card { padding: 2rem 1.75rem; display: flex; flex-direction: column; gap: 0.65rem; }
+    .value-icon { font-size: 1.35rem; color: var(--accent); opacity: 0.75; }
+    .value-h { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; color: var(--text); line-height: 1.2; }
+    .value-d { font-size: 0.79rem; color: var(--text-2); line-height: 1.7; }
+    .timeline { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0; }
+    .tl-item { display: grid; grid-template-columns: 120px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+    .tl-item:last-child { border-bottom: none; }
+    .tl-year { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--text-3); line-height: 1; padding-top: 0.2rem; }
+    .tl-year em { font-style: italic; color: var(--accent); }
+    .tl-body h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; color: var(--text); margin-bottom: 0.4rem; line-height: 1.2; }
+    .tl-body p { font-size: 0.8rem; color: var(--text-2); line-height: 1.7; }
+    @media (max-width: 900px) { .mission-split { grid-template-columns: 1fr; gap: 2rem; } .values-grid { grid-template-columns: 1fr 1fr; } .provenance-overlay { padding: 2rem; } .provenance-img { height: 320px; } }
+    @media (max-width: 600px) { .values-grid { grid-template-columns: 1fr; } .tl-item { grid-template-columns: 70px 1fr; gap: 1rem; } .tl-year { font-size: 1.4rem; } }
+  </style>
+</head>
+<body>
+<div id="scroll-prog"></div>
+<div class="amb-r"></div><div class="amb-l"></div>
+<header class="site-header">
+  <div class="nav-top"><div class="nav-top-r"><div class="nav-top-social"><a href="#" class="nav-top-soc" title="Facebook" target="_blank" rel="noopener"><i class="ph ph-facebook-logo"></i></a><a href="#" class="nav-top-soc" title="LinkedIn" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i></a><a href="#" class="nav-top-soc" title="YouTube" target="_blank" rel="noopener"><i class="ph ph-youtube-logo"></i></a></div><div class="nav-top-sep"></div><a href="contact.html" class="nav-top-link">Contact us</a><div class="nav-top-sep"></div><button class="nav-top-search" aria-label="Search"><i class="ph ph-magnifying-glass"></i></button><div class="nav-top-sep"></div><div id="langSw"><button class="lang-btn" id="langBtn" onclick="bI18nToggleDrop()">EN</button><div class="lang-drop" id="langDrop"><button data-lang="en" onclick="bI18nSetLang('en')">EN · English</button><button data-lang="ru" onclick="bI18nSetLang('ru')">RU · Русский</button><button data-lang="fr" onclick="bI18nSetLang('fr')">FR · Français</button><button data-lang="es" onclick="bI18nSetLang('es')">ES · Español</button></div></div></div></div>
+  <nav class="nav-main"><a href="index.html" class="nav-main-logo">BIOLAR</a><ul class="nav-main-links"><li class="nav-main-item"><a href="about.html">About</a></li><li class="nav-main-item" data-mega="applications"><a href="applications.html">Applications</a></li><li class="nav-main-item"><a href="science.html">Science</a></li><li class="nav-main-item active"><a href="company.html">Company</a></li><li class="nav-main-item"><a href="contact.html">Partners</a></li></ul><button class="nav-burger" id="navBurger" aria-label="Menu"><span></span><span></span></button></nav>
+  <div class="mega-menu" id="megaMenu"><div class="mega-wrap"><div class="mega-left"><div class="mega-intro active" data-col="applications"><h3 class="mega-intro-h">Applications</h3><p class="mega-intro-d">Larifolin is calibrated for five distinct manufacturing sectors — each with a precision DHQ+AG ratio engineered for that category's requirements.</p><a href="applications.html" class="mega-intro-link">All Applications <span>&rarr;</span></a></div></div><div class="mega-right"><div class="mega-col active" data-col="applications"><a href="app-nutra.html" class="mega-link"><span class="mega-link-t">Nutraceuticals &amp; Supplements</span><span class="mega-link-d">Vitamins · minerals · botanicals · bioavailability</span></a><a href="app-sports.html" class="mega-link"><span class="mega-link-t">Sports Nutrition</span><span class="mega-link-d">Recovery · endurance · oxidative stress</span></a><a href="app-food.html" class="mega-link"><span class="mega-link-t">Functional Food &amp; Beverage</span><span class="mega-link-d">Heat stability · clean label · water-soluble</span></a><a href="app-pharma.html" class="mega-link"><span class="mega-link-t">Pharmaceuticals</span><span class="mega-link-d">GMP · clinical-grade · BBB penetration</span></a><a href="app-longevity.html" class="mega-link"><span class="mega-link-t">Longevity &amp; Anti-aging</span><span class="mega-link-d">Inflammaging · neuroprotection · cellular health</span></a></div></div></div></div>
+</header>
+<div class="mob-menu" id="mobMenu"><div class="mob-header"><a href="index.html" class="mob-logo">BIOLAR</a><button class="mob-close" aria-label="Close menu" onclick="document.getElementById('navBurger').click()"><span></span><span></span></button></div><div class="mob-nav"><div class="mob-section"><span class="mob-cat">About Larifolin</span><a href="about.html" class="mob-link">What is Larifolin</a><a href="about.html#mechanism" class="mob-link">How it works</a></div><div class="mob-section"><span class="mob-cat">Applications</span><a href="applications.html" class="mob-link">All Applications</a><a href="app-nutra.html" class="mob-link">Nutraceuticals &amp; Supplements</a><a href="app-sports.html" class="mob-link">Sports Nutrition</a><a href="app-food.html" class="mob-link">Functional Food &amp; Beverage</a><a href="app-pharma.html" class="mob-link">Pharmaceuticals</a><a href="app-longevity.html" class="mob-link">Longevity &amp; Anti-aging</a></div><div class="mob-section"><span class="mob-cat">Science</span><a href="science.html" class="mob-link">Research Overview</a></div><div class="mob-section"><span class="mob-cat">Company</span><a href="company.html" class="mob-link">About Us</a></div></div><div class="mob-foot"><a href="contact.html" class="mob-cta">Become a Partner →</a><div class="mob-lang"><button data-lang="en" onclick="bI18nSetLang('en')">EN</button><button data-lang="ru" onclick="bI18nSetLang('ru')">RU</button><button data-lang="fr" onclick="bI18nSetLang('fr')">FR</button><button data-lang="es" onclick="bI18nSetLang('es')">ES</button></div></div></div>
+
+<section class="sec" style="padding-top:calc(var(--nav-h) + 5rem)">
+  <div class="sec-eye rv">About BIOLAR</div>
+  <h1 class="page-h1 rv d1">One ingredient.<br><em>Precision-engineered.</em></h1>
+  <p class="company-intro rv d2">BIOLAR develops and manufactures Larifolin — a precision DHQ+Arabinogalactan ingredient sourced exclusively from Siberian Dahurian larch. Our focus is narrow by design: one ingredient, five application sectors, a single mission to make the DHQ+AG combination the global reference standard in high-bioavailability botanical actives.</p>
+</section>
+
+<div class="sec-divider"></div>
+
+<section class="sec">
+  <div class="sec-eye rv">Mission</div>
+  <div class="mission-split">
+    <div class="rv d1">
+      <h2 class="mission-h">Why we exist:</h2>
+      <h2 class="mission-h"><em>DHQ was underdelivering</em> its own potential.</h2>
+      <p class="mission-p">Dihydroquercetin has over 70 peer-reviewed publications and a strong biological rationale. It was being sold as a commodity extract — variable purity, no carrier system, buyers left to figure out formulation themselves.<br><br>We built Larifolin to solve the delivery problem. The Arabinogalactan matrix is not an additive — it is the reason the DHQ works at meaningful dose levels. ×2.8 bioavailability is not a marketing claim; it is a pharmacokinetic measurement. That is what we manufacture and supply.</p>
+    </div>
+    <div class="rv d2">
+      <h2 class="mission-h">What we actually <em>sell:</em></h2>
+      <p class="mission-p" style="margin-bottom: 1.25rem">We sell a precision ingredient with five calibrated ratio variants, matched to application sector requirements. We do not sell finished products, make health claims to consumers, or retail direct-to-consumer.</p>
+      <p class="mission-p">Our customers are manufacturers, formulators, and brand owners in nutraceuticals, sports nutrition, functional food, pharmaceutical, and longevity verticals. Every engagement starts with a technical brief and ends with documented specifications — not a catalogue purchase.</p>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<section class="sec">
+  <div class="sec-eye rv">Origin</div>
+  <h2 class="sec-h2 rv d1">The source of<br><em>Larifolin</em></h2>
+  <div class="provenance-section rv d2">
+    <img src="img/larch-forest-hero.jpg" alt="Siberian Dahurian larch forest — source of Larifolin DHQ and Arabinogalactan" class="provenance-img">
+    <div class="provenance-overlay">
+      <div class="provenance-content">
+        <div class="provenance-eye">Siberia · Dahurian Larch</div>
+        <h3 class="provenance-h">A single species,<br>a <em>controlled source</em>.</h3>
+        <p class="provenance-p">Larix gmelinii — Dahurian larch — is the primary commercial source of DHQ and Arabinogalactan globally. Siberia holds the world's largest natural stands. Our extraction is sourced from the same origin, batch-tested, and documented end to end. No blended origins, no undisclosed substitutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<section class="sec">
+  <div class="sec-eye rv">Principles</div>
+  <h2 class="sec-h2 rv d1">How we work</h2>
+  <div class="values-grid">
+    <div class="dbezel rv d1"><div class="dbezel-in value-card"><i class="ph ph-file-text value-icon"></i><h3 class="value-h">Documentation First</h3><p class="value-d">Every claim we make — bioavailability, purity, stability — is backed by documentation we can share. CoA per batch, technical specs, supporting research. If we can't document it, we don't claim it.</p></div></div>
+    <div class="dbezel rv d2"><div class="dbezel-in value-card"><i class="ph ph-funnel value-icon"></i><h3 class="value-h">Narrow Focus</h3><p class="value-d">We make one ingredient. Not a catalogue of extracts, not a portfolio play. This is not a positioning decision — it is an operational one. Depth beats breadth when precision matters.</p></div></div>
+    <div class="dbezel rv d3"><div class="dbezel-in value-card"><i class="ph ph-handshake value-icon"></i><h3 class="value-h">B2B Only</h3><p class="value-d">We work exclusively with manufacturers, formulators, and brand owners. No DTC, no retail, no consumer marketing. Our sales process is a technical dialogue, not a catalogue transaction.</p></div></div>
+  </div>
+</section>
+
+<div class="sec-divider"></div>
+
+<section class="sec">
+  <div class="sec-eye rv">Timeline</div>
+  <h2 class="sec-h2 rv d1">BIOLAR at a<br><em>glance</em></h2>
+  <div class="timeline">
+    <div class="tl-item rv d1">
+      <div class="tl-year"><em>Origin</em></div>
+      <div class="tl-body"><h4>Biolar Organics — consumer health product company</h4><p>BIOLAR begins as a consumer health brand developing and selling finished dietary supplements on Russian e-commerce marketplaces. This phase builds deep operational knowledge of the supplement industry — regulatory requirements, formulation constraints, consumer demand patterns.</p></div>
+    </div>
+    <div class="tl-item rv d2">
+      <div class="tl-year"><em>Pivot</em></div>
+      <div class="tl-body"><h4>Identification of the Larifolin opportunity</h4><p>Partner research surfaces the DHQ+Arabinogalactan bioavailability data. The decision: stop building finished products and develop the precision ingredient that finished product companies should be using. Larifolin is conceived as a branded ingredient on the Pycnogenol model.</p></div>
+    </div>
+    <div class="tl-item rv d3">
+      <div class="tl-year"><em>Now</em></div>
+      <div class="tl-body"><h4>Global B2B — five application sectors</h4><p>Larifolin is positioned across nutraceuticals, sports nutrition, functional food, pharmaceuticals, and longevity. The focus is international — EU, Asia-Pacific, Brazil. The Russian market is deliberately excluded from the initial commercial strategy. Five ratio variants calibrated per sector. Samples and documentation available on request.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-block">
+  <div class="cta-card rv">
+    <div class="cta-in">
+      <div class="cta-glow"></div>
+      <div><h2 class="cta-h">Start a technical<br><em>conversation</em></h2><p class="cta-sub">Tell us your application sector and formulation goals. We will match the right Larifolin ratio and share the relevant documentation.</p></div>
+      <div class="cta-acts"><a href="contact.html" class="btn-p"><span>Contact Us</span> <span class="btn-p-ic">→</span></a><a href="about.html" class="btn-s">About Larifolin</a></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-brand"><a href="index.html" class="ft-logo">BIOLAR</a><p>Larifolin — a precision DHQ+Arabinogalactan ingredient from Siberian Dahurian larch.</p></div>
+  <nav class="ft-nav"><a href="about.html">About Larifolin</a><a href="applications.html">Applications</a><a href="science.html">Science</a><a href="company.html">Company</a><a href="contact.html">Partners</a></nav>
+  <div class="ft-nl"><div class="ft-nl-lbl">Newsletter</div><form id="nlForm" onsubmit="nlSub(event)"><div class="ft-nl-row"><input type="email" class="ft-nl-in" placeholder="your@company.com" required autocomplete="email"><button type="submit" class="ft-nl-btn">→</button></div><p class="ft-nl-note">Research updates only. No marketing.</p></form><div class="ft-nl-ok" id="nlOk">✓ Subscribed</div></div>
+  <div class="ft-copy"><p>© 2025 BIOLAR</p></div>
+</footer>
+<script>
+  const obs=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&(x.target.classList.add('in'),obs.unobserve(x.target))),{threshold:0.05,rootMargin:'0px 0px -36px 0px'});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+  setTimeout(()=>document.querySelectorAll('.page-hero .rv').forEach(el=>el.classList.add('in')),80);
+  const burger=document.getElementById('navBurger'),mob=document.getElementById('mobMenu');
+  if(burger&&mob){burger.addEventListener('click',()=>{const o=mob.classList.toggle('open');burger.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});}
+  document.querySelectorAll('.mob-link,.mob-cta').forEach(l=>l.addEventListener('click',()=>{mob.classList.remove('open');burger.classList.remove('open');document.body.style.overflow='';}));
+  function nlSub(e){e.preventDefault();document.getElementById('nlForm').style.display='none';document.getElementById('nlOk').style.display='block';}
+  (function(){var el=document.getElementById('scroll-prog');if(!el)return;window.addEventListener('scroll',function(){var s=document.documentElement;el.style.width=Math.min(s.scrollTop/(s.scrollHeight-s.clientHeight)*100,100)+'%';},{passive:true});})();
+</script>
+<script src="js/i18n.js"></script><script src="js/nav.js"></script>
+</body>
+</html>
