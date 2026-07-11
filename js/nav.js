@@ -39,10 +39,26 @@
     menu.addEventListener('mouseleave', close);
   }
 
+  function initPhotoHero() {
+    var bgs = document.querySelectorAll('.ph-bg');
+    bgs.forEach(function (bg) {
+      var url = bg.style.backgroundImage.replace(/url\(['"]?([^'"]+)['"]?\)/, '$1');
+      if (!url) { bg.classList.add('loaded'); return; }
+      var img = new Image();
+      img.onload = function () { bg.classList.add('loaded'); };
+      img.onerror = function () { bg.classList.add('loaded'); };
+      img.src = url;
+    });
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMegaMenu);
+    document.addEventListener('DOMContentLoaded', function () {
+      initMegaMenu();
+      initPhotoHero();
+    });
   } else {
     initMegaMenu();
+    initPhotoHero();
   }
 })();
 
